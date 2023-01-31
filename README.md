@@ -39,7 +39,7 @@ Incarnez un Chevalier de Bronze et construisez votre deck en affrontant d'autres
 
 ## About The Project
 
-![Screen Shot](https://cdn2.philibertnet.com/421648-large_default/saint-seiya-le-jeu-de-deckbuilding.jpg)
+![Screen Shot](https://saint-seiya-deckbuilding.fr/img/ssdb_box.webp)
 
 (description)
 
