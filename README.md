@@ -39,7 +39,7 @@ Incarnez un Chevalier de Bronze et construisez votre deck en affrontant d'autres
 
 ## About The Project
 
-![Screen Shot](https://saint-seiya-deckbuilding.fr/img/ssdb_box.webp)
+![Screen Shot](https://img.dungeondice.it/30012-large_default/saint-seiya-i-cavalieri-dello-zodiaco-deckbuilding-game.jpg)
 
 (description)
 
