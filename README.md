@@ -66,7 +66,7 @@ $
 2. Clone the repo
 
 ```sh
-git clone https://github.com/wolf7522/saint-seiya-deckbuilding.git
+git clone https://github.com/wolf75222/saint-seiya-deckbuilding.git
 ```
 
 3. Install 
