@@ -7,6 +7,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+* Main application class
+* 
+* @author LittleBigOwI
+* @version 1.0
+* @since 2023-02-04
+*/
+
 @SpringBootApplication
 @RestController
 public class App {
@@ -14,7 +22,7 @@ public class App {
 	
 	/** 
 	 * Application start point
-	 * @param args
+	 * @param args command line args
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(App.class, args);

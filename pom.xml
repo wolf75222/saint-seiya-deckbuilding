@@ -8,14 +8,18 @@
 		<version>3.0.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	
 	<groupId>com.cmiurca</groupId>
 	<artifactId>SaintSeiyaDeckBuilding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>saintseiyadeckbuilding</name>
 	<description>Saint seiya game in java complete with a Spring web interface and a Java backend</description>
+	
 	<properties>
 		<java.version>17</java.version>
+		<project.reporting.docsOutputDirectory>./docs</project.reporting.docsOutputDirectory>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -34,6 +38,19 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9</version>
+				<configuration>
+					<noqualifier>all</noqualifier>
+					<reportOutputDirectory>
+						${project.reporting.docsOutputDirectory}
+					</reportOutputDirectory>
+					<destDir>docs</destDir>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
