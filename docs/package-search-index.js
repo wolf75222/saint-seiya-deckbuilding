@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.cmiurca.saintseiyadeckbuilding"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.cmiurca.saintseiyadeckbuilding"},{"l":"com.cmiurca.saintseiyadeckbuilding.controllers"},{"l":"com.cmiurca.saintseiyadeckbuilding.saintseiya"}];updateSearchResults();

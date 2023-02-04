@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.cmiurca.saintseiyadeckbuilding","l":"App"}];updateSearchResults();
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"com.cmiurca.saintseiyadeckbuilding","l":"App"},{"p":"com.cmiurca.saintseiyadeckbuilding.saintseiya","l":"Game"},{"p":"com.cmiurca.saintseiyadeckbuilding.controllers","l":"GameController"}];updateSearchResults();
