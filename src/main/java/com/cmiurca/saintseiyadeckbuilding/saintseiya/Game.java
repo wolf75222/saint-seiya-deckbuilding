@@ -4,7 +4,7 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  * Game class, where the game is created
  * 
  * @author LittleBigOwI
- * @version 1.0
+ * @version 1.2
  * @since 2023-02-04
  */
 public class Game {
