@@ -8,11 +8,15 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  * @since 2023-02-04
  */
 public class Game {
+<<<<<<< HEAD
     
     /**
      * Number of players in game
      */
     private int playerCount;
+=======
+    private int playerCount = 0;
+>>>>>>> 1c7a4adbebe65269c07e4db7638bad6b32e8f895
 
     /**
      * Array of players in game
@@ -36,6 +40,7 @@ public class Game {
         this.playerCount = playerCount;
     }
 
+<<<<<<< HEAD
     /** 
      * Simple getter for players in game
      * @return Player[] array of players
@@ -80,4 +85,12 @@ public class Game {
         //...
     }
 
+=======
+    /**
+     * Main game start method, called in GameController class
+     */
+    public void start() {
+        return;
+    }
+>>>>>>> 1c7a4adbebe65269c07e4db7638bad6b32e8f895
 }
