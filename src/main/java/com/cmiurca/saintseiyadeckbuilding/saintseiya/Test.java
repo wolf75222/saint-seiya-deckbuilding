@@ -40,17 +40,18 @@ public class Test {
         File dir = new File(path);
         File[] javaFiles = dir.listFiles((d, name) -> name.endsWith(".java"));
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
-
+    
         System.out.println(" - " +"Nombre de fichiers Java dans le répertoire courant : " + javaFiles.length);
         Arrays.stream(javaFiles).forEach(file -> {
             int result = compiler.run(null, null, null, file.getPath());
             if (result == 0) {
-                System.out.println(" --> " + file.getName() + " ✔");
+                System.out.println(TEXT_GREEN + " --> " + file.getName() + " ✔" + TEXT_RESET);
             } else {
-                System.out.println(" --> " + file.getName() + " ✖");
+                System.out.println(TEXT_RED + " --> " + file.getName() + " ✖" + TEXT_RESET);
             }
         });
     }
+    
 
     /**
     * Check for errors during the execution of compiled files
