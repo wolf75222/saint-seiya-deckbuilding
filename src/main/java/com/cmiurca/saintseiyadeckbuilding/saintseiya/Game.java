@@ -64,6 +64,11 @@ public class Game {
         this.players = new Player[playerCount];
     }
 
+    public Game(){
+        this.playerCount = 4;
+        this.players = new Player[playerCount];
+    }
+
     /**
      * Method to start the game
      */
