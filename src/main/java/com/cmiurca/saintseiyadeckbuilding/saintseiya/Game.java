@@ -8,7 +8,7 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  * @since 2023-02-04
  */
 public class Game {
-    private int playerCount;
+    private int playerCount = 0;
 
     /** 
      * Simple getter for number of players in game
@@ -24,5 +24,12 @@ public class Game {
      */
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
+    }
+
+    /**
+     * Main game start method, called in GameController class
+     */
+    public void start() {
+        return;
     }
 }
