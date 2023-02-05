@@ -39,7 +39,7 @@ public class GameController {
 	@PostMapping("/game")
 	public String gameSubmit(@ModelAttribute Game game, Model model) {
 		model.addAttribute("game", game); //Here, the game variable will have all the correct attributes to start
-		game.start();
+		game.startGame();
 		
 		return "game.html";
 	}
