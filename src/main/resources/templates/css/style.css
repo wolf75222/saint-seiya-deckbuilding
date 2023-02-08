@@ -1,0 +1,56 @@
+.grid-container {
+	display: grid;
+
+	grid-template-areas:
+		'header'
+		'aide'
+		'decompte';
+}
+
+.header {
+	grid-area: header;
+	height: 60px;
+	margin-bottom: 60px;
+
+	border: solid black;
+}
+
+#saint_seya_logo {
+	height: 100%;
+	width: auto;
+}
+
+.aide {
+	grid-area: aide;
+	height: 400px;
+	margin-bottom: 60px;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: center;
+	align-items: center;
+
+	border: solid black;
+}
+
+.aide div {
+	width: 400px;
+}
+
+.decompte {
+	grid-area: decompte;
+	height: 400px;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	justify-content: center;
+	align-items: center;
+
+	border: solid black;
+}
+
+.decompte div {
+	width: 400px;
+}
