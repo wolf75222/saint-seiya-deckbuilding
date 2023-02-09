@@ -8,7 +8,6 @@ import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-
 /**
  * Test, a class to test the compilation of all java files in the current directory and some other stuff
  * @author Sirwolf
@@ -151,9 +150,6 @@ public class Test {
             }
         }
     }
-
-
-    
 
 
 

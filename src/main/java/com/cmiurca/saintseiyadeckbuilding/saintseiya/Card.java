@@ -9,63 +9,65 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  */
 public class Card {
 
+    //TODO: Add pointOfInjury
+
     /**
-     * The name of the card.
+     * The name of the {@link Card}.
      */
     private String name;
 
     /**
-     * The category of the card.
+     * The category of the {@link Card}.
      */
     private String category;
 
     /**
-     * The acquisition cost in strength required to acquire the card.
+     * The acquisition cost in strength required to acquire the {@link Card}.
      */
     private int acquisitionCostInStrength;
 
     /**
-     * The acquisition cost in cosmos required to acquire the card.
+     * The acquisition cost in cosmos required to acquire the {@link Card}.
      */
     private int acquisitionCostInCosmos;
 
     /**
-     * The rank of the card.
+     * The rank of the {@link Card}.
      */
     private String rank;
 
     /**
-     * The id of the card.
+     * The id of the {@link Card}.
      */
     private int id;
 
     /**
-     * The flame of the clock value of the card.
+     * The flame of the clock value of the {@link Card}.
      */
     private int flameOfTheClock;
 
     /**
-     * The point of victory value of the card.
+     * The point of victory value of the {@link Card}.
      */
     private int pointOfVictory;
 
     /**
-     * The effect of the card.
+     * The effect of the {@link Card}.
      */
     private Effect effect;
 
     /**
-     * The strength value of the card.
+     * The strength value of the {@link Card}.
      */
     private int strength;
 
     /**
-     * The cosmos value of the card.
+     * The cosmos value of the {@link Card}.
      */
     private int cosmos;
 
     /**
-     * The care value of the card.
+     * The care value of the {@link Card}.
      */
     private int care;
     
@@ -97,18 +99,18 @@ public class Card {
     /**
      * Creates a new Card instance with the specified parameters.
      * 
-     * @param name The name of the card.
-     * @param category The category of the card.
-     * @param acquisitionCostInStrength The acquisition cost in strength required to acquire the card.
-     * @param acquisitionCostInCosmos The acquisition cost in cosmos required to acquire the card.
-     * @param rank The rank of the card.
-     * @param id The id of the card.
-     * @param flameOfTheClock The flame of the clock value of the card.
-     * @param pointOfVictory The point of victory value of the card.
-     * @param effect The effect of the card.
-     * @param strength The strength value of the card.
-     * @param cosmos The cosmos value of the card.
-     * @param care The care value of the card.
+     * @param name The name of the {@link Card}.
+     * @param category The category of the {@link Card}.
+     * @param acquisitionCostInStrength The acquisition cost in strength required to acquire the {@link Card}.
+     * @param acquisitionCostInCosmos The acquisition cost in cosmos required to acquire the {@link Card}.
+     * @param rank The rank of the {@link Card}.
+     * @param id The id of the {@link Card}.
+     * @param flameOfTheClock The flame of the clock value of the {@link Card}.
+     * @param pointOfVictory The point of victory value of the {@link Card}.
+     * @param effect The effect of the {@link Card}.
+     * @param strength The strength value of the {@link Card}.
+     * @param cosmos The cosmos value of the {@link Card}.
+     * @param care The care value of the {@link Card}.
      */
     public Card(String name, String category, int acquisitionCostInStrength, int acquisitionCostInCosmos, String rank, int id, int flameOfTheClock, int pointOfVictory, Effect effect, int strength, int cosmos, int care) {
         this.name = name;
@@ -123,6 +125,16 @@ public class Card {
         this.strength = strength;
         this.cosmos = cosmos;
         this.care = care;
+    }
+
+    /**
+     * Creates a new Card instance with the specified parameters.
+     * 
+     * @param int id The id of the {@link Card}.
+     */
+    public Card(int id) {
+        this.id = id;
+        // TODO: Get the card from the database.
     }
 
     /**
@@ -224,7 +236,7 @@ public class Card {
 
     /**
      * Setter for name
-     * @param name The name of the card.
+     * @param name The name of the {@link Card}.
      */
     public void setName(String name) {
         this.name = name;
@@ -232,7 +244,7 @@ public class Card {
 
     /**
      * Setter for category
-     * @param category The category of the card.
+     * @param category The category of the {@link Card}.
      */
     public void setCategory(String category) {
         this.category = category;
@@ -240,7 +252,7 @@ public class Card {
 
     /**
      * Setter for acquisitionCostInStrength
-     * @param acquisitionCostInStrength The acquisition cost in strength required to acquire the card.
+     * @param acquisitionCostInStrength The acquisition cost in strength required to acquire the {@link Card}.
      */
     public void setAcquisitionCostInStrength(int acquisitionCostInStrength) {
         this.acquisitionCostInStrength = acquisitionCostInStrength;
@@ -248,7 +260,7 @@ public class Card {
 
     /**
      * Setter for acquisitionCostInCosmos
-     * @param acquisitionCostInCosmos The acquisition cost in cosmos required to acquire the card.
+     * @param acquisitionCostInCosmos The acquisition cost in cosmos required to acquire the {@link Card}.
      */
     public void setAcquisitionCostInCosmos(int acquisitionCostInCosmos) {
         this.acquisitionCostInCosmos = acquisitionCostInCosmos;
@@ -256,7 +268,7 @@ public class Card {
 
     /**
      * Setter for rank
-     * @param rank The rank of the card.
+     * @param rank The rank of the {@link Card}.
      */
     public void setRank(String rank) {
         this.rank = rank;
@@ -264,7 +276,7 @@ public class Card {
 
     /**
      * Setter for id
-     * @param id The id of the card.
+     * @param id The id of the {@link Card}.
      */
     public void setId(int id) {
         this.id = id;
@@ -272,7 +284,7 @@ public class Card {
 
     /**
      * Setter for flameOfTheClock
-     * @param flameOfTheClock The flame of the clock value of the card.
+     * @param flameOfTheClock The flame of the clock value of the {@link Card}.
      */
     public void setFlameOfTheClock(int flameOfTheClock) {
         this.flameOfTheClock = flameOfTheClock;
@@ -280,7 +292,7 @@ public class Card {
 
     /**
      * Setter for pointOfVictory
-     * @param pointOfVictory The point of victory value of the card.
+     * @param pointOfVictory The point of victory value of the {@link Card}.
      */
     public void setPointOfVictory(int pointOfVictory) {
         this.pointOfVictory = pointOfVictory;
@@ -288,7 +300,7 @@ public class Card {
 
     /**
      * Setter for effect
-     * @param effect The effect of the card.
+     * @param effect The effect of the {@link Card}.
      */
     public void setEffect(Effect effect) {
         this.effect = effect;
@@ -296,7 +308,7 @@ public class Card {
 
     /**
      * Setter for strength
-     * @param strength The strength value of the card.
+     * @param strength The strength value of the {@link Card}.
      */
     public void setStrength(int strength) {
         this.strength = strength;
@@ -304,7 +316,7 @@ public class Card {
 
     /**
      * Setter for cosmos
-     * @param cosmos The cosmos value of the card.
+     * @param cosmos The cosmos value of the {@link Card}.
      */
     public void setCosmos(int cosmos) {
         this.cosmos = cosmos;
@@ -312,14 +324,14 @@ public class Card {
 
     /**
      * Setter for care
-     * @param care The care value of the card.
+     * @param care The care value of the {@link Card}.
      */
     public void setCare(int care) {
         this.care = care;
     }
 
     /**
-     * Method to display the card
+     * Method to display the {@link Card}.
      * @return String
      */
     @Override
@@ -327,6 +339,122 @@ public class Card {
         return "Card{" + "name=" + name + ", category=" + category + ", acquisitionCostInStrength=" + acquisitionCostInStrength + ", acquisitionCostInCosmos=" + acquisitionCostInCosmos + ", rank=" + rank + ", id=" + id + ", flameOfTheClock=" + flameOfTheClock + ", pointOfVictory=" + pointOfVictory + ", effect=" + effect + ", strength=" + strength + ", cosmos=" + cosmos + ", care=" + care + '}';
     }
 
+    /**
+     * Method to compare two cards
+     * @param obj The card to compare
+     * @return boolean
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Card other = (Card) obj;
+        if ((this.name == null) ? (other.name != null) : !this.name.equals(other.name)) {
+            return false;
+        }
+        if ((this.category == null) ? (other.category != null) : !this.category.equals(other.category)) {
+            return false;
+        }
+        if (this.acquisitionCostInStrength != other.acquisitionCostInStrength) {
+            return false;
+        }
+        if (this.acquisitionCostInCosmos != other.acquisitionCostInCosmos) {
+            return false;
+        }
+        if ((this.rank == null) ? (other.rank != null) : !this.rank.equals(other.rank)) {
+            return false;
+        }
+        if (this.id != other.id) {
+            return false;
+        }
+        if (this.flameOfTheClock != other.flameOfTheClock) {
+            return false;
+        }
+        if (this.pointOfVictory != other.pointOfVictory) {
+            return false;
+        }
+        if (this.effect != other.effect && (this.effect == null || !this.effect.equals(other.effect))) {
+            return false;
+        }
+        if (this.strength != other.strength) {
+            return false;
+        }
+        if (this.cosmos != other.cosmos) {
+            return false;
+        }
+        if (this.care != other.care) {
+            return false;
+        }
+        return true;
+    }   
+
+    /**
+     * Method to add strength to the {@link Card}.
+     * @param int strengthToAdd The strength to add
+     */
+    public void addStrength(int strengthToAdd) {
+        this.strength += strengthToAdd;
+    }
+
+    /**
+     * Method to add cosmos to the {@link Card}.
+     * @param int cosmosToAdd The cosmos to add
+     */
+    public void addCosmos(int cosmosToAdd) {
+        this.cosmos += cosmosToAdd;
+    }
+
+    /**
+     * Method to add care to the {@link Card}.
+     * @param int careToAdd The care to add
+     */
+    public void addCare(int careToAdd) {
+        this.care += careToAdd;
+    }
+
+    /**
+     * Method to remove strength to the {@link Card}.
+     * @param int strengthToRemove The strength to remove
+     */
+    public void removeStrength(int strengthToRemove) {
+        this.strength -= strengthToRemove;
+    }
+
+    /**
+     * Method to remove cosmos to the {@link Card}.
+     * @param int cosmosToRemove The cosmos to remove
+     */
+    public void removeCosmos(int cosmosToRemove) {
+        this.cosmos -= cosmosToRemove;
+    }
+
+    /**
+     * Method to remove care to the {@link Card}.
+     * @param int careToRemove The care to remove
+     */
+    public void removeCare(int careToRemove) {
+        this.care -= careToRemove;
+    }
+
+    /**
+     * Method to remove acquisitionCostInStrength to the {@link Card}
+     * @param int acquisitionCostInStrengthToRemove The acquisitionCostInStrength to remove
+     */
+    public void removeAcquisitionCostInStrength(int acquisitionCostInStrengthToRemove) {
+        this.acquisitionCostInStrength -= acquisitionCostInStrengthToRemove;
+    }
+
+    /**
+     * Method to remove acquisitionCostInCosmos to the {@link Card}
+     * @param int acquisitionCostInCosmosToRemove The acquisitionCostInCosmos to remove
+     */
+    public void removeAcquisitionCostInCosmos(int acquisitionCostInCosmosToRemove) {
+        this.acquisitionCostInCosmos -= acquisitionCostInCosmosToRemove;
+    }
 
 
 }

@@ -229,6 +229,17 @@ public class Player {
         }
 
     }
+
+    /**
+     * Method to add card to the hand
+     * @param int id of the card to be added to the hand
+     */
+    public void addCardToHand(int id) {
+        Card card = new Card(id);
+        addCardToHand(card);
+    }
+
+    
     
     /**
      * Method to add a card to the discard
@@ -242,6 +253,15 @@ public class Player {
             }
         }
     }
+
+    /**
+     * Method to add card to the discard
+     * @param int id of the card to be added to the discard
+     */
+    public void addCardToDiscard(int id) {
+        Card card = new Card(id);
+        addCardToDiscard(card);
+    }
     
     /**
      * Method to add a card to the destroyed cards
@@ -254,7 +274,15 @@ public class Player {
                 break;
             }
         }
+    }
 
+    /**
+     * Method to add card to the destroyed cards
+     * @param int id of the card to be added to the destroyed cards
+     */
+    public void addCardToDestroyedCards(int id) {
+        Card card = new Card(id);
+        addCardToDestroyedCards(card);
     }
 
     /**
@@ -262,6 +290,7 @@ public class Player {
      * @param card card to be added to the injured characters
      */
     public void addCardToInjuredCharacters(Card card) {
+        //TODO: card.pointOfInjury++
         for (int i = 0; i < injuredCharacters.length; i++) {
             if (injuredCharacters[i] == null) {
                 injuredCharacters[i] = card;
@@ -271,12 +300,34 @@ public class Player {
     }
 
     /**
+     * Method to add card to the injured characters
+     * @param int id of the card to be added to the injured characters
+     */
+    public void addCardToInjuredCharacters(int id) {
+        Card card = new Card(id);
+        addCardToInjuredCharacters(card);
+    }
+
+    /**
      * Method to remove a card from the hand
      * @param card card to be removed from the hand
      */
     public void removeCardFromHand(Card card) {
         for (int i = 0; i < hand.length; i++) {
             if (hand[i] == card) {
+                hand[i] = null;
+                break;
+            }
+        }
+    }
+
+    /**
+     * Method to remove a card from the hand
+     * @param int id of the card to be removed from the hand
+     */
+    public void removeCardFromHand(int id) {
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getId() == id) {
                 hand[i] = null;
                 break;
             }
@@ -298,6 +349,19 @@ public class Player {
     }
 
     /**
+     * Method to remove a card from the discard
+     * @param int id of the card to be removed from the discard
+     */
+    public void removeCardFromDiscard(int id) {
+        for (int i = 0; i < discard.length; i++) {
+            if (discard[i].getId() == id) {
+                discard[i] = null;
+                break;
+            }
+        }
+    }
+
+    /**
      * Method to remove a card from the destroyed cards
      * @param card card to be removed from the destroyed cards
      */
@@ -312,12 +376,38 @@ public class Player {
     }
 
     /**
+     * Method to remove a card from the destroyed cards
+     * @param int id of the card to be removed from the destroyed cards
+     */
+    public void removeCardFromDestroyedCards(int id) {
+        for (int i = 0; i < destroyedCards.length; i++) {
+            if (destroyedCards[i].getId() == id) {
+                destroyedCards[i] = null;
+                break;
+            }
+        }
+    }
+
+    /**
      * Method to remove a card from the injured characters
      * @param card card to be removed from the injured characters
      */
     public void removeCardFromInjuredCharacters(Card card) {
         for (int i = 0; i < injuredCharacters.length; i++) {
             if (injuredCharacters[i] == card) {
+                injuredCharacters[i] = null;
+                break;
+            }
+        }
+    }
+
+    /**
+     * Method to remove a card from the injured characters
+     * @param int id of the card to be removed from the injured characters
+     */
+    public void removeCardFromInjuredCharacters(int id) {
+        for (int i = 0; i < injuredCharacters.length; i++) {
+            if (injuredCharacters[i].getId() == id) {
                 injuredCharacters[i] = null;
                 break;
             }
@@ -338,6 +428,19 @@ public class Player {
     }
 
     /**
+     * Method to remove a card from the deck
+     * @param int id of the card to be removed from the deck
+     */
+    public void removeCardFromDeck(int id) {
+        for (int i = 0; i < deck.length; i++) {
+            if (deck[i].getId() == id) {
+                deck[i] = null;
+                break;
+            }
+        }
+    }
+
+    /**
      * Method to add a card to the deck
      * @param card card to be added to the deck
      */
@@ -348,6 +451,584 @@ public class Player {
                 break;
             }
         }
+    }
+
+    /**
+     * Method to add a card to the deck
+     * @param int id of the card to be added to the deck
+     */
+    public void addCardToDeck(int id) {
+        Card card = new Card(id);
+        addCardToDeck(card);
+    }
+
+    /**
+     * Method that returns the occurence of a card in the hand
+     * @param card card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInHand(Card card) {
+        int occurence = 0;
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i] == card) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+    
+    /**
+     * Method that returns the occurence of a card in the hand
+     * @param id id of the card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInHand(int id) {
+        int occurence = 0;
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getId() == id) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+
+    /**
+     * Method that returns the occurence of a card in the discard
+     * @param card card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInDiscard(Card card) {
+        int occurence = 0;
+        for (int i = 0; i < discard.length; i++) {
+            if (discard[i] == card) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+    
+    /**
+     * Method that returns the occurence of a card in the discard
+     * @param id id of the card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInDiscard(int id) {
+        int occurence = 0;
+        for (int i = 0; i < discard.length; i++) {
+            if (discard[i].getId() == id) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+
+    /**
+     * Method that returns the occurence of a card in the destroyed cards
+     * @param card card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInDestroyedCards(Card card) {
+        int occurence = 0;
+        for (int i = 0; i < destroyedCards.length; i++) {
+            if (destroyedCards[i] == card) {
+                occurence++;
+            }
+        }
+        return occurence;
+
+    }
+
+    /**
+     * Method that returns the occurence of a card in the destroyed cards
+     * @param id id of the card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInDestroyedCards(int id) {
+        int occurence = 0;
+        for (int i = 0; i < destroyedCards.length; i++) {
+            if (destroyedCards[i].getId() == id) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+
+
+    /**
+     * Method that returns the occurence of a card in the injured characters
+     * @param card card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInInjuredCharacters(Card card) {
+        int occurence = 0;
+        for (int i = 0; i < injuredCharacters.length; i++) {
+            if (injuredCharacters[i] == card) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+    
+    /**
+     * Method that returns the occurence of a card in the injured characters
+     * @param id id of the card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInInjuredCharacters(int id) {
+        int occurence = 0;
+        for (int i = 0; i < injuredCharacters.length; i++) {
+            if (injuredCharacters[i].getId() == id) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+
+    /**
+     * Method that returns the occurence of a card in the deck
+     * @param card card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInDeck(Card card) {
+        int occurence = 0;
+        for (int i = 0; i < deck.length; i++) {
+            if (deck[i] == card) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+
+    /**
+     * Method that returns the occurence of a card in the deck
+     * @param id id of the card to be searched for
+     * @return int occurence
+     */
+    public int occurenceInDeck(int id) {
+        int occurence = 0;
+        for (int i = 0; i < deck.length; i++) {
+            if (deck[i].getId() == id) {
+                occurence++;
+            }
+        }
+        return occurence;
+    }
+
+    /**
+     * Method that returns all the positions of a card in the hand
+     * @param card card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInHand(Card card) {
+        int[] positions = new int[occurenceInHand(card)];
+        int j = 0;
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i] == card) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+    /**
+     * Method that returns all the positions of a card in the hand
+     * @param int id id of the card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInHand(int id) {
+        int[] positions = new int[occurenceInHand(id)];
+        int j = 0;
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getId() == id) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+
+
+    /**
+     * Method that returns all the positions of a card in the discard
+     * @param card card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInDiscard(Card card) {
+        int[] positions = new int[occurenceInDiscard(card)];
+        int j = 0;
+        for (int i = 0; i < discard.length; i++) {
+            if (discard[i] == card) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+    /**
+     * Method that returns all the positions of a card in the discard
+     * @param id id of the card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInDiscard(int id) {
+        int[] positions = new int[occurenceInDiscard(id)];
+        int j = 0;
+        for (int i = 0; i < discard.length; i++) {
+            if (discard[i].getId() == id) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+    /**
+     * Method that returns all the positions of a card in the destroyed cards
+     * @param card card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInDestroyedCards(Card card) {
+        int[] positions = new int[occurenceInDestroyedCards(card)];
+        int j = 0;
+        for (int i = 0; i < destroyedCards.length; i++) {
+            if (destroyedCards[i] == card) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+
+    }
+
+    /**
+     * Method that returns all the positions of a card in the destroyed cards
+     * @param id id of the card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInDestroyedCards(int id) {
+        int[] positions = new int[occurenceInDestroyedCards(id)];
+        int j = 0;
+        for (int i = 0; i < destroyedCards.length; i++) {
+            if (destroyedCards[i].getId() == id) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+    /**
+     * Method that returns all the positions of a card in the injured characters
+     * @param card card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInInjuredCharacters(Card card) {
+        int[] positions = new int[occurenceInInjuredCharacters(card)];
+        int j = 0;
+        for (int i = 0; i < injuredCharacters.length; i++) {
+            if (injuredCharacters[i] == card) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+
+    }
+
+    /**
+     * Method that returns all the positions of a card in the injured characters
+     * @param id id of the card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInInjuredCharacters(int id) {
+        int[] positions = new int[occurenceInInjuredCharacters(id)];
+        int j = 0;
+        for (int i = 0; i < injuredCharacters.length; i++) {
+            if (injuredCharacters[i].getId() == id) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+
+    /**
+     * Method that returns all the positions of a card in the deck
+     * @param card card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInDeck(Card card) {
+        int[] positions = new int[occurenceInDeck(card)];
+        int j = 0;
+        for (int i = 0; i < deck.length; i++) {
+            if (deck[i] == card) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+    /**
+     * Method that returns all the positions of a card in the deck
+     * @param id id of the card to be searched for
+     * @return int[] positions
+     */
+    public int[] positionsInDeck(int id) {
+        int[] positions = new int[occurenceInDeck(id)];
+        int j = 0;
+        for (int i = 0; i < deck.length; i++) {
+            if (deck[i].getId() == id) {
+                positions[j] = i;
+                j++;
+            }
+        }
+        return positions;
+    }
+
+    /**
+     * Method thar move one card from the hand to the discard and removes it from the hand
+     * @param card card to be moved
+     */
+    public void moveCardFromHandToDiscard(Card card) {
+        int[] positions = positionsInHand(card);
+        addCardToDiscard(card);
+        removeCardFromHand(card);
+    }
+
+    /**
+     * Method that move one card from the hand to the discard and removes it from the hand
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromHandToDiscard(int id) {
+        int[] positions = positionsInHand(id);
+        addCardToDiscard(id);
+        removeCardFromHand(id);
+    }
+
+    /**
+     * Method that move one card from the hand to the injured characters and removes it from the hand
+     * @param card
+     */
+    public void moveCardFromHandToInjuredCharacters(Card card) {
+        int[] positions = positionsInHand(card);
+        addCardToInjuredCharacters(card);
+        removeCardFromHand(card);
+    }
+
+    /**
+     * Method that move one card from the hand to the injured characters and removes it from the hand
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromHandToInjuredCharacters(int id) {
+        int[] positions = positionsInHand(id);
+        addCardToInjuredCharacters(id);
+        removeCardFromHand(id);
+    }
+
+
+    /**
+     * Method that move one card from the hand to the destroyed cards and removes it from the hand
+     * @param card card to be moved
+     */
+    public void moveCardFromHandToDestroyedCards(Card card) {
+        int[] positions = positionsInHand(card);
+        addCardToDestroyedCards(card);
+        removeCardFromHand(card);
+    }
+
+    /**
+     * Method that move one card from the hand to the destroyed cards and removes it from the hand
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromHandToDestroyedCards(int id) {
+        int[] positions = positionsInHand(id);
+        addCardToDestroyedCards(id);
+        removeCardFromHand(id);
+    }
+
+
+    /**
+     * Method that move one card from the discard to the hand and removes it from the discard
+     * @param card card to be moved
+     */
+    public void moveCardFromDiscardToHand(Card card) {
+        int[] positions = positionsInDiscard(card);
+        addCardToHand(card);
+        removeCardFromDiscard(card);
+    }
+
+    /**
+     * Method that move one card from the discard to the hand and removes it from the discard
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDiscardToHand(int id) {
+        int[] positions = positionsInDiscard(id);
+        addCardToHand(id);
+        removeCardFromDiscard(id);
+    }
+
+    /**
+     * Method that move one card from the hand to the deck and removes it from the hand
+     * @param card card to be moved
+     */
+    public void moveCardFromHandToDeck(Card card) {
+        int[] positions = positionsInHand(card);
+        addCardToDeck(card);
+        removeCardFromHand(card);
+    }
+
+    /**
+     * Method that move one card from the hand to the deck and removes it from the hand
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromHandToDeck(int id) {
+        int[] positions = positionsInHand(id);
+        addCardToDeck(id);
+        removeCardFromHand(id); 
+    }
+
+    /**
+     * Method that move one card from the deck to the hand and removes it from the deck
+     * @param card card to be moved
+     */
+    public void moveCardFromDeckToHand(Card card) {
+        int[] positions = positionsInDeck(card);
+        addCardToHand(card);
+        removeCardFromDeck(card);
+    }
+
+    /**
+     * Method that move one card from the deck to the hand and removes it from the deck
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDeckToHand(int id) {
+        int[] positions = positionsInDeck(id);
+        addCardToHand(id);
+        removeCardFromDeck(id);
+    }
+
+    /**
+     * Method that move one card from the deck to the discard and removes it from the deck
+     * @param card card to be moved
+     */
+    public void moveCardFromDeckToDiscard(Card card) {
+        int[] positions = positionsInDeck(card);
+        addCardToDiscard(card);
+        removeCardFromDeck(card);
+    }
+
+    /**
+     * Method that move one card from the deck to the discard and removes it from the deck
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDeckToDiscard(int id) {
+        int[] positions = positionsInDeck(id);
+        addCardToDiscard(id);
+        removeCardFromDeck(id);
+    }
+
+    /**
+     * Method that move one card from the discard to the deck and removes it from the discard
+     * @param card card to be moved
+     */
+    public void moveCardFromDiscardToDeck(Card card) {
+        int[] positions = positionsInDiscard(card);
+        addCardToDeck(card);
+        removeCardFromDiscard(card);
+    }
+
+    /**
+     * Method that move one card from the discard to the deck and removes it from the discard
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDiscardToDeck(int id) {
+        int[] positions = positionsInDiscard(id);
+        addCardToDeck(id);
+        removeCardFromDiscard(id);
+    }
+
+    /**
+     * Method that move one card from the deck to the injured characters and removes it from the deck
+     * @param card card to be moved
+     */
+    public void moveCardFromDeckToInjuredCharacters(Card card) {
+        int[] positions = positionsInDeck(card);
+        addCardToInjuredCharacters(card);
+        removeCardFromDeck(card);
+    }
+
+    /**
+     * Method that move one card from the deck to the injured characters and removes it from the deck
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDeckToInjuredCharacters(int id) {
+        int[] positions = positionsInDeck(id);
+        addCardToInjuredCharacters(id);
+        removeCardFromDeck(id);
+    }
+
+    /**
+     * Method that move one card from the injured characters to the deck and removes it from the injured characters
+     * @param card card to be moved
+     */
+    public void moveCardFromInjuredCharactersToDeck(Card card) {
+        int[] positions = positionsInInjuredCharacters(card);
+        addCardToDeck(card);
+        removeCardFromInjuredCharacters(card);
+    }
+
+    /**
+     * Method that move one card from the injured characters to the deck and removes it from the injured characters
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromInjuredCharactersToDeck(int id) {
+        int[] positions = positionsInInjuredCharacters(id);
+        addCardToDeck(id);
+        removeCardFromInjuredCharacters(id);
+    }
+
+    /**
+     * Method that move one card from the injured characters to the discard and removes it from the injured characters
+     * @param card card to be moved
+     */
+    public void moveCardFromInjuredCharactersToDiscard(Card card) {
+        int[] positions = positionsInInjuredCharacters(card);
+        addCardToDiscard(card);
+        removeCardFromInjuredCharacters(card);
+    }
+
+    /**
+     * Method that move one card from the injured characters to the discard and removes it from the injured characters
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromInjuredCharactersToDiscard(int id) {
+        int[] positions = positionsInInjuredCharacters(id);
+        addCardToDiscard(id);
+        removeCardFromInjuredCharacters(id);
+    }
+
+    /**
+     * Method that move one card from the discard to the injured characters and removes it from the discard
+     * @param card card to be moved
+     */
+    public void moveCardFromDiscardToInjuredCharacters(Card card) {
+        int[] positions = positionsInDiscard(card);
+        addCardToInjuredCharacters(card);
+        removeCardFromDiscard(card);
+    }
+
+    /**
+     * Method that move one card from the discard to the injured characters and removes it from the discard
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDiscardToInjuredCharacters(int id) {
+        int[] positions = positionsInDiscard(id);
+        addCardToInjuredCharacters(id);
+        removeCardFromDiscard(id);
     }
 
     

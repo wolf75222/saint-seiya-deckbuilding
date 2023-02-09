@@ -23,7 +23,7 @@ public class Effect0006 extends Effect {
      * @param description The description of the effect.
      */
     public Effect0006(int id, String description) {
-        super(id, description, EffectType.DISCARD);
+        super(0006, "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur", EffectType.DISCARD);
     }
 
     /**
@@ -32,8 +32,6 @@ public class Effect0006 extends Effect {
      */
     @Override
     public  void applyEffect(Card [] card) {
-
-        // "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur"
     }
 
 
@@ -42,7 +40,16 @@ public class Effect0006 extends Effect {
      * @param player The player that the effect is applied to.
      */
     @Override
-    public void applyEffect(Player [] player){}
+    public void applyEffect(Player [] player){
+        // "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur"
+        int id = 001;
+        if(player[0].occurenceInHand(001) >= 2){
+            player[0].moveCardFromHandToDestroyedCards(id);
+            player[0].moveCardFromHandToDestroyedCards(id);
+            id = 011;
+            player[0].addCardToDiscard(id);
+        }   
+    }
     
     /**
      * The method that applies the effect.
