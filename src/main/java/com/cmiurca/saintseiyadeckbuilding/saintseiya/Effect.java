@@ -1,10 +1,9 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
-
 /**
  * Effect class, where the effect is created.
  * 
  * @author Sirwolf
- * @version 1.3
+ * @version 2,0
  * @since 2023-02-04
  */
 public abstract class Effect {
@@ -63,8 +62,52 @@ public abstract class Effect {
 
     /**
      * The method that applies the effect.
+     * @param card The card that the effect is applied to.
      */
-    public abstract void applyEffect();
+    public abstract void applyEffect(Card [] card);
+
+    /**
+     * The method that applies the effect.
+     * @param player The player that the effect is applied to.
+     */
+    public abstract void applyEffect(Player [] player);
+
+    /**
+     * The method that applies the effect.
+     * @param playMat The playMat that the effect is applied to.
+     */
+    public abstract void applyEffect(PlayMat playMat);
+
+    /**
+     * The method that applies the effect.
+     * @param card The card that the effect is applied to.
+     * @param player The player that the effect is applied to.
+     */
+    public abstract void applyEffect(Card [] card, Player [] player);
+
+    /**
+     * The method that applies the effect.
+     * @param card The card that the effect is applied to.
+     * @param playMat The playMat that the effect is applied to.
+     */
+    public abstract void applyEffect(Card [] card, PlayMat playMat);
+
+    /**
+     * The method that applies the effect.
+     * @param player The player that the effect is applied to.
+     * @param playMat The playMat that the effect is applied to.
+     */
+    public abstract void applyEffect(Player [] player, PlayMat playMat);
+
+    /**
+     * The method that applies the effect.
+     * @param card The card that the effect is applied to.
+     * @param player The player that the effect is applied to.
+     * @param playMat The playMat that the effect is applied to.
+     */
+    public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat);
+
+
 }
 
 
