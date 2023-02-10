@@ -11,7 +11,7 @@
 Incarnez un Chevalier de Bronze et construisez votre deck en affrontant d'autres personnages, dont les mythiques Chevaliers d'Or !
     <br/>
     <br/>
-    <a href="https://github.com/wolf75222/saint-seiya-deckbuilding"><strong>Explore the docs »</strong></a>
+    <a href="https://wolf75222.github.io/saint-seiya-deckbuilding/index-all.html"><strong>Explore the docs »</strong></a>
     <br/>
     <br/>
     <a href="https://github.com/wolf75222/saint-seiya-deckbuilding">View Demo</a>
