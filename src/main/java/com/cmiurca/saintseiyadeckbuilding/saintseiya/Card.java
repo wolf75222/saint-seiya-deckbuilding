@@ -117,7 +117,7 @@ public class Card {
      * @param care The care value of the {@link Card}.
      * @param pointOfInjury The point of injury value of the {@link Card}.
      */
-    public Card(String name, String category, int acquisitionCostInStrength, int acquisitionCostInCosmos, String rank, int id, int flameOfTheClock, int pointOfVictory, Effect effect, int strength, int cosmos, int care) {
+    public Card(String name, String category, int acquisitionCostInStrength, int acquisitionCostInCosmos, String rank, int id, int flameOfTheClock, int pointOfVictory, Effect effect, int strength, int cosmos, int care, int pointOfInjury) {
         this.name = name;
         this.category = category;
         this.acquisitionCostInStrength = acquisitionCostInStrength;
