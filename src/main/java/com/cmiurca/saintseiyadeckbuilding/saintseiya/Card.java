@@ -9,8 +9,6 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  */
 public class Card {
 
-    //TODO: Add pointOfInjury
-
     /**
      * The name of the {@link Card}.
      */
@@ -72,6 +70,11 @@ public class Card {
     private int care;
     
     /**
+     * The point of injury value of the {@link Card}.
+     */
+    private int pointOfInjury;
+
+    /**
      * Default constructor
      */
     public Card() {}
@@ -94,6 +97,7 @@ public class Card {
         this.strength = card.getStrength();
         this.cosmos = card.getCosmos();
         this.care = card.getCare();
+        this.pointOfInjury = card.getPointOfInjury();
     }
 
     /**
@@ -111,6 +115,7 @@ public class Card {
      * @param strength The strength value of the {@link Card}.
      * @param cosmos The cosmos value of the {@link Card}.
      * @param care The care value of the {@link Card}.
+     * @param pointOfInjury The point of injury value of the {@link Card}.
      */
     public Card(String name, String category, int acquisitionCostInStrength, int acquisitionCostInCosmos, String rank, int id, int flameOfTheClock, int pointOfVictory, Effect effect, int strength, int cosmos, int care) {
         this.name = name;
@@ -125,6 +130,7 @@ public class Card {
         this.strength = strength;
         this.cosmos = cosmos;
         this.care = care;
+        this.pointOfInjury = pointOfInjury;
     }
 
     /**
@@ -235,6 +241,14 @@ public class Card {
     }
 
     /**
+     * Getter for pointOfInjury
+     * @return int pointOfInjury
+     */
+    public int getPointOfInjury() {
+        return pointOfInjury;
+    }
+
+    /**
      * Setter for name
      * @param name The name of the {@link Card}.
      */
@@ -331,12 +345,20 @@ public class Card {
     }
 
     /**
+     * Setter for pointOfInjury
+     * @param pointOfInjury The point of injury value of the {@link Card}.
+     */
+    public void setPointOfInjury(int pointOfInjury) {
+        this.pointOfInjury = pointOfInjury;
+    }
+
+    /**
      * Method to display the {@link Card}.
      * @return String
      */
     @Override
     public String toString() {
-        return "Card{" + "name=" + name + ", category=" + category + ", acquisitionCostInStrength=" + acquisitionCostInStrength + ", acquisitionCostInCosmos=" + acquisitionCostInCosmos + ", rank=" + rank + ", id=" + id + ", flameOfTheClock=" + flameOfTheClock + ", pointOfVictory=" + pointOfVictory + ", effect=" + effect + ", strength=" + strength + ", cosmos=" + cosmos + ", care=" + care + '}';
+        return "Card{" + "name=" + name + ", category=" + category + ", acquisitionCostInStrength=" + acquisitionCostInStrength + ", acquisitionCostInCosmos=" + acquisitionCostInCosmos + ", rank=" + rank + ", id=" + id + ", flameOfTheClock=" + flameOfTheClock + ", pointOfVictory=" + pointOfVictory + ", effect=" + effect + ", strength=" + strength + ", cosmos=" + cosmos + ", care=" + care + ", pointOfInjury=" + pointOfInjury + '}';
     }
 
     /**
@@ -389,6 +411,9 @@ public class Card {
         if (this.care != other.care) {
             return false;
         }
+        if (this.pointOfInjury != other.pointOfInjury) {
+            return false;
+        }
         return true;
     }   
 
@@ -414,6 +439,14 @@ public class Card {
      */
     public void addCare(int careToAdd) {
         this.care += careToAdd;
+    }
+
+    /**
+     * Method to add pointOfInjury to the {@link Card}.
+     * @param int pointOfInjuryToAdd The point of injury to add
+     */
+    public void addpointOfInjury(int pointOfInjuryToAdd) {
+        this.pointOfInjury += pointOfInjuryToAdd;
     }
 
     /**
@@ -454,6 +487,14 @@ public class Card {
      */
     public void removeAcquisitionCostInCosmos(int acquisitionCostInCosmosToRemove) {
         this.acquisitionCostInCosmos -= acquisitionCostInCosmosToRemove;
+    }
+
+    /**
+     * Method to remove pointOfInjury to the {@link Card}.
+     * @param int pointOfInjuryToRemove The point of injury to remove
+     */
+    public void removepointOfInjury(int pointOfInjuryToRemove) {
+        this.pointOfInjury -= pointOfInjuryToRemove;
     }
 
 
