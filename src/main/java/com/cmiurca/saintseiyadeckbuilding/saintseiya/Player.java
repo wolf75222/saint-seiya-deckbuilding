@@ -811,7 +811,7 @@ public class Player {
 
     /**
      * Method that move one card from the hand to the injured characters and removes it from the hand
-     * @param card
+     * @param card card to be moved
      */
     public void moveCardFromHandToInjuredCharacters(Card card) {
         int[] positions = positionsInHand(card);
