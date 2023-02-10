@@ -1,1 +1,1 @@
-/usr/lib/jvm/java-18-openjdk/bin/javadoc @options @packages
+/opt/homebrew/Cellar/openjdk/19.0.2/libexec/openjdk.jdk/Contents/Home/bin/javadoc @options @packages
