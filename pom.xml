@@ -18,7 +18,6 @@
 	<properties>
 		<java.version>17</java.version>
 		<project.reporting.docsOutputDirectory>./docs</project.reporting.docsOutputDirectory>
-		<project.reporting.docsStyleSheet>./docs/theme.css</project.reporting.docsStyleSheet>
 	</properties>
 
 	<dependencies>
@@ -56,9 +55,6 @@
 						${project.reporting.docsOutputDirectory}
 					</reportOutputDirectory>
 					<destDir>docs</destDir>
-					<stylesheetfile>
-						${project.reporting.docsStyleSheet}
-					</stylesheetfile>
 				</configuration>
 			</plugin>
 		</plugins>

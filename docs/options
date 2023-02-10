@@ -20,8 +20,6 @@
 'http://docs.oracle.com/javase/7/docs/api' 'C:/Users/syl20/OneDrive/Documents/Code/Java/SaintSeyaDeckBuilding/target/javadoc-bundle-options'
 -noqualifier
 'all'
--stylesheetfile
-'C:/Users/syl20/OneDrive/Documents/Code/Java/SaintSeyaDeckBuilding/./docs/theme.css'
 -use
 -version
 -windowtitle
