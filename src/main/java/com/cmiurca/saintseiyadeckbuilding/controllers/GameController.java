@@ -15,7 +15,6 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Game;
  * @version 1.0
  * @since 2023-02-04
  */
-
 @Controller
 public class GameController {
 

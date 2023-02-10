@@ -8,18 +8,55 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  * @since 2023-02-04
  */
 public enum EffectType {
+    
     /**
-     * The effect type.
+     * The effect type Strengthen.
      */
     STRENGTHEN("Strengthen"),
+
+    /**
+     * The effect type Discard.
+     */
     DISCARD("Discard"),
+
+    /**
+     * The effect type setting game.
+     */
     SETTINGGAME("Setting Game"),
+
+    /**
+     * The effect type Arrival.
+     */
     ARRIVAL("Arrival"),
+
+    /**
+     * The effect type Hurt.
+     */
     HURT("Hurt"),
+
+    /**
+     * The effect type defeated.
+     */
     DEFEATED("Defeated"),
+
+    /**
+     * The effect type Destroy.
+     */
     DESTROY("Destroy"),
+
+    /**
+     * The effect type Freeze.
+     */
     FREEZE("Freeze"),
+
+    /**
+     * The effect type Marked.
+     */
     MARKED("Marked"),
+
+    /**
+     * The effect type Other.
+     */
     OTHER("Other");
 
     /**

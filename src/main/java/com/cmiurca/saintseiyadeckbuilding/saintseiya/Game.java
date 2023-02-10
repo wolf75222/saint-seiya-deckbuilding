@@ -30,7 +30,7 @@ public class Game {
 
     /** 
      * Simple setter for number of players in game
-     * @param int number of players to set
+     * @param playerCount number of players to set
      */
     public void setPlayerCount(int playerCount) {
         this.playerCount = playerCount;
@@ -46,24 +46,25 @@ public class Game {
 
     /** 
      * Simple setter for players in game
-     * @param Player[] array of players to set
+     * @param players array of players to set
      */
     public void setPlayers(Player[] players) {
         this.players = players;
     }
 
-    
 
     /**
      * Constructor for Game class
      * @param playerCount number of players in game
-     * @param players array of players in game
      */
     public Game(int playerCount) {
         this.playerCount = playerCount;
         this.players = new Player[playerCount];
     }
 
+    /**
+     * Constructor for Game class
+     */
     public Game(){
         this.playerCount = 4;
         this.players = new Player[playerCount];

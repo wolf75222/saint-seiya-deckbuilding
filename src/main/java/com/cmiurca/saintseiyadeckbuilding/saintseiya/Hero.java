@@ -9,10 +9,25 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  */
 public enum Hero {
 
+    /**
+     * Seiya
+     */
     SEIYA,
+    /**
+     * Shiryu
+     */
     SHIRYU,
+    /**
+     * Shun
+     */
     SHUN,
+    /**
+     * Hyoga
+     */
     HYOGA,
+    /**
+     * Ikki
+     */
     IKKI;
 
     /**

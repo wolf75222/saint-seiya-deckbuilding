@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 * @version 1.1
 * @since 2023-02-04
 */
-
 @SpringBootApplication
 public class App {
 

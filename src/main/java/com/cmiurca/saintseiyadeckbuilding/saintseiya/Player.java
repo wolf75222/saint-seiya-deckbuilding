@@ -232,7 +232,7 @@ public class Player {
 
     /**
      * Method to add card to the hand
-     * @param int id of the card to be added to the hand
+     * @param id of the card to be added to the hand
      */
     public void addCardToHand(int id) {
         Card card = new Card(id);
@@ -256,7 +256,7 @@ public class Player {
 
     /**
      * Method to add card to the discard
-     * @param int id of the card to be added to the discard
+     * @param id of the card to be added to the discard
      */
     public void addCardToDiscard(int id) {
         Card card = new Card(id);
@@ -278,7 +278,7 @@ public class Player {
 
     /**
      * Method to add card to the destroyed cards
-     * @param int id of the card to be added to the destroyed cards
+     * @param id of the card to be added to the destroyed cards
      */
     public void addCardToDestroyedCards(int id) {
         Card card = new Card(id);
@@ -301,7 +301,7 @@ public class Player {
 
     /**
      * Method to add card to the injured characters
-     * @param int id of the card to be added to the injured characters
+     * @param id of the card to be added to the injured characters
      */
     public void addCardToInjuredCharacters(int id) {
         Card card = new Card(id);
@@ -323,7 +323,7 @@ public class Player {
 
     /**
      * Method to remove a card from the hand
-     * @param int id of the card to be removed from the hand
+     * @param id of the card to be removed from the hand
      */
     public void removeCardFromHand(int id) {
         for (int i = 0; i < hand.length; i++) {
@@ -350,7 +350,7 @@ public class Player {
 
     /**
      * Method to remove a card from the discard
-     * @param int id of the card to be removed from the discard
+     * @param id of the card to be removed from the discard
      */
     public void removeCardFromDiscard(int id) {
         for (int i = 0; i < discard.length; i++) {
@@ -377,7 +377,7 @@ public class Player {
 
     /**
      * Method to remove a card from the destroyed cards
-     * @param int id of the card to be removed from the destroyed cards
+     * @param id of the card to be removed from the destroyed cards
      */
     public void removeCardFromDestroyedCards(int id) {
         for (int i = 0; i < destroyedCards.length; i++) {
@@ -403,7 +403,7 @@ public class Player {
 
     /**
      * Method to remove a card from the injured characters
-     * @param int id of the card to be removed from the injured characters
+     * @param id of the card to be removed from the injured characters
      */
     public void removeCardFromInjuredCharacters(int id) {
         for (int i = 0; i < injuredCharacters.length; i++) {
@@ -429,7 +429,7 @@ public class Player {
 
     /**
      * Method to remove a card from the deck
-     * @param int id of the card to be removed from the deck
+     * @param id of the card to be removed from the deck
      */
     public void removeCardFromDeck(int id) {
         for (int i = 0; i < deck.length; i++) {
@@ -455,7 +455,7 @@ public class Player {
 
     /**
      * Method to add a card to the deck
-     * @param int id of the card to be added to the deck
+     * @param id of the card to be added to the deck
      */
     public void addCardToDeck(int id) {
         Card card = new Card(id);
@@ -479,7 +479,7 @@ public class Player {
     
     /**
      * Method that returns the occurence of a card in the hand
-     * @param id id of the card to be searched for
+     * @param id of the card to be searched for
      * @return int occurence
      */
     public int occurenceInHand(int id) {
@@ -509,7 +509,7 @@ public class Player {
     
     /**
      * Method that returns the occurence of a card in the discard
-     * @param id id of the card to be searched for
+     * @param id of the card to be searched for
      * @return int occurence
      */
     public int occurenceInDiscard(int id) {
@@ -571,7 +571,7 @@ public class Player {
     
     /**
      * Method that returns the occurence of a card in the injured characters
-     * @param id id of the card to be searched for
+     * @param id of the card to be searched for
      * @return int occurence
      */
     public int occurenceInInjuredCharacters(int id) {
@@ -601,7 +601,7 @@ public class Player {
 
     /**
      * Method that returns the occurence of a card in the deck
-     * @param id id of the card to be searched for
+     * @param id of the card to be searched for
      * @return int occurence
      */
     public int occurenceInDeck(int id) {
@@ -633,7 +633,7 @@ public class Player {
 
     /**
      * Method that returns all the positions of a card in the hand
-     * @param int id id of the card to be searched for
+     * @param id id of the card to be searched for
      * @return int[] positions
      */
     public int[] positionsInHand(int id) {
@@ -669,7 +669,7 @@ public class Player {
 
     /**
      * Method that returns all the positions of a card in the discard
-     * @param id id of the card to be searched for
+     * @param id of the card to be searched for
      * @return int[] positions
      */
     public int[] positionsInDiscard(int id) {
@@ -704,7 +704,7 @@ public class Player {
 
     /**
      * Method that returns all the positions of a card in the destroyed cards
-     * @param id id of the card to be searched for
+     * @param id of the card to be searched for
      * @return int[] positions
      */
     public int[] positionsInDestroyedCards(int id) {
@@ -1030,7 +1030,5 @@ public class Player {
         addCardToInjuredCharacters(id);
         removeCardFromDiscard(id);
     }
-
-    
 
 }

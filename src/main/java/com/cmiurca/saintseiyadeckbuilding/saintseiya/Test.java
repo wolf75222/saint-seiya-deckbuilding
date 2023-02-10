@@ -14,15 +14,50 @@ import java.lang.reflect.Method;
  * @version 1.2
 */
 public class Test {
-
+    
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_RED = "\u001B[31m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_BLACK = "\u001B[30m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_GREEN = "\u001B[32m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_BLUE = "\u001B[34m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_RESET = "\u001B[0m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_PURPLE = "\u001B[35m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_CYAN = "\u001B[36m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_YELLOW = "\u001B[33m";
+
+    /**
+     * Text color constants for the console output (ANSI escape codes)
+     */
     public static final String TEXT_WHITE = "\u001B[37m";
 
 
