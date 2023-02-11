@@ -12,51 +12,45 @@ public enum Hero {
     /**
      * Seiya
      */
-    SEIYA,
+    SEIYA(6),
     /**
      * Shiryu
      */
-    SHIRYU,
+    SHIRYU(7),
     /**
      * Shun
      */
-    SHUN,
+    SHUN(9),
     /**
      * Hyoga
      */
-    HYOGA,
+    HYOGA(8),
     /**
      * Ikki
      */
-    IKKI;
+    IKKI(10);
 
     /**
      * Array of heroes
      */
     private static final Hero[] HEROES = Hero.values();
 
+    /**
+     * Size of heroes array
+     */
+    private static final int SIZE = HEROES.length;
 
     /**
-     * Method to get the hero
-     * @param hero hero to get
-     * @return Hero hero
+     * armorId of hero
      */
-    public static Hero getHero(String hero) {
-        switch (hero) {
-            case "SEIYA":
-                return SEIYA;
-            case "SHIRYU":
-                return SHIRYU;
-            case "SHUN":
-                return SHUN;
-            case "HYOGA":
-                return HYOGA;
-            case "IKKI":
-                return IKKI;
-            default:
-                return null;
-        }
+    private int armorId;
+
+    public int getArmorId() {
+        return armorId;
     }
 
+    private Hero(int armorId) {
+        this.armorId = armorId;
+    }
 
 }

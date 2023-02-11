@@ -59,6 +59,20 @@ public class PlayMat {
     }
 
     /**
+     * Constructor for PlayMat class
+     * @param currentGame current game
+     */
+    public PlayMat(Game currentGame) {
+        this.currentGame = currentGame;
+        this.cardLocation = new Card[6];
+        this.commonDiscard = new Card[90];
+        this.cardReserve = new Card[90];
+        this.onGoingEffect = null;
+        this.flameOfTheClockRemaining = 12;
+
+    }
+
+    /**
      * Getter for cardLocation
      * @return Card[] cardLocation
      */
