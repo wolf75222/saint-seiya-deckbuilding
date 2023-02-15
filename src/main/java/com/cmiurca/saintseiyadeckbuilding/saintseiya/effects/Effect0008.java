@@ -23,7 +23,7 @@ public class Effect0008 extends Effect {
      * @param description The description of the effect.
      */
     public Effect0008(int id, String description) {
-        super(0008, "Défausser - Détruire 2 Hyoga identiques de votre main puis ajouter à votre défausse 1 Hyoga de rang immédiatement supérieur", EffectType.DISCARD);
+        super(8, "Défausser - Détruire 2 Hyoga identiques de votre main puis ajouter à votre défausse 1 Hyoga de rang immédiatement supérieur", EffectType.DISCARD);
     }
 
     /**

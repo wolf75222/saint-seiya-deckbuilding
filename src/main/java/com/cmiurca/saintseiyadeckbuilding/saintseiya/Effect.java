@@ -107,6 +107,7 @@ public abstract class Effect {
      */
     public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat);
 
+    
 
 }
 

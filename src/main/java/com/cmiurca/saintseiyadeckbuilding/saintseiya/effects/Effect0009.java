@@ -23,7 +23,7 @@ public class Effect0009 extends Effect {
      * @param description The description of the effect.
      */
     public Effect0009(int id, String description) {
-        super(0009, "Défausser - Détruire 2 Shun identiques de votre main puis ajouter à votre défausse 1 Shun de rang immédiatement supérieur", EffectType.DISCARD);
+        super(9, "Défausser - Détruire 2 Shun identiques de votre main puis ajouter à votre défausse 1 Shun de rang immédiatement supérieur", EffectType.DISCARD);
     }
 
     /**

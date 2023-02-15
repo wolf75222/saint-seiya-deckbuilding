@@ -62,5 +62,15 @@ public class turn {
         this.playerTurn = playerTurn;
     }
 
+    /**
+     * Simple toString method
+     * @return String turn
+     */
+    @Override
+    public String toString() {
+        return "turn [playerTurn=" + playerTurn + ", turnNumber=" + turnNumber + "]";
+    }
+
+
     
 }

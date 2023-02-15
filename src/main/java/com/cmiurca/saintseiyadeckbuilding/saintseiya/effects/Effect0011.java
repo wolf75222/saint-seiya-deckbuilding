@@ -23,7 +23,7 @@ public class Effect0011 extends Effect {
      * @param description The description of the effect.
      */
     public Effect0011(int id, String description) {
-        super(0011, "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte", EffectType.SETTINGGAME);
+        super(11, "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte", EffectType.SETTINGGAME);
     }
 
     /**
@@ -57,7 +57,7 @@ public class Effect0011 extends Effect {
     public void applyEffect(Card [] card, Player [] player){
         // "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte"
         if(player[0].occurenceInDiscard(0001)> 0 || player[0].occurenceInDiscard(0011)>0){
-            moveCardFromDecktoHand(card);
+            player[0].moveCardFromDeckToHand(card[0]);
         }
     }
 

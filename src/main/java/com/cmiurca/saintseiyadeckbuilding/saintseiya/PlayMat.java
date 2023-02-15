@@ -296,6 +296,41 @@ public class PlayMat {
         return true;
     }
 
+    /**
+     * Method to check if the card location is full
+     * @param location location of the card
+     * @return boolean true if the card location is full
+     */
+    public boolean isCardLocationFull(int location) {
+        return this.cardLocation[location] != null;
+    }
+
+    /**
+     * Method to check if the common discard is full
+     * @return boolean true if the common discard is full
+     */
+    public boolean isCommonDiscardFull() {
+        for (int i = 0; i < commonDiscard.length; i++) {
+            if (commonDiscard[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to check if the card reserve is full
+     * @return boolean true if the card reserve is full
+     */
+    public boolean isCardReserveFull() {
+        for (int i = 0; i < cardReserve.length; i++) {
+            if (cardReserve[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
 
 
