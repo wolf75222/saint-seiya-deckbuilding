@@ -798,6 +798,11 @@ public class Player {
         addCardToDiscard(card);
         removeCardFromHand(card);
     }
+    public void moveCardFromDiscardToDestroyedCards(Card card) {
+        int[] positions = positionsInDiscard(card);
+        addCardToDestroyedCards(card);
+        removeCardFromDiscard(card);
+    }
 
     /**
      * Method that move one card from the hand to the discard and removes it from the hand

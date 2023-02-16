@@ -8,14 +8,13 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
 
 /**
- * Effect0051 class, where the effect "Shun gagne +1Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.
-                                        Défausser - Récupérer en main 1 Personnage présent dans votre défausse." is created.
+ * Effect0015 class, where the effect "Mise en jeu - Détruire 1 Personnage de votre défausse ; piocher 1 carte." is created.
  * 
- * @author EvanEtSens
+ * @author Sirwolf, EvanEtSens
  * @version 1.1
  * @since 2023-02-04
  */
-public class Effect0051 extends Effect {
+public class Effect0015 extends Effect {
 
     /**
      * The constructor of the effect.
@@ -23,8 +22,8 @@ public class Effect0051 extends Effect {
      * @param id The id of the effect.
      * @param description The description of the effect.
      */
-    public Effect0051(int id, String description) {
-        super(id, "Shun gagne +1Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.Défausser - Récupérer en main 1 Personnage présent dans votre défausse.", EffectType.DISCARD);
+    public Effect0015(int id, String description) {
+        super(15, "Mise en jeu - Détruire 1 Personnage de votre défausse ; piocher 1 carte.", EffectType.SETTINGGAME);
     }
 
     /**
@@ -33,9 +32,6 @@ public class Effect0051 extends Effect {
      */
     @Override
     public  void applyEffect(Card [] card) {
-
-
-        
     }
 
 
@@ -45,11 +41,7 @@ public class Effect0051 extends Effect {
      */
     @Override
     public void applyEffect(Player [] player){
-        
-
-        /**Shun gagne +1Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.
-        Défausser - Récupérer en main 1 Personnage présent dans votre défausse.*/
-
+       
     }
     
     /**
@@ -64,9 +56,15 @@ public class Effect0051 extends Effect {
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player){}
+    public void applyEffect(Card [] card, Player [] player){
+        //Mise en jeu - Détruire 1 Personnage de votre défausse ; piocher 1 carte."
+
+        player[0].moveCardFromDiscardToDestroyedCards(card[0]);
+        player[0].moveCardFromDeckToHand(card[0]);
+    }
 
     /**
+    Mise en jeu - Détruire 1 Personnage de votre défausse ; piocher 1 carte."
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
