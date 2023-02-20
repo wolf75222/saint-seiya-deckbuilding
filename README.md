@@ -47,7 +47,7 @@ The game rules can be complex at times, so the project was created to provide a 
 
 The project is available on GitHub and comes with detailed documentation to help users get started. The documentation includes instructions on how to install the project and run it on your computer. The project is open source, and contributions from the community are welcome. The project is licensed under the MIT License, which gives users the freedom to use, modify, and distribute the code as they see fit.
 
-# See 
+## See 
 
 * [saint-seiya-deckbuilding.fr](https://saint-seiya-deckbuilding.fr)
 
