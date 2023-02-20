@@ -41,7 +41,11 @@ Incarnez un Chevalier de Bronze et construisez votre deck en affrontant d'autres
 
 ![Screen Shot](https://img.dungeondice.it/30012-large_default/saint-seiya-i-cavalieri-dello-zodiaco-deckbuilding-game.jpg)
 
-(description)
+The Saint Seiya Deckbuilding project is a group study project aimed at providing assistance to players of the Saint Seiya DeckBuilding card game. The game, which can be played by up to five players, is set in the universe of the Knights of the Zodiac. Players take on the role of a Bronze Knight and build their deck to compete against other characters, including the legendary Golden Knights.
+
+The game rules can be complex at times, so the project was created to provide a user-friendly and intuitive interface to help players better understand the game mechanics. The project was built using Java and Spring, two powerful technologies that enable developers to create robust and scalable applications.
+
+The project is available on GitHub and comes with detailed documentation to help users get started. The documentation includes instructions on how to install the project and run it on your computer. The project is open source, and contributions from the community are welcome. The project is licensed under the MIT License, which gives users the freedom to use, modify, and distribute the code as they see fit.
 
 ## Built With
 
@@ -66,19 +70,26 @@ $
 2. Clone the repo
 
 ```sh
-git clone https://github.com/wolf75222/saint-seiya-deckbuilding.git
+$ git clone https://github.com/wolf75222/saint-seiya-deckbuilding.git
 ```
 
 3. Install 
 
 ```sh
-$
+$ mvn install
+$ mvn compile
 ```
 
 4. Run
 
 ```sh
-$
+$ javac ...
+$ java ...
+```
+4. Update docs
+
+```sh
+$ mvn javadoc:javadoc
 ```
 
 ## Usage
@@ -108,4 +119,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/wolf75222/sa
 ## Authors
 
 * **Sirwolf** - *Comp Sci Student* - [Sirwolf](https://github.com/wolf75222) - *Main*
-
+* **♡ Elise ♡** - *Comp Sci Student* - [Elisemag](https://github.com/elisemag) - *Main*
+* **LittleBigOwl** - *Comp Sci Student* - [LittleBigOwl](https://github.com/LittleBigOwI) - *Main*
+* **killian_charrier** - *Comp Sci Student* - [killianc3](https://github.com/killianc3) - *Main*
+* **EvanEtSens** - *Comp Sci Student* - [EvanEtSens](https://github.com/EvanEtSens) - *Main*
