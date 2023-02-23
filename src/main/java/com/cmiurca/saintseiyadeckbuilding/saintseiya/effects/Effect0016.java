@@ -8,13 +8,13 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
 
 /**
- * Effect0007 class, where the effect "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur" is created.
+ * Effect0016 class, where the effect "Arrivée - Tous les joueurs piochent 1 carte puis soignent tous leurs Personnages blessés." is created.
  * 
  * @author Sirwolf, elisemag
  * @version 1.1
  * @since 2023-02-04
  */
-public class Effect0007 extends Effect {
+public class Effect0016 extends Effect {
 
     /**
      * The constructor of the effect.
@@ -22,8 +22,8 @@ public class Effect0007 extends Effect {
      * @param id The id of the effect.
      * @param description The description of the effect.
      */
-    public Effect0007(int id, String description) {
-        super(0007, "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur", EffectType.DISCARD);
+    public Effect0016(int id, String description) {
+        super(0016, "Arrivée - Tous les joueurs piochent 1 carte puis soignent tous leurs Personnages blessés.", EffectType.ARRIVAL);
     }
 
     /**
@@ -41,14 +41,6 @@ public class Effect0007 extends Effect {
      */
     @Override
     public void applyEffect(Player [] player){
-        // "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur"
-        int id = 002;
-        if(player[0].occurenceInHand(002) >= 2){
-            player[0].moveCardFromHandToDestroyedCards(id);
-            player[0].moveCardFromHandToDestroyedCards(id);
-            id = 012;
-            player[0].addCardToDiscard(id);
-        }   
     }
     
     /**
@@ -60,10 +52,18 @@ public class Effect0007 extends Effect {
 
     /**
      * The method that applies the effect.
-     * @param card The card that the effect is applied to.
+     * @param card The card that the player drew from the deck.
      * @param player The player that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player){}
+    public void applyEffect(Card [] card, Player [] player){
+        //Arrivée - Tous les joueurs piochent 1 carte puis soignent tous leurs Personnages blessés.
+        for (int i=0; i< player.length; i++){
+            player[i].moveCardFromDeckToHand(card[0]);
+            for(int j=0; j<player[i].getInjuredCharacters().length; j++){
+               player[i].moveCardFromInjuredCharactersToDiscard(player[i].getInjuredCharacters()[j]);
+            }
+        }
+    }
 
     /**
      * The method that applies the effect.

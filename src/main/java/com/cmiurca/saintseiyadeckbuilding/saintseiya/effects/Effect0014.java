@@ -8,13 +8,13 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
 
 /**
- * Effect0007 class, where the effect "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur" is created.
+ * Effect0014 class, where the effect "Mise en jeu - Si Shun utilise son cosmos pour acquérir un Personnage du terrain ; piocher 1 carte." is created.
  * 
  * @author Sirwolf, elisemag
  * @version 1.1
  * @since 2023-02-04
  */
-public class Effect0007 extends Effect {
+public class Effect0014 extends Effect {
 
     /**
      * The constructor of the effect.
@@ -22,8 +22,8 @@ public class Effect0007 extends Effect {
      * @param id The id of the effect.
      * @param description The description of the effect.
      */
-    public Effect0007(int id, String description) {
-        super(0007, "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur", EffectType.DISCARD);
+    public Effect0014(int id, String description) {
+        super(14, "Mise en jeu - Si Shun utilise son cosmos pour acquérir un Personnage du terrain ; piocher 1 carte.", EffectType.SETTINGGAME);
     }
 
     /**
@@ -40,16 +40,7 @@ public class Effect0007 extends Effect {
      * @param player The player that the effect is applied to.
      */
     @Override
-    public void applyEffect(Player [] player){
-        // "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur"
-        int id = 002;
-        if(player[0].occurenceInHand(002) >= 2){
-            player[0].moveCardFromHandToDestroyedCards(id);
-            player[0].moveCardFromHandToDestroyedCards(id);
-            id = 012;
-            player[0].addCardToDiscard(id);
-        }   
-    }
+    public void applyEffect(Player [] player){}
     
     /**
      * The method that applies the effect.

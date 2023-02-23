@@ -53,12 +53,11 @@ public class Effect0013 extends Effect {
 
     /**
      * The method that applies the effect.
-     * @param card The card that the effect is applied to.
+     * @param card The card that the player drew from the Deck.
      * @param player The player that the effect is applied to.
      */
     public void applyEffect(Card [] card, Player [] player){
-        int id1 = 003;
-        int id2 = 013;
+        //Mise en jeu - Si au moins 1 autre Hyoga combat à ses côtés ; piocher 1 carte.
         if(player[0].occurenceInHand(003) >= 2 || player[0].occurenceInHand(013) >= 2 || player[0].occurenceInHand(003) >= 1 && player[0].occurenceInHand(003) >= 1){
             player[0].moveCardFromDeckToHand(card[0]);
         }   
