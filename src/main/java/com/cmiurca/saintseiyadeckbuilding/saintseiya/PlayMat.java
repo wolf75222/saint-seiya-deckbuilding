@@ -226,6 +226,19 @@ public class PlayMat {
     }
 
     /**
+     * Method to remove a card from common discard
+     * @param id of the card to be removed from the common discard
+     */
+    public void removeCardFromCommonDiscard(int id) {
+        for (int i = 0; i < commonDiscard.length; i++) {
+            if (commonDiscard[i].getId() == id) {
+                commonDiscard[i] = null;
+                break;
+            }
+        }
+    }
+
+    /**
      * Method to remove a card from the card reserve
      * @param card card to be removed
      */
