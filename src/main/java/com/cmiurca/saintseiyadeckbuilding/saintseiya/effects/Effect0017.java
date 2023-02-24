@@ -65,6 +65,7 @@ public class Effect0017 extends Effect {
         Card[] defausse = playmat.getCommonDiscard();
         for(int j=0; j<defausse.length; j++){
             if(defausse[j].getCategory().equals("Chevalier d'Or")){
+                playmat.addCardToCardReserve(defausse[j]);
                 playmat.removeCardFromCommonDiscard(defausse[j]);
             }
         }
