@@ -49,24 +49,24 @@ public class Effect0017 extends Effect {
     @Override
     public void applyEffect(PlayMat playMat){
         //Arrivée - Pope et tous les Chevaliers d'Or retirés du jeu sont mélangés dans la réserve
-        Card[] riviere = playmat.getCardLocation();
+        Card[] riviere = playMat.getCardLocation();
         int location = 0;
-        Card pope;
+        Card pope=null;
         for(int i=0; i<riviere.length; i++){
             if(riviere[i].getId()==17){
                 location = i; 
                 pope = riviere[i];
             }
         }
-        playmat.RemoveCardFromLocation(location);
-        playmat.addCardToCardReserve(pope);
+        playMat.removeCardFromLocation(location);
+        playMat.addCardToCardReserve(pope);
         
 
-        Card[] defausse = playmat.getCommonDiscard();
+        Card[] defausse = playMat.getCommonDiscard();
         for(int j=0; j<defausse.length; j++){
             if(defausse[j].getCategory().equals("Chevalier d'Or")){
-                playmat.addCardToCardReserve(defausse[j]);
-                playmat.removeCardFromCommonDiscard(defausse[j]);
+                playMat.addCardToCardReserve(defausse[j]);
+                playMat.removeCardFromCommonDiscard(defausse[j]);
             }
         }
     }
