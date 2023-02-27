@@ -6,7 +6,7 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
  * @version 2,0
  * @since 2023-02-04
  */
-public abstract class Effect {
+public abstract class Effect implements Iterable<Effect>{
 
     /**
      * The id of the effect.

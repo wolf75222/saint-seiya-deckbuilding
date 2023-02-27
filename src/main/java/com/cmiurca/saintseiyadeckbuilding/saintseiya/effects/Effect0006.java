@@ -6,6 +6,10 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
 
 /**
  * Effect0006 class, where the effect "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur" is created.
@@ -85,4 +89,19 @@ public class Effect0006 extends Effect {
      * @param playMat The playMat that the effect is applied to.
      */
     public void applyEffect(Card [] card, Player [] player, PlayMat playMat){}
+
+    @Override
+    public Iterator<Effect> iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super Effect> action) {
+        super.forEach(action);
+    }
+
+    @Override
+    public Spliterator<Effect> spliterator() {
+        return super.spliterator();
+    }
 }

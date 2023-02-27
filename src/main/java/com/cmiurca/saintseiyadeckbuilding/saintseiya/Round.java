@@ -1,7 +1,5 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
-import com.fasterxml.jackson.databind.ser.std.StdKeySerializers.Default;
-
 /**
  * Turn class, where the turn is created
  * 
@@ -120,26 +118,40 @@ public class Round {
     }
 
     public void turn() {
-        
+
         // Main Phase
-        mainPhase();
+        //mainPhase();
         // Maintenance Phase
-        maintenancePhase();
+        //maintenancePhase();
 
 
     }
 
-    public void mainPhase() {
-        // différentes action sont possibles durant cette phase
-        // Jouer des Personnages
-        // Jouer des Armures
-        // Aquerrir des cartes du PlayMat en cumulant de la Force ou du cosmos
-        // Activer les effets de certaines cartes
-        // Soigner des personnages blessés
+    public void mainPhase(int playerChoice) {
 
+        switch (playerChoice) {
+            case 1:
+                // Jouer des Personnages
+                break;
+            case 2:
+                // Jouer des Armures //TODO : Elise et Evan
+                break;
+            case 3:
+                // Aquerrir des cartes du PlayMat en cumulant de la Force ou du cosmos //TODO : Elise et Evan
+                break;
+            case 4:
+                // Activer les effets de certaines cartes
+                break;
+            case 5:
+                // Soigner des personnages blessés //TODO : Elise et Evan
+
+                break;
+            default:
+                break;
+        }
     }
 
-    public void maintenancePhase(){
+    public void maintenancePhase() {
         /* 
          * Cette phase met fin au tour du joueur. Elle consiste en une succession d’étapes permettant de reconstituer sa main et de préparer le terrain pour le joueur suivant.
             4. Décaler toutes les cartes restantes vers la droite du terrain (b).
