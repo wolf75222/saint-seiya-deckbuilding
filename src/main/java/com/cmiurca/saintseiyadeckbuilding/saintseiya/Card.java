@@ -1,5 +1,16 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.function.BiConsumer;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+
 /**
  * Card class, where the cards are created
  * 
@@ -73,7 +84,7 @@ public class Card {
      * Default constructor
      */
     public Card() {}
-    
+
     /**
      * Creates a new Card instance with the specified parameters.
      * 
@@ -131,8 +142,30 @@ public class Card {
      * @param id The id of the {@link Card}.
      */
     public Card(int id) {
-        this.id = id;
-        // TODO: Get the card from the database.
+        
+        
+        JSONParser parser = new JSONParser();
+
+        try {     
+            Object obj = parser.parse(new FileReader("./saint_seiya_cartes.json"));
+            JSONArray cards = (JSONArray) obj;
+
+            Iterator<String> iterator = cards.iterator();
+            JSONObject card = (JSONObject)parser.parse(iterator.next());
+            while(iterator.hasNext() && !card.get("id").equals(id + "")) {
+                card = (JSONObject)parser.parse(iterator.next());
+            }
+            System.out.print(card.get("nom"));
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     /**
