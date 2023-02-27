@@ -263,7 +263,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Défausser - Un Personnage très communes ou communes en jeu gagne +2force."
+        "effets": "Défausser - Un Personnage très communes ou communes en jeu gagne +2 de Force."
     },
     {
         "id": 20,
@@ -305,7 +305,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Défausser - Blesser 1 de vos Chevaliers en main puis un Chevalier en jeu gagne +4force."
+        "effets": "Défausser - Blesser 1 de vos Chevaliers en main puis un Chevalier en jeu gagne +4 de Force."
     },
     {
         "id": 23,
@@ -333,7 +333,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Défausser - Défausser 1 Personnage en main ; tous vos Personnages gagnent +1force. (ce tour uniquement)"
+        "effets": "Défausser - Défausser 1 Personnage en main ; tous vos Personnages gagnent +1 de Force. (ce tour uniquement)"
     },
     {
         "id": 25,
@@ -431,7 +431,7 @@
         "cosmos": 1,
         "points": 5,
         "objet": "Flamme",
-        "effets": "Aldébaran du Taureau gagne +2force lorsqu'il combat la première carte du terrain."
+        "effets": "Aldébaran du Taureau gagne +2 de Force lorsqu'il combat la première carte du terrain."
     },
     {
         "id": 32,
@@ -445,7 +445,7 @@
         "cosmos": 1,
         "points": 6,
         "objet": "Flamme",
-        "effets": "Saga des Gémeaux gagne +2force si l'horloge indique un nombre de flammes pair. Saga des Gémeaux gagne +2cosmos si l'horloge indique un nombre de flammes impair. Vaincu - Blesser tous les Personnages utilisés pour le combattre."
+        "effets": "Saga des Gémeaux gagne +2 de Force si l'horloge indique un nombre de flammes pair. Saga des Gémeaux gagne +2 de Cosmos si l'horloge indique un nombre de flammes impair.\nVaincu - Blesser tous les Personnages utilisés pour le combattre."
     },
     {
         "id": 33,
@@ -473,7 +473,7 @@
         "cosmos": 2,
         "points": 5,
         "objet": "Flamme",
-        "effets": "Aiolia du Lion gagne +1force et +1cosmos lorsqu'il affronte la dernière carte du terrain."
+        "effets": "Aiolia du Lion gagne +1 de Force et +1 de Cosmos lorsqu'il affronte la dernière carte du terrain."
     },
     {
         "id": 35,
@@ -501,7 +501,7 @@
         "cosmos": 2,
         "points": 5,
         "objet": "Flamme",
-        "effets": "Shiryu double ses valeurs de force et cosmos si celui-ci est joué aux côtés de Doko de la Balance. Arrivée - Chaque joueur peut récupérer un Héros de sa défausse."
+        "effets": "Shiryu double ses valeurs de force et cosmos si celui-ci est joué aux côtés de Doko de la Balance.\nArrivée - Chaque joueur peut récupérer un Héros de sa défausse."
     },
     {
         "id": 37,
@@ -529,7 +529,7 @@
         "cosmos": 2,
         "points": 5,
         "objet": "Flamme",
-        "effets": "Aiolos du Sagittaire gagne +1cosmos pour chaque Chevalier d'Or présent sur le terrain. Arrivée - Si un autre Chevalier d'Or est présent sur le terrain ; retirer 1 flammes."
+        "effets": "Aiolos du Sagittaire gagne +1 de Cosmos pour chaque Chevalier d'Or présent sur le terrain.\nArrivée - Si un autre Chevalier d'Or est présent sur le terrain ; retirer 1 flammes."
     },
     {
         "id": 39,
@@ -557,7 +557,7 @@
         "cosmos": 2,
         "points": 6,
         "objet": "Flamme",
-        "effets": "Vaincu - Blesser Camus du Verseau. Hyoga peut acquérir Camus du Verseau pour un coût de 8cosmos."
+        "effets": "Vaincu - Blesser Camus du Verseau. Hyoga peut acquérir Camus du Verseau pour un coût de 8 de Cosmos."
     },
     {
         "id": 41,
@@ -585,7 +585,7 @@
         "cosmos": 1,
         "points": "3  + 1 si vous êtes le joueur possédant le plus de héros",
         "objet": "",
-        "effets": "Seiya gagne +1cosmos lorsqu'il est joué aux côtés de Marine de l'Aigle."
+        "effets": "Seiya gagne +1 de Cosmos lorsqu'il est joué aux côtés de Marine de l'Aigle."
     },
     {
         "id": 43,
@@ -613,7 +613,7 @@
         "cosmos": 1,
         "points": 1,
         "objet": "",
-        "effets": "Défausser - Détruire un de vos Personnages blessés puis piocher 2 cartes. Arrivée - Chaque joueur détruit un de ses Personnages blessés."
+        "effets": "Défausser - Détruire un de vos Personnages blessés puis piocher 2 cartes.\nArrivée - Chaque joueur détruit un de ses Personnages blessés."
     },
     {
         "id": 45,
@@ -697,7 +697,7 @@
         "cosmos": "",
         "points": 2,
         "objet": "",
-        "effets": "Détruire - Réduire le coût d'un Personnage présent sur le terrain de -3force (coût minimum de 1force)."
+        "effets": "Détruire - Réduire le coût d'un Personnage présent sur le terrain de -3 de Force (coût minimum de 1 de Force)."
     },
     {
         "id": 51,
@@ -711,7 +711,7 @@
         "cosmos": 2,
         "points": 2,
         "objet": "",
-        "effets": "Shun gagne +1cosmos lorsqu'il est joué aux côtés d'Albior de Céphée. Défausser - Récupérer en main 1 Personnage présent dans votre défausse."
+        "effets": "Shun gagne +1 de Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.\nDéfausser - Récupérer en main 1 Personnage présent dans votre défausse."
     },
     {
         "id": 52,
@@ -725,7 +725,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Blesser - Chaque adversaire mélange 1 carte Athéna de sa main dans la réserve. Arrivée - Retirer 1 flammes de l'horloge."
+        "effets": "Blesser - Chaque adversaire mélange 1 carte Athéna de sa main dans la réserve.\nArrivée - Retirer 1 flammes de l'horloge."
     },
     {
         "id": 53,
@@ -837,7 +837,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Ikki gagne +1cosmos lorsqu'il est joué aux côtés de Guilty. Mise en jeu - Mélanger les cartes de votre défausse avec votre pioche."
+        "effets": "Ikki gagne +1 de Cosmos lorsqu'il est joué aux côtés de Guilty.\nMise en jeu - Mélanger les cartes de votre défausse avec votre pioche."
     },
     {
         "id": 61,
@@ -865,7 +865,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Hyoga gagne +1cosmos lorsqu'il est joué aux côtés de Chevalier de Cristal. Mise en jeu - Piocher 1 carte puis défausser 1 carte."
+        "effets": "Hyoga gagne +1 de Cosmos lorsqu'il est joué aux côtés de Chevalier de Cristal.\nMise en jeu - Piocher 1 carte puis défausser 1 carte."
     },
     {
         "id": 63,
@@ -879,7 +879,7 @@
         "cosmos": 1,
         "points": 1,
         "objet": "",
-        "effets": "Défausser - Acquérir gratuitement 1 Chevalier Fantôme présent sur le terrain. Arrivée - Chaque joueur détruit un Personnage en main."
+        "effets": "Défausser - Acquérir gratuitement 1 Chevalier Fantôme présent sur le terrain.\nArrivée - Chaque joueur détruit un Personnage en main."
     },
     {
         "id": 64,
@@ -963,7 +963,7 @@
         "cosmos": "",
         "points": "2 si vous possédez au moins une carte spica",
         "objet": "",
-        "effets": "Léda gagne +1force lorsqu'il combat aux côtés de Spica."
+        "effets": "Léda gagne +1 de Force lorsqu'il combat aux côtés de Spica."
     },
     {
         "id": 70,
@@ -977,7 +977,7 @@
         "cosmos": "",
         "points": "2 si vous possédez au moins une carte léda",
         "objet": "",
-        "effets": "Spica gagne +1force lorsqu'il combat aux côtés de Léda."
+        "effets": "Spica gagne +1 de Force lorsqu'il combat aux côtés de Léda."
     },
     {
         "id": 71,
@@ -1005,7 +1005,7 @@
         "cosmos": 1,
         "points": "",
         "objet": "",
-        "effets": "Si Seiya combat Pégase Noir son coût est réduit de -2force."
+        "effets": "Si Seiya combat Pégase Noir son coût est réduit de -2 de Force."
     },
     {
         "id": 73,
@@ -1019,7 +1019,7 @@
         "cosmos": 1,
         "points": "",
         "objet": "",
-        "effets": "Si Shiryu combat Dragon Noir son coût est réduit de -2force."
+        "effets": "Si Shiryu combat Dragon Noir son coût est réduit de -2 de Force."
     },
     {
         "id": 74,
@@ -1033,7 +1033,7 @@
         "cosmos": 1,
         "points": "",
         "objet": "",
-        "effets": "Si Hyoga combat Cygne Noir son coût est réduit de -2force."
+        "effets": "Si Hyoga combat Cygne Noir son coût est réduit de -2 de Force."
     },
     {
         "id": 75,
@@ -1047,7 +1047,7 @@
         "cosmos": 1,
         "points": "",
         "objet": "",
-        "effets": "Si Shun combat Andromède Noir son coût est réduit de -2force."
+        "effets": "Si Shun combat Andromède Noir son coût est réduit de -2 de Force."
     },
     {
         "id": 76,
@@ -1061,7 +1061,7 @@
         "cosmos": 1,
         "points": "",
         "objet": "",
-        "effets": "Si Ikki combat Phoenix Noir son coût est réduit de -2force."
+        "effets": "Si Ikki combat Phoenix Noir son coût est réduit de -2 de Force."
     },
     {
         "id": 77,
@@ -1089,7 +1089,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Ushio gagne +1force pour chaque Héros communes combattant à ses côtés."
+        "effets": "Ushio gagne +1 de Force pour chaque Héros communes combattant à ses côtés."
     },
     {
         "id": 79,
@@ -1103,7 +1103,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Le coût du Chevalier que Daichi affronte est réduit de -1cosmos pour chaque Héros joué à ses côtés (coût minimum de 1cosmos)."
+        "effets": "Le coût du Chevalier que Daichi affronte est réduit de -1 de Cosmos pour chaque Héros joué à ses côtés (coût minimum de 1 de Cosmos)."
     },
     {
         "id": 80,
@@ -1201,7 +1201,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Détruire - Le coût d'un Chevalier présent sur le terrain est réduit de -2force et -2cosmos (coût minimum de 1force et 1cosmos)."
+        "effets": "Détruire - Le coût d'un Chevalier présent sur le terrain est réduit de -2 de Force et -2 de Cosmos (coût minimum de 1 de Force et 1 de Cosmos)."
     },
     {
         "id": 87,
@@ -1215,7 +1215,7 @@
         "cosmos": "",
         "points": -1,
         "objet": "",
-        "effets": "Défausser - Retirer un Personnage présent sur le terrain puis révéler à sa place la première carte de la réserve. Arrivée - Le joueur actif place Gigas dans la défausse du joueur de son choix."
+        "effets": "Défausser - Retirer un Personnage présent sur le terrain puis révéler à sa place la première carte de la réserve.\nArrivée - Le joueur actif place Gigas dans la défausse du joueur de son choix."
     },
     {
         "id": 88,
@@ -1271,7 +1271,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Piocher autant de cartes que de Seiya dans votre défausse. Marqué - Gagner 1 énergie."
+        "effets": "Mise en jeu - Piocher autant de cartes que de Seiya dans votre défausse.\nMarqué - Gagner 1 énergie."
     },
     {
         "id": 1002,
@@ -1285,7 +1285,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Blesser un Personnage communes de votre main pour piocher 2 cartes. Marqué - Récupérer en main un autre Shiryu blessé."
+        "effets": "Mise en jeu - Blesser un Personnage communes de votre main pour piocher 2 cartes.\nMarqué - Récupérer en main un autre Shiryu blessé."
     },
     {
         "id": 1003,
@@ -1299,7 +1299,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Piocher 1 carte pour chaque autre Hyoga combattant à ses côtés. Marqué - Récupérer en main un Hyoga de votre défausse."
+        "effets": "Mise en jeu - Piocher 1 carte pour chaque autre Hyoga combattant à ses côtés.\nMarqué - Récupérer en main un Hyoga de votre défausse."
     },
     {
         "id": 1004,
@@ -1313,7 +1313,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Si Shun affronte une carte du terrain possédant un coût en cosmos ; piocher 1 carte. Marqué - Mettre en jeu une Armure communes ou peu communes de votre défausse."
+        "effets": "Mise en jeu - Si Shun affronte une carte du terrain possédant un coût en cosmos ; piocher 1 carte.\nMarqué - Mettre en jeu une Armure communes ou peu communes de votre défausse."
     },
     {
         "id": 1005,
@@ -1327,7 +1327,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Détruire un Personnage de votre défausse pour piocher 2 cartes. Marqué - Placer dans votre défausse un de vos Personnages très communes détruits."
+        "effets": "Mise en jeu - Détruire un Personnage de votre défausse pour piocher 2 cartes.\nMarqué - Placer dans votre défausse un de vos Personnages très communes détruits."
     },
     {
         "id": 1006,
@@ -1411,7 +1411,7 @@
         "cosmos": "",
         "points": -2,
         "objet": "",
-        "effets": "Mise en jeu - Placer cette carte dans la zone de jeu d'un adversaire qui ne peut plus équiper d'Armure tant qu'il ne l'a pas affrontée avec 5force pour la défausser. Arrivée - Le joueur actif applique l'effet de Mise en jeu."
+        "effets": "Mise en jeu - Placer cette carte dans la zone de jeu d'un adversaire qui ne peut plus équiper d'Armure tant qu'il ne l'a pas affrontée avec 5 de Force pour la défausser.\nArrivée - Le joueur actif applique l'effet de Mise en jeu."
     },
     {
         "id": 1012,
@@ -1425,7 +1425,7 @@
         "cosmos": "",
         "points": 2,
         "objet": "",
-        "effets": "Geler - Détruire une Relique en jeu ou une Armure rare d'une défausse. Placer Balmung dans la zone de jeu du joueur ayant subit l'effet. Son coût est réduit de 1cosmos pour chaque Saphir d'Odin présent sur la Statue d'Odin."
+        "effets": "Geler - Détruire une Relique en jeu ou une Armure rare d'une défausse. Placer Balmung dans la zone de jeu du joueur ayant subit l'effet. Son coût est réduit de 1 de Cosmos pour chaque Saphir d'Odin présent sur la Statue d'Odin."
     },
     {
         "id": 1013,
@@ -1439,7 +1439,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Le Chevalier qu'Athéna affronte peut s'acquérir avec du cosmos pour un coût identique à son coût en force. Arrivée - Chaque joueur récupère en main tous ses Héros marqués."
+        "effets": "Le Chevalier qu'Athéna affronte peut s'acquérir avec du cosmos pour un coût identique à son coût en force.\nArrivée - Chaque joueur récupère en main tous ses Héros marqués."
     },
     {
         "id": 1014,
@@ -1495,7 +1495,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Geler - Défausser 1 carte puis jouer l'une après l'autre les 2 premières cartes de votre pioche. Les Guerriers ainsi joués gagnent +2force."
+        "effets": "Geler - Défausser 1 carte puis jouer l'une après l'autre les 2 premières cartes de votre pioche. Les Guerriers ainsi joués gagnent +2 de Force."
     },
     {
         "id": 1018,
@@ -1579,7 +1579,7 @@
         "cosmos": 2,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Chaque adversaire gèle toutes les Robes Divines de sa main, sa défausse et en jeu. Sortie - Chaque joueur gèle la première carte de sa pioche."
+        "effets": "Geler - Chaque adversaire gèle toutes les Robes Divines de sa main, sa défausse et en jeu.\nSortie - Chaque joueur gèle la première carte de sa pioche."
     },
     {
         "id": 1024,
@@ -1593,7 +1593,7 @@
         "cosmos": 2,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Détruire un Personnage gelé. Sortie - Chaque joueur détruit 1 de ses cartes gelée ou défausse 1 Hyōga en main."
+        "effets": "Geler - Détruire un Personnage gelé.\nSortie - Chaque joueur détruit 1 de ses cartes gelée ou défausse 1 Hyōga en main."
     },
     {
         "id": 1025,
@@ -1607,7 +1607,7 @@
         "cosmos": 1,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Placer dans votre défausse tous les Personnages très communes du terrain. Sortie - Chaque joueur détruit 1 de ses Personnages marqué ou défausse 1 Seiya en main."
+        "effets": "Geler - Placer dans votre défausse tous les Personnages très communes du terrain.\nSortie - Chaque joueur détruit 1 de ses Personnages marqué ou défausse 1 Seiya en main."
     },
     {
         "id": 1026,
@@ -1621,7 +1621,7 @@
         "cosmos": 2,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Chaque adversaire gèle tous les Héros de sa main, puis pioche 1 carte. Sortie - Chaque joueur gèle 1 carte rare ou très rares de sa main."
+        "effets": "Geler - Chaque adversaire gèle tous les Héros de sa main, puis pioche 1 carte.\nSortie - Chaque joueur gèle 1 carte rare ou très rares de sa main."
     },
     {
         "id": 1027,
@@ -1635,7 +1635,7 @@
         "cosmos": 1,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Geler 1 carte de la défausse de chaque adversaire. Sortie - Chaque joueur gèle 1 carte de sa main ou défausse un Shiryu en main."
+        "effets": "Geler - Geler 1 carte de la défausse de chaque adversaire.\nSortie - Chaque joueur gèle 1 carte de sa main ou défausse un Shiryu en main."
     },
     {
         "id": 1028,
@@ -1649,7 +1649,7 @@
         "cosmos": 2,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Défausser autant de cartes que souhaité puis piocher le même nombre de cartes +1. Sortie - Chaque joueur gèle une Armure en main ou défausse un Ikki en main."
+        "effets": "Geler - Défausser autant de cartes que souhaité puis piocher le même nombre de cartes +1.\nSortie - Chaque joueur gèle une Armure en main ou défausse un Ikki en main."
     },
     {
         "id": 1029,
@@ -1663,7 +1663,7 @@
         "cosmos": 1,
         "points": 4,
         "objet": "Saphir",
-        "effets": "Geler - Chaque adversaire gèle toutes les Armures rare de sa défausse. Sortie - Chaque joueur gèle tous les Personnages rare de sa défausse ou défausse un Shun en main."
+        "effets": "Geler - Chaque adversaire gèle toutes les Armures rare de sa défausse.\nSortie - Chaque joueur gèle tous les Personnages rare de sa défausse ou défausse un Shun en main."
     },
     {
         "id": 1030,
@@ -1677,7 +1677,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Geler - Placer dans votre défausse une Robe divine en jeu d'un adversaire. Sortie - Chaque joueur détruit ses Guerriers divins marqués."
+        "effets": "Geler - Placer dans votre défausse une Robe divine en jeu d'un adversaire.\nSortie - Chaque joueur détruit ses Guerriers divins marqués."
     },
     {
         "id": 1031,
@@ -1691,7 +1691,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Marqué - Soigner un Personnage gelé. Les Guerriers coûtent 1force."
+        "effets": "Marqué - Soigner un Personnage gelé. Les Guerriers coûtent 1 de Force."
     },
     {
         "id": 1032,
@@ -1705,7 +1705,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Marqué - Piocher 2 cartes et défaussez-en 1 des 2. Les Personnages à sa gauche coûtent +1force."
+        "effets": "Marqué - Piocher 2 cartes et défaussez-en 1 des 2. Les Personnages à sa gauche coûtent +1 de Force."
     },
     {
         "id": 1033,
@@ -1719,7 +1719,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Marqué - Récupérer en main un Personnage peu communes de votre défausse. Les Personnages adjacents aux Gardes coûtent +1force."
+        "effets": "Marqué - Récupérer en main un Personnage peu communes de votre défausse. Les Personnages adjacents aux Gardes coûtent +1 de Force."
     },
     {
         "id": 1034,
@@ -1761,7 +1761,7 @@
         "cosmos": "",
         "points": "",
         "objet": "",
-        "effets": "Mise en jeu - Piocher 1 carte. Marqué - Gagner 1 énergie."
+        "effets": "Mise en jeu - Piocher 1 carte.\nMarqué - Gagner 1 énergie."
     },
     {
         "id": 2001,
@@ -1775,7 +1775,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Piocher autant de cartes que de Seiya dans votre défausse. Marqué - Ajouter Seiya Transcendé à votre main."
+        "effets": "Mise en jeu - Piocher autant de cartes que de Seiya dans votre défausse.\nMarqué - Ajouter Seiya Transcendé à votre main."
     },
     {
         "id": 2002,
@@ -1789,7 +1789,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Blesser un Personnage communes de votre main pour piocher 2 cartes. Marqué - Ajouter Shiryu Transcendé à votre main."
+        "effets": "Mise en jeu - Blesser un Personnage communes de votre main pour piocher 2 cartes.\nMarqué - Ajouter Shiryu Transcendé à votre main."
     },
     {
         "id": 2003,
@@ -1803,7 +1803,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Piocher 1 carte pour chaque autre Hyoga combattant à ses côtés. Marqué - Ajouter Hyoga Transcendé à votre main."
+        "effets": "Mise en jeu - Piocher 1 carte pour chaque autre Hyoga combattant à ses côtés.\nMarqué - Ajouter Hyoga Transcendé à votre main."
     },
     {
         "id": 2004,
@@ -1817,7 +1817,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Si Shun affronte une carte du terrain possédant un coût en cosmos ; piocher 1 carte. Marqué - Ajouter Shun Transcendé à votre main."
+        "effets": "Mise en jeu - Si Shun affronte une carte du terrain possédant un coût en cosmos ; piocher 1 carte.\nMarqué - Ajouter Shun Transcendé à votre main."
     },
     {
         "id": 2005,
@@ -1831,7 +1831,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Détruire un Personnage de votre défausse pour piocher 2 cartes. Marqué - Ajouter Ikki Transcendé à votre main."
+        "effets": "Mise en jeu - Détruire un Personnage de votre défausse pour piocher 2 cartes.\nMarqué - Ajouter Ikki Transcendé à votre main."
     },
     {
         "id": 2006,
@@ -1915,7 +1915,7 @@
         "cosmos": 1,
         "points": 2,
         "objet": "",
-        "effets": "Marqué - Vous pouvez récupérer en main un Héros adverse marqué. Arrivée - Chaque joueur peut mélanger sa défausse avec sa pioche en y ajoutant son Héros Transcendé."
+        "effets": "Marqué - Vous pouvez récupérer en main un Héros adverse marqué.\nArrivée - Chaque joueur peut mélanger sa défausse avec sa pioche en y ajoutant son Héros Transcendé."
     },
     {
         "id": 2012,
@@ -1929,7 +1929,7 @@
         "cosmos": "",
         "points": -1,
         "objet": "",
-        "effets": "Blesser - Détruire un Héros très communes de votre main pour ajouter un Héros peu communes à votre défausse. Vaincu - Récupérer en main toutes les cartes très rares du terrain et de la défausse du terrain, ainsi que toutes les Reliques en jeu."
+        "effets": "Blesser - Détruire un Héros très communes de votre main pour ajouter un Héros peu communes à votre défausse.\nVaincu - Récupérer en main toutes les cartes très rares du terrain et de la défausse du terrain, ainsi que toutes les Reliques en jeu."
     },
     {
         "id": 2013,
@@ -1943,7 +1943,7 @@
         "cosmos": 3,
         "points": 4,
         "objet": "",
-        "effets": "Blesser - Placer dans votre défausse une Relique en jeu. Sortie - Ajouter un jeton -1PV sur chaque Pilier en jeu."
+        "effets": "Blesser - Placer dans votre défausse une Relique en jeu.\nSortie - Ajouter un jeton -1PV sur chaque Pilier en jeu."
     },
     {
         "id": 2014,
@@ -1971,7 +1971,7 @@
         "cosmos": 1,
         "points": 4,
         "objet": "",
-        "effets": "Tous les Gardes combattant à ses côtés sont gelés au lieu d'être défaussés. Geler - Placer dans votre défausse un Garde marqué."
+        "effets": "Tous les Gardes combattant à ses côtés sont gelés au lieu d'être défaussés.\nGeler - Placer dans votre défausse un Garde marqué."
     },
     {
         "id": 2016,
@@ -1985,7 +1985,7 @@
         "cosmos": 2,
         "points": 4,
         "objet": "",
-        "effets": "Kassa gagne +1force pour chaque Armure rare dans votre défausse. Son coût est augmenté de +1force par Personnage qui l'affronte."
+        "effets": "Kassa gagne +1 de Force pour chaque Armure rare dans votre défausse. Son coût est augmenté de +1 de Force par Personnage qui l'affronte."
     },
     {
         "id": 2017,
@@ -1999,7 +1999,7 @@
         "cosmos": 1,
         "points": 4,
         "objet": "",
-        "effets": "Défausser - Vous pouvez affronter une carte marquée. Sortie - Chaque joueur gèle un Héros de sa main ou détruit une de ses cartes marquées."
+        "effets": "Défausser - Vous pouvez affronter une carte marquée.\nSortie - Chaque joueur gèle un Héros de sa main ou détruit une de ses cartes marquées."
     },
     {
         "id": 2018,
@@ -2013,7 +2013,7 @@
         "cosmos": 2,
         "points": 4,
         "objet": "",
-        "effets": "Marqué - Chaque adversaire blesse un Personnage de sa main possédant au moins 2force. Vaincu - Détruire tous les Personnages utilisés pour le combattre possédant moins de 2force."
+        "effets": "Marqué - Chaque adversaire blesse un Personnage de sa main possédant au moins 2 de Force.\nVaincu - Détruire tous les Personnages utilisés pour le combattre possédant moins de 2 de Force."
     },
     {
         "id": 2019,
@@ -2027,7 +2027,7 @@
         "cosmos": 1,
         "points": 4,
         "objet": "",
-        "effets": "Marqué - Chaque adversaire blesse un Personnage de sa main possédant au moins 2cosmos. Blesser un Personnage de sa main possédant du cosmos pour réduire de -2force le coût de Bian de l'Hippocampe."
+        "effets": "Marqué - Chaque adversaire blesse un Personnage de sa main possédant au moins 2 de Cosmos. Blesser un Personnage de sa main possédant du cosmos pour réduire de -2 de Force le coût de Bian de l'Hippocampe."
     },
     {
         "id": 2020,
@@ -2041,7 +2041,7 @@
         "cosmos": 1,
         "points": 1,
         "objet": "",
-        "effets": "Mise en jeu - Thétis gagne +1force par Garde combattant à ses côtés. Les Héros ne peuvent pas affronter d'autre Personnage tant que Thétis est sur le terrain."
+        "effets": "Mise en jeu - Thétis gagne +1 de Force par Garde combattant à ses côtés. Les Héros ne peuvent pas affronter d'autre Personnage tant que Thétis est sur le terrain."
     },
     {
         "id": 2021,
@@ -2055,7 +2055,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Marqué - Prendre un jeton Arme de la Balance à un autre joueur. Défausser une carte pour affronter un Marina."
+        "effets": "Marqué - Prendre un jeton Arme de la Balance à un autre joueur.\nDéfausser une carte pour affronter un Marina."
     },
     {
         "id": 2022,
@@ -2069,7 +2069,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Marqué - Regarder la main d'un adversaire et geler un de ses Personnages en main. Tous les Gardes coûtent 1force."
+        "effets": "Marqué - Regarder la main d'un adversaire et geler un de ses Personnages en main. Tous les Gardes coûtent 1 de Force."
     },
     {
         "id": 2023,
@@ -2111,7 +2111,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Marqué - Récupérer en main un Garde détruit de n'importe quel joueur. Les Personnages possédant 2force ne peuvent pas affronter d'autre Personnage du terrain."
+        "effets": "Marqué - Récupérer en main un Garde détruit de n'importe quel joueur. Les Personnages possédant 2 de Force ne peuvent pas affronter d'autre Personnage du terrain."
     },
     {
         "id": 2026,
@@ -2125,7 +2125,7 @@
         "cosmos": 1,
         "points": 1,
         "objet": "",
-        "effets": "Détruire - Obtenir un jeton Arme de la Balance. Vaincu - Piocher une carte."
+        "effets": "Détruire - Obtenir un jeton Arme de la Balance.\nVaincu - Piocher une carte."
     },
     {
         "id": 2027,
@@ -2139,7 +2139,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "A votre tour, vous pouvez placer un jeton -1PV sur cette carte (3 max.). Vous pouvez retirer les jetons -1PV de cette carte pour réduire d'autant le coût d'un Marina en force et en cosmos, puis défausser le Trident de Poséidon*. Arrivée - Chaque joueur défausse sa main et pioche"
+        "effets": "A votre tour, vous pouvez placer un jeton -1PV sur cette carte (3 max.). Vous pouvez retirer les jetons -1PV de cette carte pour réduire d'autant le coût d'un Marina en force et en cosmos, puis défausser le Trident de Poséidon*.\nArrivée - Chaque joueur défausse sa main et pioche"
     },
     {
         "id": 2028,
@@ -2153,7 +2153,7 @@
         "cosmos": "",
         "points": 1,
         "objet": "",
-        "effets": "Si l'Urne d'Athéna subit un effet, le Personnage en dessous subit le même effet. Mise en jeu - Placer sous l'Urne d'Athéna un Personnage de la défausse d'un adversaire qui pourra affronter l'Urne d'Athéna avec 4cosmos pour la placer dans sa défausse."
+        "effets": "Si l'Urne d'Athéna subit un effet, le Personnage en dessous subit le même effet.\nMise en jeu - Placer sous l'Urne d'Athéna un Personnage de la défausse d'un adversaire qui pourra affronter l'Urne d'Athéna avec 4 de Cosmos pour la placer dans sa défausse."
     },
     {
         "id": 2029,
@@ -2181,7 +2181,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Arrivée - Le joueur actif désigne un adversaire qui se défausse au hasard d'une carte de sa main. Le joueur actif peut affronter la carte défaussée. Sortie - Toutes les Armures du terrain sont défaussées."
+        "effets": "Arrivée - Le joueur actif désigne un adversaire qui se défausse au hasard d'une carte de sa main. Le joueur actif peut affronter la carte défaussée.\nSortie - Toutes les Armures du terrain sont défaussées."
     },
     {
         "id": 2031,
@@ -2195,7 +2195,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Défausser - Regarder la main d'un adversaire, vous pouvez échanger un de ses Chevaliers contre une carte de votre main de rang identique. Arrivée - Chaque joueur peut blesser un Personnage de sa main pour récupérer en main un Héros de rang identique de sa défausse."
+        "effets": "Défausser - Regarder la main d'un adversaire, vous pouvez échanger un de ses Chevaliers contre une carte de votre main de rang identique.\nArrivée - Chaque joueur peut blesser un Personnage de sa main pour récupérer en main un Héros de rang identique de sa défausse."
     },
     {
         "id": 2032,
@@ -2209,7 +2209,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Défausser - Récupérer en main un de vos Personnages marqués possédant du cosmos. Arrivée - Chaque joueur révèle la première carte de sa pioche, si c'est un Personnage sans coût en cosmos il est blessé, sinon il la récupère en main."
+        "effets": "Défausser - Récupérer en main un de vos Personnages marqués possédant du cosmos.\nArrivée - Chaque joueur révèle la première carte de sa pioche, si c'est un Personnage sans coût en cosmos il est blessé, sinon il la récupère en main."
     },
     {
         "id": 2033,
@@ -2223,7 +2223,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Défausser - Appliquer l'effet d'Arrivée d'une carte du terrain. Arrivée - Appliquer chaque effet de Sortie de la dernière à la première carte du terrain."
+        "effets": "Défausser - Appliquer l'effet d'Arrivée d'une carte du terrain.\nArrivée - Appliquer chaque effet de Sortie de la dernière à la première carte du terrain."
     },
     {
         "id": 2034,
@@ -2237,7 +2237,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Détruire - Réduire de -4force et -4cosmos le coût d'un Personnage rare du terrain. Arrivée - Chaque joueur peut jouer une Armure de sa main pour piocher une carte."
+        "effets": "Détruire - Réduire de -4 de Force et -4 de Cosmos le coût d'un Personnage rare du terrain.\nArrivée - Chaque joueur peut jouer une Armure de sa main pour piocher une carte."
     },
     {
         "id": 2035,
@@ -2251,7 +2251,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Arrivée - Chaque joueur pioche 5 cartes puis défausse 5 cartes de sa main. Vaincu - Chaque joueur gèle une carte de sa main."
+        "effets": "Arrivée - Chaque joueur pioche 5 cartes puis défausse 5 cartes de sa main.\nVaincu - Chaque joueur gèle une carte de sa main."
     },
     {
         "id": 2036,
@@ -2265,7 +2265,7 @@
         "cosmos": 2,
         "points": 3,
         "objet": "",
-        "effets": "Mise en jeu - Un Héros en jeu gagne +1cosmos. Arrivée - Chaque joueur peut se défausser d'une Armure pour piocher 2 cartes."
+        "effets": "Mise en jeu - Un Héros en jeu gagne +1 de Cosmos.\nArrivée - Chaque joueur peut se défausser d'une Armure pour piocher 2 cartes."
     },
     {
         "id": 2037,
@@ -2279,7 +2279,7 @@
         "cosmos": 1,
         "points": 1,
         "objet": "",
-        "effets": "Défausser - Piocher une carte par Marina et Ecaille présents sur le terrain. Sortie - En commençant par le joueur actif, chaque joueur place la première carte de sa pioche dans la défausse d'un autre joueur ou la gèle si c'est une Armure de Bronze."
+        "effets": "Défausser - Piocher une carte par Marina et Ecaille présents sur le terrain.\nSortie - En commençant par le joueur actif, chaque joueur place la première carte de sa pioche dans la défausse d'un autre joueur ou la gèle si c'est une Armure de Bronze."
     },
     {
         "id": 2038,
@@ -2293,7 +2293,7 @@
         "cosmos": "",
         "points": "2 + 1 par marina ",
         "objet": "",
-        "effets": "Chaque Marina gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Marina gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2039,
@@ -2307,7 +2307,7 @@
         "cosmos": "",
         "points": "2 + 1 par chevalier de commun différent",
         "objet": "",
-        "effets": "Chaque Chevalier de Bronze gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Chevalier de Bronze gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2040,
@@ -2321,7 +2321,7 @@
         "cosmos": "",
         "points": "2 + 1  par joueur, si vous êtes le joueur possédant le plus de cartes marquées",
         "objet": "",
-        "effets": "Chaque Hyoga gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Hyoga gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2041,
@@ -2335,7 +2335,7 @@
         "cosmos": "",
         "points": "2 + 1 pour chacun de vos chevaliers détruits",
         "objet": "",
-        "effets": "Chaque Ikki gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Ikki gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2042,
@@ -2349,7 +2349,7 @@
         "cosmos": "",
         "points": "2 + 3 si vous possédez au moins 5 personnages marqués",
         "objet": "",
-        "effets": "Chaque Shiryu gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Shiryu gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2043,
@@ -2363,7 +2363,7 @@
         "cosmos": "",
         "points": "2 + 1 par armure  rare dans votre deck",
         "objet": "",
-        "effets": "Chaque Shun gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Shun gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2044,
@@ -2377,7 +2377,7 @@
         "cosmos": "",
         "points": "2 + 1 par personnage très rare dans votre deck",
         "objet": "",
-        "effets": "Chaque Seiya gagne +1force pour détruire ce pilier."
+        "effets": "Chaque Seiya gagne +1 de Force pour détruire ce pilier."
     },
     {
         "id": 2901,
@@ -2391,7 +2391,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 4 tours",
-        "effets": "A son tour, le joueur actif peut marquer chaque Chevalier de Bronze et Chevalier d'Acier de sa main avec un jeton +1PV. Fin d'épopée - S'il y a au moins 7 Chevaliers ainsi marqués avec des jetons +1PV, ces cartes sont défaussées. Sinon, la partie est terminée et les joueurs avec"
+        "effets": "A son tour, le joueur actif peut marquer chaque Chevalier de Bronze et Chevalier d'Acier de sa main avec un jeton +1PV.\nFin d'épopée - S'il y a au moins 7 Chevaliers ainsi marqués avec des jetons +1PV, ces cartes sont défaussées. Sinon, la partie est terminée et les joueurs avec"
     },
     {
         "id": 2902,
@@ -2433,7 +2433,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 3 tours",
-        "effets": "A chaque fois qu'un Marina arrive sur le terrain, le joueur actif défausse une carte de sa main. Fin d'épopée - Chaque joueur blesse les Marinas de sa défausse."
+        "effets": "A chaque fois qu'un Marina arrive sur le terrain, le joueur actif défausse une carte de sa main.\nFin d'épopée - Chaque joueur blesse les Marinas de sa défausse."
     },
     {
         "id": 2905,
@@ -2447,7 +2447,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 3 tours",
-        "effets": "Au début de son tour, le joueur actif peut défausser un Chevalier Noir du terrain et compléter le terrain. Fin de partie - Le joueur avec le plus de Chevaliers Noirs dans son jeu gagne autant de PV qu'il y a de Chevaliers Noirs dans la défausse du terrain."
+        "effets": "Au début de son tour, le joueur actif peut défausser un Chevalier Noir du terrain et compléter le terrain.\nFin de partie - Le joueur avec le plus de Chevaliers Noirs dans son jeu gagne autant de PV qu'il y a de Chevaliers Noirs dans la défausse du terrain."
     },
     {
         "id": 2906,
@@ -2461,7 +2461,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 3 tours",
-        "effets": "Selon le nombre de sablier 0 sablier - Les Personnages peu communes coûtent -1force. 1 sablier - Les Personnages rare coûtent -1force. 2 sablier - Les Personnages rare coûtent -1force et -1cosmos."
+        "effets": "Selon le nombre de sablier 0 sablier - Les Personnages peu communes coûtent -1 de Force.\n1 sablier - Les Personnages rare coûtent -1 de Force.\n2 sablier - Les Personnages rare coûtent -1 de Force et -1 de Cosmos."
     },
     {
         "id": 2907,
@@ -2475,7 +2475,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 2 tours",
-        "effets": "Les Gardes coûtent +1force. Chaque Garde marqué ou qui le devient est immédiatement mélangé dans la réserve. Fin de partie - Chaque Garde rapporte 1PV supplémentaire."
+        "effets": "Les Gardes coûtent +1 de Force. Chaque Garde marqué ou qui le devient est immédiatement mélangé dans la réserve.\nFin de partie - Chaque Garde rapporte 1PV supplémentaire."
     },
     {
         "id": 2908,
@@ -2503,7 +2503,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 2 tours",
-        "effets": "Retirer une flammes à chaque fois qu'un Guerrier Divin rejoint la défausse du terrain. Fin de partie - S'il y a au moins 7 Guerriers Divins dans la défausse du terrain, les joueurs sans Robe Divine dans leur jeu sont éliminés."
+        "effets": "Retirer une flammes à chaque fois qu'un Guerrier Divin rejoint la défausse du terrain.\nFin de partie - S'il y a au moins 7 Guerriers Divins dans la défausse du terrain, les joueurs sans Robe Divine dans leur jeu sont éliminés."
     },
     {
         "id": 2910,
@@ -2517,7 +2517,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 2 tours",
-        "effets": "Une fois par tour, le joueur actif peut nommer un Héros. Si un joueur possède ce Héros en main, il doit en défausser un de sa main et un Héros en jeu gagne +1force."
+        "effets": "Une fois par tour, le joueur actif peut nommer un Héros. Si un joueur possède ce Héros en main, il doit en défausser un de sa main et un Héros en jeu gagne +1 de Force."
     },
     {
         "id": 2911,
@@ -2587,7 +2587,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 3 tours",
-        "effets": "Lorsqu'un joueur utilise l'effet de son Armure de Bronze, il récupère directement un Héros peu communes à la place d'un Héros communes. Fin d'épopée - Chaque joueur échange ses Héros marqués communes ou peu communes avec ses Héros très communes détruits."
+        "effets": "Lorsqu'un joueur utilise l'effet de son Armure de Bronze, il récupère directement un Héros peu communes à la place d'un Héros communes.\nFin d'épopée - Chaque joueur échange ses Héros marqués communes ou peu communes avec ses Héros très communes détruits."
     },
     {
         "id": 2916,
@@ -2615,7 +2615,7 @@
         "cosmos": "",
         "points": "",
         "objet": "Sablier 3 tours",
-        "effets": "Tous les Héros possèdent seulement 1force et 1soin. Fin d'épopée - Le joueur avec le plus de Héros dans sa défausse reçoit 2 jetons +1PV."
+        "effets": "Tous les Héros possèdent seulement 1 de Force et 1 de Soin.\nFin d'épopée - Le joueur avec le plus de Héros dans sa défausse reçoit 2 jetons +1PV."
     },
     {
         "id": 2918,
@@ -2657,7 +2657,7 @@
         "cosmos": "",
         "points": "",
         "objet": "",
-        "effets": "Arrivée - Si un Chevalier d'Argent est présent sur le terrain ; retirer 1 flammes. Vaincu - Retirer Seiya du Sagittaire du jeu puis récupérer en main 1 carte depuis la défausse du terrain."
+        "effets": "Arrivée - Si un Chevalier d'Argent est présent sur le terrain ; retirer 1 flammes.\nVaincu - Retirer Seiya du Sagittaire du jeu puis récupérer en main 1 carte depuis la défausse du terrain."
     },
     {
         "id": 9002,
@@ -2671,7 +2671,7 @@
         "cosmos": "",
         "points": "",
         "objet": "",
-        "effets": "Détruire - Un Héros en jeu gagne +1force et +1cosmos pour chaque Héros blessé (tous joueurs confondus). Vaincu - Blesser tous les Personnages utilisés pour le vaincre, puis piocher autant de cartes que de Personnages ainsi blessés."
+        "effets": "Détruire - Un Héros en jeu gagne +1 de Force et +1 de Cosmos pour chaque Héros blessé (tous joueurs confondus).\nVaincu - Blesser tous les Personnages utilisés pour le vaincre, puis piocher autant de cartes que de Personnages ainsi blessés."
     },
     {
         "id": 9003,
@@ -2685,6 +2685,6 @@
         "cosmos": "",
         "points": "",
         "objet": "",
-        "effets": "Détruire - Tous les Personnages gelés sont détruits. Vaincu - Dans l'ordre du tour, chaque joueur acquiert une carte du terrain qu'il gèle, jusqu'à ce que le terrain soit vide."
+        "effets": "Détruire - Tous les Personnages gelés sont détruits.\nVaincu - Dans l'ordre du tour, chaque joueur acquiert une carte du terrain qu'il gèle, jusqu'à ce que le terrain soit vide."
     }
 ]

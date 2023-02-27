@@ -1,0 +1,105 @@
+body {
+	font-family: Montserrat;
+}
+
+button, input {
+	font-size: 14px;
+}
+
+input {
+	width: 120px;
+}
+
+.current {
+	color: gray !important;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-areas:
+		'header'
+		'home'
+		'result';
+}
+
+.header {
+	grid-area: header;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	gap: 32px;
+
+	padding: 16px;
+}
+
+.logo {
+	width: 6em;
+}
+
+.header > a {
+	text-decoration: none;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: black;
+}
+
+.header > a:hover {
+	color: gray;
+}
+
+.home {
+	grid-area: home;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.control_panel {
+	min-width: 300px;
+	padding: 22px;
+	padding-top: 0px;
+}
+
+.inputs {
+	display: flex;
+	flex-wrap: wrap;
+	padding-bottom: 2.6em;
+	gap: 20px;
+}
+
+.inputs > div {
+	width: 220px;
+}
+
+.cards_count {
+	margin-bottom: 0px;
+}
+
+.last_card {
+	margin-top: 8px;
+}
+
+.remove_button {
+	display: block;
+	margin-top: -0.4em;
+	margin-bottom: 1.4em;
+}
+
+.result {
+	display: none;
+	grid-area: result;
+	min-width: 260px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2em;
+	margin-bottom: 4em;
+}
+
+.effects_desc {
+	padding-left: 20px;
+}
