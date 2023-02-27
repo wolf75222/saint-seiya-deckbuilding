@@ -104,7 +104,7 @@ public class Round {
      */
     @Override
     public String toString() {
-        return "turn [playerTurn=" + playerTurn + ", turnNumber=" + roundNumber + "]";
+        return "Round [playerTurn=" + playerTurn + ", turnNumber=" + roundNumber + "]";
     }
 
     public void nextTurn() {
@@ -132,7 +132,8 @@ public class Round {
 
         switch (playerChoice) {
             case 1:
-                // Jouer des Personnages
+                // Jouer un Effet
+
                 break;
             case 2:
                 // Jouer des Armures //TODO : Elise et Evan
