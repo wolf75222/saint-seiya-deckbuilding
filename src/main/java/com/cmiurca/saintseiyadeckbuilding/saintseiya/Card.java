@@ -1,5 +1,8 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 /**
  * Card class, where the cards are created
  * 
@@ -132,6 +135,14 @@ public class Card {
      */
     public Card(int id) {
         this.id = id;
+        String effectClassName = "Effect" + String.format("%04d", id);
+        try {
+            Class<?> effectClass = Class.forName(effectClassName);
+            Constructor<?> effectConstructor = effectClass.getConstructor();
+            effect = (Effect) effectConstructor.newInstance();
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
+            // Lancez une exception ou affectez une valeur par défaut à l'effet
+        }
         // TODO: Get the card from the database.
     }
 
