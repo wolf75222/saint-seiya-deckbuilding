@@ -89,19 +89,4 @@ public class Effect0006 extends Effect {
      * @param playMat The playMat that the effect is applied to.
      */
     public void applyEffect(Card [] card, Player [] player, PlayMat playMat){}
-
-    @Override
-    public Iterator<Effect> iterator() {
-        return null;
-    }
-
-    @Override
-    public void forEach(Consumer<? super Effect> action) {
-        super.forEach(action);
-    }
-
-    @Override
-    public Spliterator<Effect> spliterator() {
-        return super.spliterator();
-    }
 }
