@@ -1,5 +1,6 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,6 +11,10 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+=======
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+>>>>>>> 4aa8da8226094fe72ccef6728549e5d72ef728ee
 
 /**
  * Card class, where the cards are created
@@ -142,7 +147,6 @@ public class Card {
      * @param id The id of the {@link Card}.
      */
     public Card(int id) {
-        
         
         JSONParser parser = new JSONParser();
 

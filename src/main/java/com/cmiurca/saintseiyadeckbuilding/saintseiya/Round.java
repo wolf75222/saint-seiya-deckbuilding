@@ -104,7 +104,7 @@ public class Round {
      */
     @Override
     public String toString() {
-        return "turn [playerTurn=" + playerTurn + ", turnNumber=" + roundNumber + "]";
+        return "Round [playerTurn=" + playerTurn + ", turnNumber=" + roundNumber + "]";
     }
 
     public void nextTurn() {
@@ -127,11 +127,13 @@ public class Round {
 
     }
 
-    public void mainPhase(int playerChoice) {
+
+    public void mainPhase(Game game, Player player, int playerChoice) {
 
         switch (playerChoice) {
             case 1:
-                // Jouer des Personnages
+                // Jouer un Effet
+
                 break;
             case 2:
                 // Jouer des Armures //TODO : Elise et Evan
@@ -140,7 +142,7 @@ public class Round {
                 // Aquerrir des cartes du PlayMat en cumulant de la Force ou du cosmos //TODO : Elise et Evan
                 break;
             case 4:
-                // Activer les effets de certaines cartes
+
                 break;
             case 5:
                 // Soigner des personnages blessés //TODO : Elise et Evan
