@@ -6,6 +6,8 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
+import java.io.IOException;
+
 
 /**
  * Effect0051 class, where the effect "Shun gagne +1Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.
@@ -32,7 +34,7 @@ public class Effect0051 extends Effect {
      * @param card The card that the effect is applied to.
      */
     @Override
-    public  void applyEffect(Card [] card) {
+    public  void applyEffect(Card [] card) throws IOException  {
 
 
         
@@ -44,7 +46,7 @@ public class Effect0051 extends Effect {
      * @param player The player that the effect is applied to.
      */
     @Override
-    public void applyEffect(Player [] player){
+    public void applyEffect(Player [] player) throws IOException{
         
 
         /**Shun gagne +1Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.
@@ -57,33 +59,33 @@ public class Effect0051 extends Effect {
      * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(PlayMat playMat){}
+    public void applyEffect(PlayMat playMat) throws IOException{}
 
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player){}
+    public void applyEffect(Card [] card, Player [] player) throws IOException{}
 
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Card [] card, PlayMat playMat){}
+    public void applyEffect(Card [] card, PlayMat playMat) throws IOException{}
 
     /**
      * The method that applies the effect.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Player [] player, PlayMat playMat){}
+    public void applyEffect(Player [] player, PlayMat playMat) throws IOException{}
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat){}
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException{}
 }

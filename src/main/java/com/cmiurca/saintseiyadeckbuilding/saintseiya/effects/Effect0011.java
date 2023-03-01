@@ -6,6 +6,8 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
+import java.io.IOException;
+
 
 /**
  * Effect0011 class, where the effect "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte" is created.
@@ -31,7 +33,7 @@ public class Effect0011 extends Effect {
      * @param card The card that the effect is applied to.
      */
     @Override
-    public  void applyEffect(Card [] card) {
+    public  void applyEffect(Card [] card)  throws IOException {
     }
 
 
@@ -40,21 +42,21 @@ public class Effect0011 extends Effect {
      * @param player The player that the effect is applied to.
      */
     @Override
-    public void applyEffect(Player [] player){}
+    public void applyEffect(Player [] player)  throws IOException{}
     
     /**
      * The method that applies the effect.
      * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(PlayMat playMat){}
+    public void applyEffect(PlayMat playMat) throws IOException{}
 
     /**
      * The method that applies the effect.
      * @param card The card that is drawn by the player from the Deck.
      * @param player The player that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player){
+    public void applyEffect(Card [] card, Player [] player) throws IOException{
         // "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte"
         if(player[0].occurenceInDiscard(0001)> 0 || player[0].occurenceInDiscard(0011)>0){
             player[0].moveCardFromDeckToHand(card[0]);
@@ -66,19 +68,19 @@ public class Effect0011 extends Effect {
      * @param card The card that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Card [] card, PlayMat playMat){}
+    public void applyEffect(Card [] card, PlayMat playMat) throws IOException{}
 
     /**
      * The method that applies the effect.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Player [] player, PlayMat playMat){}
+    public void applyEffect(Player [] player, PlayMat playMat) throws IOException{}
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat){}
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException{}
 }

@@ -1,5 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import java.io.IOException;
+
 /**
  * Game class, where the game is created
  * 
@@ -221,14 +223,14 @@ public class Game {
      * Method to set the Player armor
      * @param playerIndex index of player
      */
-    public void setPlayerArmor(int playerIndex){
+    public void setPlayerArmor(int playerIndex) throws IOException{
         this.players[playerIndex].setArmor(new Card(this.players[playerIndex].getHero().getArmorId()));
     }
 
     /**
      * Method to set the Players armors
      */
-    public void setAllPlayerArmor(){
+    public void setAllPlayerArmor() throws IOException {
         for (int i = 0; i < this.players.length; i++) {
             this.players[i].setArmor(new Card(this.players[i].getHero().getArmorId()));
         }

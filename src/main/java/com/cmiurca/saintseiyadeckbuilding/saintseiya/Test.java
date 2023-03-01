@@ -1,6 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -65,7 +66,8 @@ public class Test {
      * Main method
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
+        /**
         String path = "com/cmiurca/saintseiyadeckbuilding/saintseiya";
         System.out.println(TEXT_PURPLE + "Test: "  + path + TEXT_RESET);
         System.out.println(TEXT_PURPLE + " - " + "Compilation de tous les fichiers .java dans le dossier courant : " + TEXT_RESET);
@@ -85,6 +87,9 @@ public class Test {
         System.out.println(TEXT_CYAN + " - " +  "Removing .class files from directory " + path + " and its subdirectories..." + TEXT_RESET);
         removeClassFiles(path);
         System.out.println(TEXT_CYAN +  " - " + "Removal complete." + TEXT_RESET);
+         */
+
+        CardTest();
     }
     
 
@@ -186,7 +191,10 @@ public class Test {
         }
     }
 
-
+    public static void CardTest() throws IOException {
+        Card card = new Card(1);
+        System.out.println(card);
+    }
 
 }
 

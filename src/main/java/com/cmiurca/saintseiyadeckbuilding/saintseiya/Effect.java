@@ -1,4 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
+
+import java.io.IOException;
+
 /**
  * Effect class, where the effect is created.
  * 
@@ -64,40 +67,40 @@ public abstract class Effect{
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      */
-    public abstract void applyEffect(Card [] card);
+    public abstract void applyEffect(Card [] card) throws IOException;
 
     /**
      * The method that applies the effect.
      * @param player The player that the effect is applied to.
      */
-    public abstract void applyEffect(Player [] player);
+    public abstract void applyEffect(Player [] player) throws IOException;
 
     /**
      * The method that applies the effect.
      * @param playMat The playMat that the effect is applied to.
      */
-    public abstract void applyEffect(PlayMat playMat);
+    public abstract void applyEffect(PlayMat playMat) throws IOException;
 
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      */
-    public abstract void applyEffect(Card [] card, Player [] player);
+    public abstract void applyEffect(Card [] card, Player [] player) throws IOException;
 
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public abstract void applyEffect(Card [] card, PlayMat playMat);
+    public abstract void applyEffect(Card [] card, PlayMat playMat) throws IOException;
 
     /**
      * The method that applies the effect.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public abstract void applyEffect(Player [] player, PlayMat playMat);
+    public abstract void applyEffect(Player [] player, PlayMat playMat) throws IOException;
 
     /**
      * The method that applies the effect.
@@ -105,7 +108,7 @@ public abstract class Effect{
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat);
+    public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException;
 
     
 

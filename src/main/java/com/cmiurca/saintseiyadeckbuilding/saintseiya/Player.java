@@ -1,6 +1,8 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 
+import java.io.IOException;
+
 /**
  * Player class, where the player is created
  * 
@@ -234,7 +236,7 @@ public class Player {
      * Method to add card to the hand
      * @param id of the card to be added to the hand
      */
-    public void addCardToHand(int id) {
+    public void addCardToHand(int id) throws IOException {
         Card card = new Card(id);
         addCardToHand(card);
     }
@@ -258,7 +260,7 @@ public class Player {
      * Method to add card to the discard
      * @param id of the card to be added to the discard
      */
-    public void addCardToDiscard(int id) {
+    public void addCardToDiscard(int id) throws IOException {
         Card card = new Card(id);
         addCardToDiscard(card);
     }
@@ -280,7 +282,7 @@ public class Player {
      * Method to add card to the destroyed cards
      * @param id of the card to be added to the destroyed cards
      */
-    public void addCardToDestroyedCards(int id) {
+    public void addCardToDestroyedCards(int id) throws IOException{
         Card card = new Card(id);
         addCardToDestroyedCards(card);
     }
@@ -303,7 +305,7 @@ public class Player {
      * Method to add card to the injured characters
      * @param id of the card to be added to the injured characters
      */
-    public void addCardToInjuredCharacters(int id) {
+    public void addCardToInjuredCharacters(int id) throws IOException{
         Card card = new Card(id);
         addCardToInjuredCharacters(card);
     }
@@ -457,7 +459,7 @@ public class Player {
      * Method to add a card to the deck
      * @param id of the card to be added to the deck
      */
-    public void addCardToDeck(int id) {
+    public void addCardToDeck(int id) throws IOException{
         Card card = new Card(id);
         addCardToDeck(card);
     }
@@ -808,7 +810,7 @@ public class Player {
      * Method that move one card from the hand to the discard and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToDiscard(int id) {
+    public void moveCardFromHandToDiscard(int id) throws IOException{
         int[] positions = positionsInHand(id);
         addCardToDiscard(id);
         removeCardFromHand(id);
@@ -828,7 +830,7 @@ public class Player {
      * Method that move one card from the hand to the injured characters and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToInjuredCharacters(int id) {
+    public void moveCardFromHandToInjuredCharacters(int id) throws IOException{
         int[] positions = positionsInHand(id);
         addCardToInjuredCharacters(id);
         removeCardFromHand(id);
@@ -849,7 +851,7 @@ public class Player {
      * Method that move one card from the hand to the destroyed cards and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToDestroyedCards(int id) {
+    public void moveCardFromHandToDestroyedCards(int id) throws IOException{
         int[] positions = positionsInHand(id);
         addCardToDestroyedCards(id);
         removeCardFromHand(id);
@@ -870,7 +872,7 @@ public class Player {
      * Method that move one card from the discard to the hand and removes it from the discard
      * @param id id of the card to be moved
      */
-    public void moveCardFromDiscardToHand(int id) {
+    public void moveCardFromDiscardToHand(int id) throws IOException{
         int[] positions = positionsInDiscard(id);
         addCardToHand(id);
         removeCardFromDiscard(id);
@@ -890,7 +892,7 @@ public class Player {
      * Method that move one card from the hand to the deck and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToDeck(int id) {
+    public void moveCardFromHandToDeck(int id) throws IOException{
         int[] positions = positionsInHand(id);
         addCardToDeck(id);
         removeCardFromHand(id); 
@@ -910,7 +912,7 @@ public class Player {
      * Method that move one card from the deck to the hand and removes it from the deck
      * @param id id of the card to be moved
      */
-    public void moveCardFromDeckToHand(int id) {
+    public void moveCardFromDeckToHand(int id) throws IOException{
         int[] positions = positionsInDeck(id);
         addCardToHand(id);
         removeCardFromDeck(id);
@@ -930,7 +932,7 @@ public class Player {
      * Method that move one card from the deck to the discard and removes it from the deck
      * @param id id of the card to be moved
      */
-    public void moveCardFromDeckToDiscard(int id) {
+    public void moveCardFromDeckToDiscard(int id) throws IOException{
         int[] positions = positionsInDeck(id);
         addCardToDiscard(id);
         removeCardFromDeck(id);
@@ -950,7 +952,7 @@ public class Player {
      * Method that move one card from the discard to the deck and removes it from the discard
      * @param id id of the card to be moved
      */
-    public void moveCardFromDiscardToDeck(int id) {
+    public void moveCardFromDiscardToDeck(int id) throws IOException{
         int[] positions = positionsInDiscard(id);
         addCardToDeck(id);
         removeCardFromDiscard(id);
@@ -970,7 +972,7 @@ public class Player {
      * Method that move one card from the deck to the injured characters and removes it from the deck
      * @param id id of the card to be moved
      */
-    public void moveCardFromDeckToInjuredCharacters(int id) {
+    public void moveCardFromDeckToInjuredCharacters(int id) throws IOException{
         int[] positions = positionsInDeck(id);
         addCardToInjuredCharacters(id);
         removeCardFromDeck(id);
@@ -990,7 +992,7 @@ public class Player {
      * Method that move one card from the injured characters to the deck and removes it from the injured characters
      * @param id id of the card to be moved
      */
-    public void moveCardFromInjuredCharactersToDeck(int id) {
+    public void moveCardFromInjuredCharactersToDeck(int id) throws IOException{
         int[] positions = positionsInInjuredCharacters(id);
         addCardToDeck(id);
         removeCardFromInjuredCharacters(id);
@@ -1010,7 +1012,7 @@ public class Player {
      * Method that move one card from the injured characters to the discard and removes it from the injured characters
      * @param id id of the card to be moved
      */
-    public void moveCardFromInjuredCharactersToDiscard(int id) {
+    public void moveCardFromInjuredCharactersToDiscard(int id) throws IOException{
         int[] positions = positionsInInjuredCharacters(id);
         addCardToDiscard(id);
         removeCardFromInjuredCharacters(id);
@@ -1030,7 +1032,7 @@ public class Player {
      * Method that move one card from the discard to the injured characters and removes it from the discard
      * @param id id of the card to be moved
      */
-    public void moveCardFromDiscardToInjuredCharacters(int id) {
+    public void moveCardFromDiscardToInjuredCharacters(int id) throws IOException{
         int[] positions = positionsInDiscard(id);
         addCardToInjuredCharacters(id);
         removeCardFromDiscard(id);

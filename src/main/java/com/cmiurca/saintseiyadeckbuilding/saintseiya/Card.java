@@ -1,14 +1,19 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Iterator;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.io.IOException;
+
 
 /**
  * Card class, where the cards are created
@@ -136,15 +141,46 @@ public class Card {
     }
 
     /**
-     * Creates a new Card instance with the specified parameters.
-     * 
-     * @param id The id of the {@link Card}.
+     * Constructeur par ID qui crée une carte à partir d'un fichier JSON qui contient les données de la carte.
+     *
+     * @param id L'identifiant de la carte.
+     * @throws IOException Si une erreur se produit lors de la lecture du fichier JSON.
      */
-    public Card(int id) {
-        
+    public Card(int id) throws IOException {
+        // Récupérer les données de la carte à partir du fichier JSON
+        ObjectMapper objectMapper = new ObjectMapper();
+        InputStream inputStream = getClass().getResourceAsStream("/saint_seiya_cartes.json");
+        CardData cardData = objectMapper.readValue(inputStream, CardData[].class)[id - 1];
+
+        // Créer l'effet de la carte à partir de sa description
+        String effectClassName = "Effect" + String.format("%04d", id);
+        try {
+            Class<?> effectClass = Class.forName(effectClassName);
+            Constructor<?> effectConstructor = effectClass.getConstructor();
+            effect = (Effect) ((Constructor<?>) effectConstructor).newInstance();
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException e) {
+            // Lancez une exception ou affectez une valeur par défaut à l'effet
+        }
+
+        // Assigner les propriétés de la carte à partir du fichier JSON
+        name = cardData.getNom();
+        category = cardData.getClasse();
+        rank = cardData.getRang();
+        acquisitionCostInStrength = cardData.getCoutForce();
+        acquisitionCostInCosmos = cardData.getCoutCosmos();
+        strength = cardData.getForce();
+        cosmos = cardData.getCosmos() != 0 ? cardData.getCosmos() : 0;
+        pointOfVictory = cardData.getPoints() != 0 ? cardData.getPoints() : 0;
+        flameOfTheClock = 0;
+        care = 0;
+    }
+
+
+        /**
         JSONParser parser = new JSONParser();
 
-        try {     
+        try {
             Object obj = parser.parse(new FileReader("./saint_seiya_cartes.json"));
             JSONArray cards = (JSONArray) obj;
 
@@ -161,9 +197,25 @@ public class Card {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
+        }*
+
+    /**
+     * CreateEffect method to create an effect from a card id and a description
+     * @param id
+     * @param effectDescription
+     * @return Effect
+     */
+    private Effect createEffect(int id, String effectDescription) {
+        String effectClassName = "Effect" + String.format("%04d", id);
+        try {
+            Class<?> effectClass = Class.forName(effectClassName);
+            Constructor<?> effectConstructor = effectClass.getConstructor();
+            return (Effect) ((Constructor<?>) effectConstructor).newInstance();
+        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException |
+                 InvocationTargetException e) {
+            // Lancez une exception ou affectez une valeur par défaut à l'effet
+            return null;
         }
-
-
     }
 
     /**
@@ -484,5 +536,20 @@ public class Card {
     public void removeAcquisitionCostInCosmos(int acquisitionCostInCosmosToRemove) {
         this.acquisitionCostInCosmos -= acquisitionCostInCosmosToRemove;
     }
+
+    /**
+     * Method to apply the effect of the {@link Card}
+     * @param card The card to apply the effect
+     * @param player The player to apply the effect
+     * @param playMat The playMat to apply the effect
+     */
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException{
+        if(this.effect != null){
+            this.effect.applyEffect(card, player, playMat);
+        }
+
+    }
+
+
 
 }
