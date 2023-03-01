@@ -1,15 +1,22 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.io.IOException;
 
 public class CardData {
     private int id;
     private String nom;
     private String classe;
     private String rang;
+    @JsonProperty("cout force")
     private int coutForce;
+
+    @JsonProperty("cout cosmos")
     private int coutCosmos;
     private int force;
     private int vie;
@@ -18,31 +25,28 @@ public class CardData {
     private String objet;
     private String effets;
 
-    public CardData(@JsonProperty("id") int id,
-                    @JsonProperty("nom") String nom,
-                    @JsonProperty("classe") String classe,
-                    @JsonProperty("rang") String rang,
-                    @JsonProperty("cout force") int coutForce,
-                    @JsonProperty("cout cosmos") int coutCosmos,
-                    @JsonProperty("force") int force,
-                    @JsonProperty("vie") int vie,
-                    @JsonProperty("cosmos") int cosmos,
-                    @JsonProperty("points") int points,
-                    @JsonProperty("objet") String objet,
-                    @JsonProperty("effets") String effets) {
-        this.id = id;
-        this.nom = nom;
-        this.classe = classe;
-        this.rang = rang;
-        this.coutForce = coutForce;
-        this.coutCosmos = coutCosmos;
-        this.force = force;
-        this.vie = vie;
-        this.cosmos = cosmos;
-        this.points = points;
-        this.objet = objet;
-        this.effets = effets;
+    public CardData() {}
+
+    public CardData(JsonNode node) {
+        System.out.println("CardData");
+        ObjectMapper mapper = new ObjectMapper();
+
+        id = node.has("id") ? node.get("id").asInt(-1) : -1;
+        nom = node.has("nom") ? node.get("nom").asText("") : "";
+        classe = node.has("classe") ? node.get("classe").asText("") : "";
+        rang = node.has("rang") ? node.get("rang").asText("") : "";
+        coutForce = node.has("cout force") ? node.get("cout force").asInt(-1) : -1;
+        coutCosmos = node.has("cout cosmos") ? node.get("cout cosmos").asInt(-1) : -1;
+        force = node.has("force") ? node.get("force").asInt(-1) : -1;
+        vie = node.has("vie") ? node.get("vie").asInt(-1) : -1;
+        cosmos = node.has("cosmos") ? node.get("cosmos").asInt(-1) : -1;
+        points = node.has("points") ? node.get("points").asInt(-1) : -1;
+        objet = node.has("objet") ? node.get("objet").asText("") : "";
+        effets = node.has("effets") ? node.get("effets").asText("") : "";
     }
+
+
+
 
     public int getId() {
         return id;
@@ -83,6 +87,8 @@ public class CardData {
     public int getPoints() {
         return points;
     }
+
+
 
     public String getObjet() {
         return objet;

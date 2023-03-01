@@ -28,7 +28,11 @@ public class Effect0006 extends Effect {
      * @param description The description of the effect.
      */
     public Effect0006(int id, String description) {
-        super(0006, "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur", EffectType.DISCARD);
+        super(6, "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur", EffectType.DISCARD);
+    }
+
+    public Effect0006() {
+        super(6, "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur", EffectType.DISCARD);
     }
 
     /**

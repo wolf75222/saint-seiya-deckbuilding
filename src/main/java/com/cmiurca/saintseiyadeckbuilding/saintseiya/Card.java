@@ -3,14 +3,10 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 import java.io.*;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Iterator;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
-
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 
 import java.io.IOException;
 
@@ -147,37 +143,181 @@ public class Card {
      * @throws IOException Si une erreur se produit lors de la lecture du fichier JSON.
      */
     public Card(int id) throws IOException {
-        // Récupérer les données de la carte à partir du fichier JSON
+        ClassLoader classLoader = JsonTableau.class.getClassLoader();
+        InputStream inputStream = classLoader.getResourceAsStream("convertie.json");
         ObjectMapper objectMapper = new ObjectMapper();
-        InputStream inputStream = getClass().getResourceAsStream("/saint_seiya_cartes.json");
-        CardData cardData = objectMapper.readValue(inputStream, CardData[].class)[id - 1];
+        JsonNode rootNode;
 
-        // Créer l'effet de la carte à partir de sa description
-        String effectClassName = "Effect" + String.format("%04d", id);
         try {
-            Class<?> effectClass = Class.forName(effectClassName);
-            Constructor<?> effectConstructor = effectClass.getConstructor();
-            effect = (Effect) ((Constructor<?>) effectConstructor).newInstance();
-        } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException |
-                 InvocationTargetException e) {
-            // Lancez une exception ou affectez une valeur par défaut à l'effet
+            rootNode = objectMapper.readTree(inputStream);
+        } catch (IOException e) {
+            System.out.println("Erreur lors de la lecture du fichier JSON : " + e.getMessage());
+            return;
         }
 
-        // Assigner les propriétés de la carte à partir du fichier JSON
-        name = cardData.getNom();
-        category = cardData.getClasse();
-        rank = cardData.getRang();
-        acquisitionCostInStrength = cardData.getCoutForce();
-        acquisitionCostInCosmos = cardData.getCoutCosmos();
-        strength = cardData.getForce();
-        cosmos = cardData.getCosmos() != 0 ? cardData.getCosmos() : 0;
-        pointOfVictory = cardData.getPoints() != 0 ? cardData.getPoints() : 0;
-        flameOfTheClock = 0;
-        care = 0;
+        for (JsonNode node : rootNode) {
+            if (node.path("id").asInt() == id) {
+                try {
+                    if(node.path("id").asText() == ""){
+                        this.id = 0;
+                    }
+                    else{
+                        this.id = Integer.parseInt(node.path("id").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.id = 0;
+                    System.out.println("Erreur lors de la conversion de l'identifiant de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("nom").asText() == ""){
+                        this.name = "Inconnu";
+                    }
+                    else{
+                        this.name = node.path("nom").asText();
+                    }
+                } catch (NumberFormatException e) {
+                    this.name = "Inconnu";
+                    System.out.println("Erreur lors de la conversion du nom de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("classe").asText() == ""){
+                        this.category = "Inconnu";
+                    }
+                    else{
+                        this.category = node.path("classe").asText();
+                    }
+                } catch (NumberFormatException e) {
+                    this.category = "Inconnu";
+                    System.out.println("Erreur lors de la conversion de la classe de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("rang").asText() == ""){
+                        this.rank = "Inconnu";
+                    }
+                    else{
+                        this.rank = node.path("rang").asText();
+                    }
+                } catch (NumberFormatException e) {
+                    this.rank = "Inconnu";
+                    System.out.println("Erreur lors de la conversion du rang de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("cout force").asText() == ""){
+                        this.acquisitionCostInStrength = 0;
+                    }
+                    else{
+                        this.acquisitionCostInStrength = Integer.parseInt(node.path("cout force").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.acquisitionCostInStrength = 0;
+                    System.out.println("Erreur lors de la conversion du coût en force de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("cout cosmos").asText() == ""){
+                        this.acquisitionCostInCosmos = 0;
+                    }
+                    else{
+                        this.acquisitionCostInCosmos = Integer.parseInt(node.path("cout cosmos").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.acquisitionCostInCosmos = 0;
+                    System.out.println("Erreur lors de la conversion du coût en cosmos de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("force").asText() == ""){
+                        this.strength = 0;
+                    }
+                    else{
+                        this.strength = Integer.parseInt(node.path("force").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.strength = 0;
+                    System.out.println("Erreur lors de la conversion de la force de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("vie").asText() == ""){
+                        this.care = 0;
+                    }
+                    else{
+                        this.care = Integer.parseInt(node.path("vie").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.care = 0;
+                    System.out.println("Erreur lors de la conversion de la vie de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("cosmos").asText() == ""){
+                        this.cosmos = 0;
+                    }
+                    else{
+                        this.cosmos = Integer.parseInt(node.path("cosmos").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.cosmos = 0;
+                    System.out.println("Erreur lors de la conversion du cosmos de la carte : " + e.getMessage());
+                }
+                try {
+                    if(node.path("points").asText() == ""){
+                        this.pointOfVictory = 0;
+                    }
+                    else{
+                        this.pointOfVictory = Integer.parseInt(node.path("points").asText());
+                    }
+                } catch (NumberFormatException e) {
+                    this.pointOfVictory = 0;
+                    System.out.println("Erreur lors de la conversion des points de victoire de la carte : " + e.getMessage());
+                }
+
+
+                /**
+                {
+                    "id": "1",
+                        "nom": "Seiya de P\u00e9gase",
+                        "classe": "H\u00e9ros",
+                        "rang": "Tr\u00e8s Commun",
+                        "cout force": "",
+                        "cout cosmos": "",
+                        "force": "1",
+                        "vie": "1",
+                        "cosmos": "",
+                        "points": "",
+                        "objet": "",
+                        "effets": "Renforcer Seiya avec l'Armure de P\u00e9gase."
+                }
+                */
+
+
+                String effectClassName = "com.cmiurca.saintseiyadeckbuilding.saintseiya.effects.Effect" + String.format("%04d", id);
+                try {
+                    Class<?> effectClass = Class.forName(effectClassName);
+                    Constructor<?> effectConstructor = effectClass.getConstructor();
+                    this.effect = (Effect) ((Constructor<?>) effectConstructor).newInstance();
+                } catch (ClassNotFoundException | NoSuchMethodException | InstantiationException | IllegalAccessException |
+                         InvocationTargetException e) {
+                    System.out.println("Erreur lors de la création de l'effet de la carte : " + e.getMessage());
+                }
+
+
+
+
+
+
+
+
+
+                //System.out.println(node.path("nom").asText());
+
+            }
+        }
+
+
     }
 
 
-        /**
+
+
+
+    /**
         JSONParser parser = new JSONParser();
 
         try {

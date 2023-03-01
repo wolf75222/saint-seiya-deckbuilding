@@ -2,15 +2,16 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CardTest {
 
-    //Card card = new Card(1);
-
     @Test
-    void getName() {
+    void getName() throws IOException {
         //assertEquals("Seiya de Pégase", card.getName());
+        //Card card = new Card(1);
     }
 
     @Test

@@ -110,7 +110,13 @@ public abstract class Effect{
      */
     public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException;
 
-    
+    /**
+     * The ToString method.
+     * @return The string of the effect.
+     */
+    public String toString() {
+        return "Effect [id=" + id + ", description=" + description + ", type=" + type + "]";
+    }
 
 }
 

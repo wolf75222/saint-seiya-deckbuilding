@@ -191,10 +191,10 @@ public class Test {
         }
     }
 
-    public static void CardTest() throws IOException {
-        Card card = new Card(1);
-        System.out.println(card);
-    }
+        public static void CardTest() throws IOException {
+            Card card = new Card(6);
+            System.out.println(card);
+        }
 
 }
 
