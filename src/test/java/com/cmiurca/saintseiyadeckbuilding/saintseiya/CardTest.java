@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CardTest {
 
     @Test
-    void getName() throws IOException {
+    void getName()   {
         //assertEquals("Seiya de Pégase", card.getName());
         //Card card = new Card(1);
     }

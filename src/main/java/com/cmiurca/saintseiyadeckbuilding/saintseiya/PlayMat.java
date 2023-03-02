@@ -81,6 +81,24 @@ public class PlayMat {
     }
 
     /**
+     * Getter for card in cardLocation at index
+     * @param index index of the card in cardLocation
+     * @return Card in cardLocation
+     */
+    public Card getCardInLocationFromIndex(int index) {
+        return cardLocation[index];
+    }
+
+    /**
+     * Method to remove a card from cardLocation by index
+     * @param index index of the card in cardLocation
+     */
+    public void removeCardFromLocationFromIndex(int index) {
+        cardLocation[index] = null;
+    }
+
+
+    /**
      * Setter for cardLocation
      * @param cardLocation card location of the playmat
      */

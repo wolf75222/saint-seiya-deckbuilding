@@ -66,7 +66,7 @@ public class Test {
      * Main method
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args)  {
         /**
         String path = "com/cmiurca/saintseiyadeckbuilding/saintseiya";
         System.out.println(TEXT_PURPLE + "Test: "  + path + TEXT_RESET);
@@ -191,7 +191,7 @@ public class Test {
         }
     }
 
-        public static void CardTest() throws IOException {
+        public static void CardTest()   {
             Card card = new Card(6);
             System.out.println(card);
         }

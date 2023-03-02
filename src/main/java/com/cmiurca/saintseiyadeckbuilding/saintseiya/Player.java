@@ -2,6 +2,7 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Player class, where the player is created
@@ -74,6 +75,144 @@ public class Player {
         this.armor = armor;
         this.injuredCharacters = injuredCharacters;
     }
+
+    /**
+     * Constructor of the player with only name and hero
+     * @param name name of the player
+     * @param hero hero of the player
+     */
+    public Player(String name, Hero hero) {
+        this.name = name;
+        this.hero = hero;
+        this.deck = new Card[90];
+        this.hand = new Card[10];
+        this.discard = new Card[90];
+        this.destroyedCards = new Card[90];
+        this.armor = null;
+        this.injuredCharacters = new Card[10];
+    }
+
+
+    /**
+     * Method to acquire by Strength a card from the PlayMat
+     * @param index index of the card to be acquired
+     */
+    public void acquireByStrength(PlayMat playMat, int index, Card [] cards) {
+        int acquisitionCostInStrength = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInStrength();
+        try {
+            int strength = 0;
+            for (int i = 0; i < cards.length; i++) {
+                if (!hasCardInHand(cards[i])) {
+                    throw new IllegalArgumentException("Vous n'avez pas la carte " + cards[i].getName() + " dans votre main");
+                }
+                strength += cards[i].getStrength();
+            }
+            if (strength < acquisitionCostInStrength) {
+                throw new IllegalArgumentException("Vous n'avez pas assez de force pour acquérir cette carte");
+            }else {
+                this.addCardToDiscard(playMat.getCardInLocationFromIndex(index));
+                playMat.removeCardFromLocationFromIndex(index);
+                for (int i = 0; i < cards.length; i++) {
+                    this.moveCardFromHandToDiscard(cards[i]);
+                }
+                /**
+                if (playMat.getCardInLocationFromIndex(index).getEffect().getType() == EffectType.DEFEATED) {
+                    playMat.getCardInLocationFromIndex(index).applyEffect(...);
+                }
+                */
+            }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+    }
+
+    /**
+     * Method to acquire by Cosmos a card from the PlayMat
+     * @param index index of the card to be acquired
+     */
+    public void acquireByCosmos(PlayMat playMat, int index, Card [] cards) {
+        int acquisitionCostInCosmos = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInCosmos();
+        try {
+            int cosmos = 0;
+            for (int i = 0; i < cards.length; i++) {
+                if (!hasCardInHand(cards[i])) {
+                    throw new IllegalArgumentException("Vous n'avez pas la carte " + cards[i].getName() + " dans votre main");
+                }
+                cosmos += cards[i].getCosmos();
+            }
+            if (cosmos < acquisitionCostInCosmos) {
+                throw new IllegalArgumentException("Vous n'avez pas assez de cosmos pour acquérir cette carte");
+            }else {
+                this.addCardToHand(playMat.getCardInLocationFromIndex(index));
+                playMat.removeCardFromLocationFromIndex(index);
+                for (int i = 0; i < cards.length; i++) {
+                    this.moveCardFromHandToDiscard(cards[i]);
+                }
+            }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+    }
+
+    /**
+     * Method to heal a card from the Injured Characters
+     * @param index index of the card to be healed
+     */
+    public void healCardFromInjuredCharacters(int index) {
+        try {
+            if (injuredCharacters[index] == null) {
+                throw new IllegalArgumentException("La carte n'est pas dans les characters blessés");
+            }else {
+                injuredCharacters[index].addCare(1);
+                this.moveCardFromInjuredCharactersToDiscard(injuredCharacters[index]);
+            }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
+        }
+    }
+
+    /**
+     * Method to apply the effect of a card
+     * @param card card to be applied
+     */
+    public void applyEffect(Card card, Card [] cards, PlayMat playMat, Player [] players) {
+        card.getEffect().applyEffect(cards, players, playMat);
+    }
+
+
+    /**
+     * Method to check if the player has a card in the hand
+     * @param card card to be checked
+     */
+    public boolean hasCardInHand(Card card) {
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i] == card) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Method to check if the player has a card in the hand by id
+     * @param id of card to be checked
+     */
+    public boolean hasCardInHandById(int id) {
+        for (int i = 0; i < hand.length; i++) {
+            if (hand[i].getId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
+
+
 
     /**
      * Getter for name
@@ -189,7 +328,8 @@ public class Player {
      * @param armor armor of the player
      */
     public void setArmor(Card armor) {
-        this.armor = armor;
+        if (armor.getId() == this.hero.getArmorId())
+            this.armor = armor;
     } 
 
     /**
@@ -223,20 +363,29 @@ public class Player {
      * @param card card to be added to the hand
      */
     public void addCardToHand(Card card) {
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i] == null) {
-                hand[i] = card;
-                break;
+        // Check if Hand is full
+        try {
+            if (hand[hand.length - 1] != null) {
+                throw new IllegalArgumentException("La main est pleine");
+            } else {
+                for (int i = 0; i < hand.length; i++) {
+                    if (hand[i] == null) {
+                        hand[i] = card;
+                        break;
+                    }
+                }
             }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
         }
-
     }
 
     /**
      * Method to add card to the hand
      * @param id of the card to be added to the hand
      */
-    public void addCardToHand(int id) throws IOException {
+    public void addCardToHand(int id)   {
         Card card = new Card(id);
         addCardToHand(card);
     }
@@ -248,11 +397,20 @@ public class Player {
      * @param card card to be added to the discard
      */
     public void addCardToDiscard(Card card) {
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i] == null) {
-                discard[i] = card;
-                break;
+        try {
+            if (discard[discard.length - 1] != null) {
+                throw new IllegalArgumentException("La défausse est pleine");
+            } else {
+                for (int i = 0; i < discard.length; i++) {
+                    if (discard[i] == null) {
+                        discard[i] = card;
+                        break;
+                    }
+                }
             }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
         }
     }
 
@@ -260,7 +418,7 @@ public class Player {
      * Method to add card to the discard
      * @param id of the card to be added to the discard
      */
-    public void addCardToDiscard(int id) throws IOException {
+    public void addCardToDiscard(int id)   {
         Card card = new Card(id);
         addCardToDiscard(card);
     }
@@ -270,11 +428,20 @@ public class Player {
      * @param card card to be added to the destroyed cards
      */
     public void addCardToDestroyedCards(Card card) {
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i] == null) {
-                destroyedCards[i] = card;
-                break;
+        try {
+            if (destroyedCards[destroyedCards.length - 1] != null) {
+                throw new IllegalArgumentException("La main de personnages détruits est pleine");
+            } else {
+                for (int i = 0; i < destroyedCards.length; i++) {
+                    if (destroyedCards[i] == null) {
+                        destroyedCards[i] = card;
+                        break;
+                    }
+                }
             }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
         }
     }
 
@@ -282,7 +449,7 @@ public class Player {
      * Method to add card to the destroyed cards
      * @param id of the card to be added to the destroyed cards
      */
-    public void addCardToDestroyedCards(int id) throws IOException{
+    public void addCardToDestroyedCards(int id)  {
         Card card = new Card(id);
         addCardToDestroyedCards(card);
     }
@@ -292,12 +459,20 @@ public class Player {
      * @param card card to be added to the injured characters
      */
     public void addCardToInjuredCharacters(Card card) {
-        //TODO: card.pointOfInjury++
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i] == null) {
-                injuredCharacters[i] = card;
-                break;
+        try {
+            if (injuredCharacters[injuredCharacters.length - 1] != null) {
+                throw new IllegalArgumentException("La main de personnages détruits est pleine");
+            } else {
+                for (int i = 0; i < injuredCharacters.length; i++) {
+                    if (injuredCharacters[i] == null) {
+                        injuredCharacters[i] = card;
+                        break;
+                    }
+                }
             }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
         }
     }
 
@@ -305,7 +480,7 @@ public class Player {
      * Method to add card to the injured characters
      * @param id of the card to be added to the injured characters
      */
-    public void addCardToInjuredCharacters(int id) throws IOException{
+    public void addCardToInjuredCharacters(int id)  {
         Card card = new Card(id);
         addCardToInjuredCharacters(card);
     }
@@ -447,11 +622,20 @@ public class Player {
      * @param card card to be added to the deck
      */
     public void addCardToDeck(Card card) {
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i] == null) {
-                deck[i] = card;
-                break;
+        try {
+            if (deck[deck.length - 1] != null) {
+                throw new IllegalArgumentException("Le deck est plein");
+            } else {
+                for (int i = 0; i < deck.length; i++) {
+                    if (deck[i] == null) {
+                        deck[i] = card;
+                        break;
+                    }
+                }
             }
+        }catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return;
         }
     }
 
@@ -459,7 +643,7 @@ public class Player {
      * Method to add a card to the deck
      * @param id of the card to be added to the deck
      */
-    public void addCardToDeck(int id) throws IOException{
+    public void addCardToDeck(int id)  {
         Card card = new Card(id);
         addCardToDeck(card);
     }
@@ -810,7 +994,7 @@ public class Player {
      * Method that move one card from the hand to the discard and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToDiscard(int id) throws IOException{
+    public void moveCardFromHandToDiscard(int id)  {
         int[] positions = positionsInHand(id);
         addCardToDiscard(id);
         removeCardFromHand(id);
@@ -830,7 +1014,7 @@ public class Player {
      * Method that move one card from the hand to the injured characters and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToInjuredCharacters(int id) throws IOException{
+    public void moveCardFromHandToInjuredCharacters(int id)  {
         int[] positions = positionsInHand(id);
         addCardToInjuredCharacters(id);
         removeCardFromHand(id);
@@ -851,7 +1035,7 @@ public class Player {
      * Method that move one card from the hand to the destroyed cards and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToDestroyedCards(int id) throws IOException{
+    public void moveCardFromHandToDestroyedCards(int id)  {
         int[] positions = positionsInHand(id);
         addCardToDestroyedCards(id);
         removeCardFromHand(id);
@@ -872,7 +1056,7 @@ public class Player {
      * Method that move one card from the discard to the hand and removes it from the discard
      * @param id id of the card to be moved
      */
-    public void moveCardFromDiscardToHand(int id) throws IOException{
+    public void moveCardFromDiscardToHand(int id)  {
         int[] positions = positionsInDiscard(id);
         addCardToHand(id);
         removeCardFromDiscard(id);
@@ -892,7 +1076,7 @@ public class Player {
      * Method that move one card from the hand to the deck and removes it from the hand
      * @param id id of the card to be moved
      */
-    public void moveCardFromHandToDeck(int id) throws IOException{
+    public void moveCardFromHandToDeck(int id)  {
         int[] positions = positionsInHand(id);
         addCardToDeck(id);
         removeCardFromHand(id); 
@@ -912,7 +1096,7 @@ public class Player {
      * Method that move one card from the deck to the hand and removes it from the deck
      * @param id id of the card to be moved
      */
-    public void moveCardFromDeckToHand(int id) throws IOException{
+    public void moveCardFromDeckToHand(int id)  {
         int[] positions = positionsInDeck(id);
         addCardToHand(id);
         removeCardFromDeck(id);
@@ -932,7 +1116,7 @@ public class Player {
      * Method that move one card from the deck to the discard and removes it from the deck
      * @param id id of the card to be moved
      */
-    public void moveCardFromDeckToDiscard(int id) throws IOException{
+    public void moveCardFromDeckToDiscard(int id)  {
         int[] positions = positionsInDeck(id);
         addCardToDiscard(id);
         removeCardFromDeck(id);
@@ -952,7 +1136,7 @@ public class Player {
      * Method that move one card from the discard to the deck and removes it from the discard
      * @param id id of the card to be moved
      */
-    public void moveCardFromDiscardToDeck(int id) throws IOException{
+    public void moveCardFromDiscardToDeck(int id)  {
         int[] positions = positionsInDiscard(id);
         addCardToDeck(id);
         removeCardFromDiscard(id);
@@ -972,7 +1156,7 @@ public class Player {
      * Method that move one card from the deck to the injured characters and removes it from the deck
      * @param id id of the card to be moved
      */
-    public void moveCardFromDeckToInjuredCharacters(int id) throws IOException{
+    public void moveCardFromDeckToInjuredCharacters(int id)  {
         int[] positions = positionsInDeck(id);
         addCardToInjuredCharacters(id);
         removeCardFromDeck(id);
@@ -992,7 +1176,7 @@ public class Player {
      * Method that move one card from the injured characters to the deck and removes it from the injured characters
      * @param id id of the card to be moved
      */
-    public void moveCardFromInjuredCharactersToDeck(int id) throws IOException{
+    public void moveCardFromInjuredCharactersToDeck(int id)  {
         int[] positions = positionsInInjuredCharacters(id);
         addCardToDeck(id);
         removeCardFromInjuredCharacters(id);
@@ -1012,7 +1196,7 @@ public class Player {
      * Method that move one card from the injured characters to the discard and removes it from the injured characters
      * @param id id of the card to be moved
      */
-    public void moveCardFromInjuredCharactersToDiscard(int id) throws IOException{
+    public void moveCardFromInjuredCharactersToDiscard(int id)  {
         int[] positions = positionsInInjuredCharacters(id);
         addCardToDiscard(id);
         removeCardFromInjuredCharacters(id);
@@ -1032,12 +1216,94 @@ public class Player {
      * Method that move one card from the discard to the injured characters and removes it from the discard
      * @param id id of the card to be moved
      */
-    public void moveCardFromDiscardToInjuredCharacters(int id) throws IOException{
+    public void moveCardFromDiscardToInjuredCharacters(int id)  {
         int[] positions = positionsInDiscard(id);
         addCardToInjuredCharacters(id);
         removeCardFromDiscard(id);
     }
 
-    
+    /**
+     * Method to show the cards in the hand
+     * @return String with the cards in the hand
+     */
+    public String showHand() {
+        String hand = "";
+        for (int i = 0; i < this.hand.length; i++) {
+            if (this.hand[i] != null) {
+                hand += this.hand[i].getName() + ", ";
+            }else {
+                hand += "null, ";
+            }
+        }
+        return hand;
+    }
+
+    /**
+     * Method to show the cards in the deck
+     * @return String with the cards in the deck
+     */
+    public String showDeck() {
+        String deck = "";
+        for (int i = 0; i < this.deck.length; i++) {
+            if (this.deck[i] != null) {
+                deck += this.deck[i].getName() + ", ";
+            }else {
+                deck += "null, ";
+            }
+        }
+        return deck;
+    }
+
+    /**
+     * Method toString to show the player
+     * @return String with the player
+     */
+    @Override
+    public String toString() {
+        return "Player{" +
+                "name='" + name + '\'' +
+                ", hero=" + hero +
+                ", deck=" + Arrays.toString(deck) +
+                ", hand=" + Arrays.toString(hand) +
+                ", discard=" + Arrays.toString(discard) +
+                ", destroyedCards=" + Arrays.toString(destroyedCards) +
+                ", armor=" + armor +
+                ", injuredCharacters=" + Arrays.toString(injuredCharacters) +
+                '}';
+    }
+
+
+
+    /**
+     * Method to show the cards in the discard
+     * @return String with the cards in the discard
+     */
+    public String showDiscard() {
+        String discard = "";
+        for (int i = 0; i < this.discard.length; i++) {
+            if (this.discard[i] != null) {
+                discard += this.discard[i].getName() + ", ";
+            }else {
+                discard += "null, ";
+            }
+        }
+        return discard;
+    }
+
+    /**
+     * Method to show the cards in the injured characters
+     * @return String with the cards in the injured characters
+     */
+    public String showInjuredCharacters() {
+        String injuredCharacters = "";
+        for (int i = 0; i < this.injuredCharacters.length; i++) {
+            if (this.injuredCharacters[i] != null) {
+                injuredCharacters += this.injuredCharacters[i].getName() + ", ";
+            }else {
+                injuredCharacters += "null, ";
+            }
+        }
+        return injuredCharacters;
+    }
 
 }

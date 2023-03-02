@@ -105,6 +105,8 @@ public class Card {
         this.care = card.getCare();
     }
 
+
+
     /**
      * Creates a new Card instance with the specified parameters.
      * 
@@ -138,11 +140,9 @@ public class Card {
 
     /**
      * Constructeur par ID qui crée une carte à partir d'un fichier JSON qui contient les données de la carte.
-     *
      * @param id L'identifiant de la carte.
-     * @throws IOException Si une erreur se produit lors de la lecture du fichier JSON.
      */
-    public Card(int id) throws IOException {
+    public Card(int id) {
         ClassLoader classLoader = JsonTableau.class.getClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream("convertie.json");
         ObjectMapper objectMapper = new ObjectMapper();
@@ -683,7 +683,7 @@ public class Card {
      * @param player The player to apply the effect
      * @param playMat The playMat to apply the effect
      */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException{
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
         if(this.effect != null){
             this.effect.applyEffect(card, player, playMat);
         }

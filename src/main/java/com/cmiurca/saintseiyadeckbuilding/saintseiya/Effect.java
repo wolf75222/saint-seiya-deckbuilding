@@ -66,49 +66,10 @@ public abstract class Effect{
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
-     */
-    public abstract void applyEffect(Card [] card) throws IOException;
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     */
-    public abstract void applyEffect(Player [] player) throws IOException;
-
-    /**
-     * The method that applies the effect.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public abstract void applyEffect(PlayMat playMat) throws IOException;
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     */
-    public abstract void applyEffect(Card [] card, Player [] player) throws IOException;
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public abstract void applyEffect(Card [] card, PlayMat playMat) throws IOException;
-
-    /**
-     * The method that applies the effect.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public abstract void applyEffect(Player [] player, PlayMat playMat) throws IOException;
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException;
+    public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat)  ;
 
     /**
      * The ToString method.

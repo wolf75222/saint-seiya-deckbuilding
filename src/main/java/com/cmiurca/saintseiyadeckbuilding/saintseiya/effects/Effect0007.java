@@ -33,7 +33,7 @@ public class Effect0007 extends Effect {
      * @param card The card that the effect is applied to.
      */
     @Override
-    public  void applyEffect(Card [] card) throws IOException {
+    public  void applyEffect(Card [] card)   {
     }
 
 
@@ -42,7 +42,7 @@ public class Effect0007 extends Effect {
      * @param player The player that the effect is applied to.
      */
     @Override
-    public void applyEffect(Player [] player) throws IOException {
+    public void applyEffect(Player [] player)   {
         // "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur"
         int id = 002;
         if(player[0].occurenceInHand(002) >= 2){
@@ -58,33 +58,33 @@ public class Effect0007 extends Effect {
      * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(PlayMat playMat) throws IOException{}
+    public void applyEffect(PlayMat playMat)  {}
 
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player) throws IOException{}
+    public void applyEffect(Card [] card, Player [] player)  {}
 
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Card [] card, PlayMat playMat) throws IOException{}
+    public void applyEffect(Card [] card, PlayMat playMat)  {}
 
     /**
      * The method that applies the effect.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Player [] player, PlayMat playMat) throws IOException{}
+    public void applyEffect(Player [] player, PlayMat playMat)  {}
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat) throws IOException{}
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {}
 }
