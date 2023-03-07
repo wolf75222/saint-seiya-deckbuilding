@@ -23,11 +23,11 @@ public class GameController {
 	 * @param model The type of model the form is compatible with (Game class in this case)
 	 * @return String The home webpage (src/main/resources/templates/home.html)
 	 */
-	@GetMapping("/")
-	public String forms(Model model) {
-		model.addAttribute("game", new Game());
-		return "home.html";
-	}
+	//@GetMapping("/")
+	//public String forms(Model model) {
+	//	model.addAttribute("game", new Game());
+	//	return "home.html";
+	//}
 	
 	/** 
 	 * The game UI page, where the user gets redirected after inputting basic game info
@@ -41,6 +41,13 @@ public class GameController {
 		game.startGame();
 		
 		return "game.html";
+	}
+
+	@GetMapping(path = "/exemple")
+	public String exemple(int a, String b) {
+		System.out.println(a + b);
+
+		return "nothing";
 	}
 
 }
