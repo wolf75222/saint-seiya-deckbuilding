@@ -32,58 +32,6 @@ public class Effect0051 extends Effect {
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
-     */
-    @Override
-    public  void applyEffect(Card [] card)    {
-
-
-        
-    }
-
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(Player [] player)  {
-        
-
-        /**Shun gagne +1Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.
-        Défausser - Récupérer en main 1 Personnage présent dans votre défausse.*/
-
-    }
-    
-    /**
-     * The method that applies the effect.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Player [] player, PlayMat playMat)  {}
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */

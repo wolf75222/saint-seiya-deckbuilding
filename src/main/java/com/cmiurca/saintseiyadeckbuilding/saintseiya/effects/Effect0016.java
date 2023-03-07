@@ -31,60 +31,17 @@ public class Effect0016 extends Effect {
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
-     */
-    @Override
-    public  void applyEffect(Card [] card)   {
-    }
-
-
-    /**
-     * The method that applies the effect.
      * @param player The player that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(Player [] player)  {
-    }
-    
-    /**
-     * The method that applies the effect.
      * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the player drew from the deck.
-     * @param player The player that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player)  {
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
         //Arrivée - Tous les joueurs piochent 1 carte puis soignent tous leurs Personnages blessés.
         for (int i=0; i< player.length; i++){
             player[i].moveCardFromDeckToHand(card[0]);
             for(int j=0; j<player[i].getInjuredCharacters().length; j++){
-               player[i].moveCardFromInjuredCharactersToDiscard(player[i].getInjuredCharacters()[j]);
+                player[i].moveCardFromInjuredCharactersToDiscard(player[i].getInjuredCharacters()[j]);
             }
         }
     }
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Player [] player, PlayMat playMat)  {}
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {}
 }

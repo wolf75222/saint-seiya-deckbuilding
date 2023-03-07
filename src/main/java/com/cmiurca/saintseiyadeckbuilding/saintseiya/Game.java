@@ -1,6 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 /**
  * Game class, where the game is created
@@ -26,9 +27,28 @@ public class Game {
      */
     private PlayMat playMat;
 
+    /**
+     * Current Player index
+     */
+    private int currentPlayerIndex;
 
+    /**
+     * Simple getter for current player index
+     * @return int current player index
+     */
+    public int getCurrentPlayerIndex() {
+        return currentPlayerIndex;
+    }
 
-    /** 
+    /**
+     * Simple setter for current player index
+     * @param currentPlayerIndex
+     */
+    public void setCurrentPlayerIndex(int currentPlayerIndex) {
+        this.currentPlayerIndex = currentPlayerIndex;
+    }
+
+    /**
      * Simple getter for number of players in game
      * @return int number of players
      */
@@ -85,6 +105,7 @@ public class Game {
         this.playerCount = playerCount;
         this.players = new Player[playerCount];
         this.playMat = new PlayMat(this);
+        this.currentPlayerIndex = 0;
     }
 
     /**
@@ -94,8 +115,17 @@ public class Game {
         this.playerCount = 4;
         this.players = new Player[playerCount];
         this.playMat = new PlayMat(this);
+        this.currentPlayerIndex = 0;
     }
 
+    /**
+     * Method to initialize players
+     */
+    public void initPlayers(){
+        for (int i = 0; i < this.playerCount; i++) {
+            this.players[i] = new Player();
+        }
+    }
     /**
      * Method to start the game
      */
@@ -256,6 +286,14 @@ public class Game {
     }
 
     /**
+     * Method to set the cardLocation of the playMat
+     * @param cardLocation Card[] to set the playMat cardLocation
+     */
+    public void setPlayMatCardLocation(Card[] cardLocation) {
+        this.playMat.setCardLocation(cardLocation);
+    }
+
+    /**
      * Method to end the game
      */
     public void endGame() {
@@ -306,4 +344,17 @@ public class Game {
         return this.players[playerIndex];
     }
 
+    /**
+     * To string method for Game
+     * @return String representation of Game
+     */
+    @Override
+    public String toString() {
+        return "Game{" +
+                "playerCount=" + playerCount +
+                ", players=" + Arrays.toString(players) +
+                ", playMat=" + "playMat" +
+                ", currentPlayerIndex=" + currentPlayerIndex +
+                '}';
+    }
 }

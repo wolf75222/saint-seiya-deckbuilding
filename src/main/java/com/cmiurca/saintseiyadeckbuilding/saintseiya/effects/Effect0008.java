@@ -29,20 +29,21 @@ public class Effect0008 extends Effect {
     }
 
     /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
+     * The constructor of the effect.
      */
-    @Override
-    public  void applyEffect(Card [] card) {
+    public Effect0008() {
+        super(8, "Défausser - Détruire 2 Hyoga identiques de votre main puis ajouter à votre défausse 1 Hyoga de rang immédiatement supérieur", EffectType.DISCARD);
     }
-
 
     /**
      * The method that applies the effect.
+     * @param card The card that the effect is applied to.
      * @param player The player that the effect is applied to.
+     * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(Player [] player)   {
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
+
         // "Défausser - Détruire 2 Hyoga identiques de votre main puis ajouter à votre défausse 1 Hyoga de rang immédiatement supérieur"
         int id = 003;
         if(player[0].occurenceInHand(003) >= 2){
@@ -50,41 +51,6 @@ public class Effect0008 extends Effect {
             player[0].moveCardFromHandToDestroyedCards(id);
             id = 013;
             player[0].addCardToDiscard(id);
-        }   
-    }
-    
-    /**
-     * The method that applies the effect.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(PlayMat playMat)  {}
+        }
 
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Player [] player, PlayMat playMat)  {}
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {}
-}
+    }}

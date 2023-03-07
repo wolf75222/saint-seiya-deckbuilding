@@ -28,41 +28,28 @@ public class Effect0017 extends Effect {
         super(0017, "Arrivée - Pope et tous les Chevaliers d'Or retirés du jeu sont mélangés dans la réserve", EffectType.ARRIVAL);
     }
 
+
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
-     */
-    @Override
-    public  void applyEffect(Card [] card)   {
-    }
-
-
-    /**
-     * The method that applies the effect.
      * @param player The player that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(Player [] player)  {}
-    
-    /**
-     * The method that applies the effect.
      * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(PlayMat playMat)  {
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
         //Arrivée - Pope et tous les Chevaliers d'Or retirés du jeu sont mélangés dans la réserve
         Card[] riviere = playMat.getCardLocation();
         int location = 0;
         Card pope=null;
         for(int i=0; i<riviere.length; i++){
             if(riviere[i].getId()==17){
-                location = i; 
+                location = i;
                 pope = riviere[i];
             }
         }
         playMat.removeCardFromLocation(location);
         playMat.addCardToCardReserve(pope);
-        
+
 
         Card[] defausse = playMat.getCommonDiscard();
         for(int j=0; j<defausse.length; j++){
@@ -71,33 +58,6 @@ public class Effect0017 extends Effect {
                 playMat.removeCardFromCommonDiscard(defausse[j]);
             }
         }
+
     }
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Player [] player, PlayMat playMat)  {}
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {}
 }

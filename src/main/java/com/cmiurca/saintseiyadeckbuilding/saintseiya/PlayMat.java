@@ -1,5 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import java.util.Arrays;
+
 /**
  * PlayMat class, where the playmat is created
  * 
@@ -362,7 +364,19 @@ public class PlayMat {
         return true;
     }
 
-
-
-
+    /**
+     * To string method
+     * @return string representation of the play mat
+     */
+    @Override
+    public String toString() {
+        return "PlayMat{" +
+                "cardLocation=" + Arrays.toString(cardLocation) +
+                ", commonDiscard=" + Arrays.toString(commonDiscard) +
+                ", cardReserve=" + Arrays.toString(cardReserve) +
+                ", onGoingEffect=" + onGoingEffect +
+                ", flameOfTheClockRemaining=" + flameOfTheClockRemaining +
+                ", currentGame=" + currentGame +
+                '}';
+    }
 }

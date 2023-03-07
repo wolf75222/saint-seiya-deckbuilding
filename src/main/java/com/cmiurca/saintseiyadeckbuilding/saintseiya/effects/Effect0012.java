@@ -28,64 +28,21 @@ public class Effect0012 extends Effect {
         super(12, "Mise en jeu - Blesser 1 Shiryu de votre main ; piocher 1 carte.", EffectType.SETTINGGAME);
     }
 
+
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.
-     */
-    @Override
-    public  void applyEffect(Card [] card)   {
-    }
-
-
-    /**
-     * The method that applies the effect.
      * @param player The player that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(Player [] player)  {
-       
-    }
-    
-    /**
-     * The method that applies the effect.
      * @param playMat The playMat that the effect is applied to.
      */
     @Override
-    public void applyEffect(PlayMat playMat)  {}
+    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
 
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player)  {
-         // "Mise en jeu - Blesser 1 Shiryu de votre main ; piocher 1 carte."
+        // "Mise en jeu - Blesser 1 Shiryu de votre main ; piocher 1 carte."
         int id = 002;
         if(player[0].occurenceInHand(002) >= 1){
             player[0].moveCardFromHandToInjuredCharacters(id);
-            }   
+        }
         player[0].moveCardFromDeckToHand(card[0]);
-
     }
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Player [] player, PlayMat playMat)  {}
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {}
 }

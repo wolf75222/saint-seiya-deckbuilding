@@ -92,6 +92,20 @@ public class Player {
         this.injuredCharacters = new Card[10];
     }
 
+    /**
+     * Constructor of the player with no parameters
+     */
+    public Player() {
+        this.name = "Player";
+        this.hero = Hero.SEIYA;
+        this.deck = new Card[90];
+        this.hand = new Card[10];
+        this.discard = new Card[90];
+        this.destroyedCards = new Card[90];
+        this.armor = null;
+        this.injuredCharacters = new Card[10];
+    }
+
 
     /**
      * Method to acquire by Strength a card from the PlayMat

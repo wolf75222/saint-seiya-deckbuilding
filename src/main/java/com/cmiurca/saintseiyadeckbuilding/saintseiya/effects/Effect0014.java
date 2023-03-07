@@ -28,49 +28,7 @@ public class Effect0014 extends Effect {
         super(14, "Mise en jeu - Si Shun utilise son cosmos pour acquérir un Personnage du terrain ; piocher 1 carte.", EffectType.SETTINGGAME);
     }
 
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     */
-    @Override
-    public  void applyEffect(Card [] card)   {
-    }
 
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(Player [] player)  {}
-    
-    /**
-     * The method that applies the effect.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, PlayMat playMat)  {}
-
-    /**
-     * The method that applies the effect.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Player [] player, PlayMat playMat)  {}
     /**
      * The method that applies the effect.
      * @param card The card that the effect is applied to.

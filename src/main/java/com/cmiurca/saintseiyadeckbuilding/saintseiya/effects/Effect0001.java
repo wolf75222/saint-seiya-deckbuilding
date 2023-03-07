@@ -8,10 +8,19 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
 public class Effect0001 extends Effect{
 
+    /**
+     * The constructor of the effect.
+     */
     public Effect0001() {
         super(1, "Renforcer Seiya avec l'Armure de Pégase.", EffectType.STRENGTHEN);
     }
 
+    /**
+     * The method that applies the effect.
+     * @param card The card that the effect is applied to.
+     * @param player The player that the effect is applied to.
+     * @param playMat The playMat that the effect is applied to.
+     */
     @Override
     public void applyEffect(Card [] card, Player [] player, PlayMat playMat) {
     }
