@@ -7,8 +7,7 @@
   <h3 align="center">Saint Seiya Deckbuilding</h3>
 
   <p align="center">
-    Saint Seiya DeckBuilding est un jeu de cartes de 1 à 5 joueurs, dans l'univers des Chevaliers du Zodiaque.
-Incarnez un Chevalier de Bronze et construisez votre deck en affrontant d'autres personnages, dont les mythiques Chevaliers d'Or !
+Saint Seiya DeckBuilding is a card game for 1 to 5 players, in the universe of the Knights of the Zodiac. Play as a Bronze Knight and build your deck against other characters, including the mythical Golden Knights!
     <br/>
     <br/>
     <a href="https://wolf75222.github.io/saint-seiya-deckbuilding/index-all.html"><strong>Explore the docs »</strong></a>
