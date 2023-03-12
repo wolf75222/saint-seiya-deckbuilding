@@ -106,6 +106,80 @@ public class Player {
         this.injuredCharacters = new Card[10];
     }
 
+    /**
+     * Method that return all the things the palyer can do
+     * @return String with all the things the player can do
+     */
+    public String help(PlayMat playMat) {
+        String effect = "";
+        for (int i = 0; i < this.hand.length; i++) {
+            if (this.hand[i] != null) {
+                effect += this.hand[i].getEffect().getDescription() + "\n";
+            }
+        }
+        String aquire = "";
+        for (int i = 0; i < playMat.getCardLocation().length; i++) {
+            if (playMat.getCardInLocationFromIndex(i) != null) {
+                if (canAcquireByStrength(playMat, i)) {
+                    aquire += "Vous pouvez acquérir la carte " + playMat.getCardInLocationFromIndex(i).getName() + " par force\n";
+                }
+                if (canAcquireByCosmos(playMat, i)) {
+                    aquire += "Vous pouvez acquérir la carte " + playMat.getCardInLocationFromIndex(i).getName() + " par cosmos\n";
+                }
+            }
+        }
+        String heal = "";
+        for (int i = 0; i < this.injuredCharacters.length; i++) {
+            if (this.injuredCharacters[i] != null) {
+                heal += "Vous pouvez soigner la carte " + this.injuredCharacters[i].getName() + "\n";
+            }
+        }
+        String help = "Voici les actions que vous pouvez faire : \n" + effect + aquire + heal;
+        return help;
+    }
+
+
+
+    /**
+     * Method to verify if a card can be aquired by strength with all the cards in the hand
+     * @param index index of the card to be acquired
+     * @return true if the card can be acquired by strength, false otherwise
+     */
+    public boolean canAcquireByStrength(PlayMat playMat, int index) {
+        int acquisitionCostInStrength = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInStrength();
+        int strength = 0;
+        for (int i = 0; i < this.hand.length; i++) {
+            if (this.hand[i] != null) {
+                strength += this.hand[i].getStrength();
+            }
+        }
+        if (strength < acquisitionCostInStrength) {
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+    /**
+     * Method to verify if a card can be aquired by cosmos with all the cards in the hand
+     * @param index index of the card to be acquired
+     * @return true if the card can be acquired by cosmos, false otherwise
+     */
+    public boolean canAcquireByCosmos(PlayMat playMat, int index) {
+        int acquisitionCostInCosmos = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInCosmos();
+        int cosmos = 0;
+        for (int i = 0; i < this.hand.length; i++) {
+            if (this.hand[i] != null) {
+                cosmos += this.hand[i].getCosmos();
+            }
+        }
+        if (cosmos < acquisitionCostInCosmos) {
+            return false;
+        }else {
+            return true;
+        }
+    }
+
 
     /**
      * Method to acquire by Strength a card from the PlayMat

@@ -46,6 +46,6 @@ public class GameTest {
         // add a card with id 5 to the player
         game.getPlayer(0).addCardToHand(new Card(5));
 
-
+        System.out.println(game.getPlayer(0).help(game.getPlayMat()));
     }
 }

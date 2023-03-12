@@ -16,3 +16,4 @@ public class Effect0003 extends Effect{
     public void applyEffect(Card [] card, Player [] player, PlayMat playMat) {
     }
 }
+
