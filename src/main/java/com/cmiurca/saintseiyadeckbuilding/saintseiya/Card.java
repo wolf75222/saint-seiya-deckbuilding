@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 
 /**
@@ -683,7 +684,7 @@ public class Card {
      * @param player The player to apply the effect
      * @param playMat The playMat to apply the effect
      */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
+    public void applyEffect(ArrayList<Card> card, ArrayList<Player> player, PlayMat playMat)  {
         if(this.effect != null){
             this.effect.applyEffect(card, player, playMat);
         }

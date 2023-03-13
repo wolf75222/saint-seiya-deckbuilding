@@ -1,6 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -176,9 +177,9 @@ public class Game {
     /**
      * Method to set the deck of a player
      * @param playerIndex index of player
-     * @param deck deck to set
+     * @param deck arraylist deck to set
      */
-    public void setPlayerDeck(int playerIndex, Card [] deck) {
+    public void setPlayerDeck(int playerIndex, ArrayList<Card> deck) {
         this.players[playerIndex].setDeck(deck);
     }
 
@@ -186,9 +187,9 @@ public class Game {
      * Method to set the deck of all players
      * @param decks
      */
-    public void setAllPlayerDeck(Card[][] decks) {
+    public void setAllPlayerDeck(ArrayList<ArrayList<Card>> decks) {
         for (int i = 0; i < this.players.length; i++) {
-            this.players[i].setDeck(decks[i]);
+            this.players[i].setDeck(decks.get(i));
         }
     }
 
@@ -197,7 +198,7 @@ public class Game {
      * @param playerIndex index of player
      * @param hand hand to set
      */
-    public void setPlayerHand(int playerIndex, Card [] hand) {
+    public void setPlayerHand(int playerIndex, ArrayList<Card> hand) {
         this.players[playerIndex].setHand(hand);
     }
 
@@ -205,9 +206,9 @@ public class Game {
      * Method to set the hand of all players
      * @param hands
      */
-    public void setAllPlayerHand(Card[][] hands) {
+    public void setAllPlayerHand(ArrayList<ArrayList<Card>> hands) {
         for (int i = 0; i < this.players.length; i++) {
-            this.players[i].setHand(hands[i]);
+            this.players[i].setHand(hands.get(i));
         }
     }
 
@@ -216,7 +217,7 @@ public class Game {
      * @param playerIndex index of player
      * @param discard discard to set
      */
-    public void setPlayerDiscard(int playerIndex, Card [] discard) {
+    public void setPlayerDiscard(int playerIndex, ArrayList<Card> discard) {
         this.players[playerIndex].setDiscard(discard);
     }
 
@@ -224,9 +225,9 @@ public class Game {
      * Method to set the discard of all players
      * @param discards
      */
-    public void setAllPlayerDiscard(Card[][] discards) {
+    public void setAllPlayerDiscard(ArrayList<ArrayList<Card>> discards) {
         for (int i = 0; i < this.players.length; i++) {
-            this.players[i].setDiscard(discards[i]);
+            this.players[i].setDiscard(discards.get(i));
         }
     }
 
@@ -235,7 +236,7 @@ public class Game {
      * @param playerIndex index of player
      * @param destroyedCards destroyed cards to set
      */
-    public void setPlayerDestroyedCards(int playerIndex, Card [] destroyedCards) {
+    public void setPlayerDestroyedCards(int playerIndex, ArrayList<Card> destroyedCards) {
         this.players[playerIndex].setDestroyedCards(destroyedCards);
     }
 
@@ -243,9 +244,9 @@ public class Game {
      * Method to set the destroyed cards of all players
      * @param destroyedCards
      */
-    public void setAllPlayerDestroyedCards(Card[][] destroyedCards) {
+    public void setAllPlayerDestroyedCards(ArrayList<ArrayList<Card>> destroyedCards) {
         for (int i = 0; i < this.players.length; i++) {
-            this.players[i].setDestroyedCards(destroyedCards[i]);
+            this.players[i].setDestroyedCards(destroyedCards.get(i));
         }
     }
 
@@ -271,7 +272,7 @@ public class Game {
      * @param playerIndex
      * @param injuredCharacters
      */
-    public void setPlayerInjuredCharacters(int playerIndex, Card [] injuredCharacters) {
+    public void setPlayerInjuredCharacters(int playerIndex, ArrayList<Card> injuredCharacters) {
         this.players[playerIndex].setInjuredCharacters(injuredCharacters);
     }
         
@@ -279,9 +280,9 @@ public class Game {
      * Method to set the Players injured characters
      * @param injuredCharacters
      */
-    public void setAllPlayerInjuredCharacters(Card[][] injuredCharacters) {
+    public void setAllPlayerInjuredCharacters(ArrayList<ArrayList<Card>> injuredCharacters) {
         for (int i = 0; i < this.players.length; i++) {
-            this.players[i].setInjuredCharacters(injuredCharacters[i]);
+            this.players[i].setInjuredCharacters(injuredCharacters.get(i));
         }
     }
 
@@ -356,6 +357,17 @@ public class Game {
                 ", playMat=" + "playMat" +
                 ", currentPlayerIndex=" + currentPlayerIndex +
                 '}';
+    }
+
+    /**
+     * Method nextPlayer to set the next player as the current player
+     */
+    public void nextPlayer() {
+        if (this.currentPlayerIndex == this.playerCount - 1) {
+            this.currentPlayerIndex = 0;
+        } else {
+            this.currentPlayerIndex++;
+        }
     }
 
 

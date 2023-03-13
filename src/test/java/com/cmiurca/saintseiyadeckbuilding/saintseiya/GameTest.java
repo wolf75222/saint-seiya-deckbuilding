@@ -1,5 +1,8 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class GameTest {
 
     /**
@@ -23,29 +26,33 @@ public class GameTest {
         System.out.println(game.toString());
 
         // test with the same hand for all players
-        Card[][] hands = new Card[4][5];
-        for (int i = 0; i < hands.length; i++) {
-            for (int j = 0; j < hands[i].length; j++) {
+        ArrayList<ArrayList<Card>> hands = new ArrayList<ArrayList<Card>>();
+        for (int i = 0; i < game.getPlayerCount(); i++) {
+            ArrayList<Card> playerHand = new ArrayList<Card>();
+            for (int j = 0; j < 5; j++) {
                 int id = 1;
-                hands[i][j] = new Card(1);
-
+                playerHand.add(new Card(id));
             }
+            hands.add(playerHand);
         }
         game.setAllPlayerHand(hands);
         System.out.println(game.toString());
-        Card[] cardLocation = new Card[6];
-        for (int i = 0; i < cardLocation.length; i++) {
+
+        Card [] cardLocation = new Card[6];
+        for (int i = 0; i < 6; i++) {
             cardLocation[i] = new Card(61);
         }
         game.setPlayMatCardLocation(cardLocation);
         System.out.println(game.getPlayMat().toString());
-        Card[] hand0 = game.getPlayer(0).getHand();
+
+        ArrayList<Card> hand0 = game.getPlayer(0).getHand();
         game.getPlayer(game.getCurrentPlayerIndex()).acquireByStrength(game.getPlayMat(), 0, hand0);
         System.out.println(game.toString());
+
         //game.getPlayer(game.getCurrentPlayerIndex()).applyEffect(game.getPlayMat(), ...);
+
         // add a card with id 5 to the player
         game.getPlayer(0).addCardToHand(new Card(5));
-
         System.out.println(game.getPlayer(0).help(game.getPlayMat()));
     }
 }

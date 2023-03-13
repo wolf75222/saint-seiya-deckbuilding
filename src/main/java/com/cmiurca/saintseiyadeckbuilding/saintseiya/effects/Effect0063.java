@@ -6,23 +6,25 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
+import java.util.ArrayList;
+
 public class Effect0063 extends Effect {
 
 	/**
 	 * The constructor of the effect.
 	 */
 	public Effect0063() {
-		super(63, "Description de l'effet", EffectType.OTHER);
+		super(64, "Serpent des Mers ne peut être combattu que par au moins 3 Personnages.", EffectType.OTHER);
 	}
 
 	/**
 	 * The method that applies the effect.
-	 * @param card The card that the effect is applied to.
-	 * @param player The player that the effect is applied to.
+	 * @param cards The cards that the effect is applied to.
+	 * @param players The players that the effect is applied to.
 	 * @param playMat The playMat that the effect is applied to.
 	 */
 	@Override
-	public void applyEffect(Card [] card, Player [] player, PlayMat playMat) {
+	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
 		// TODO : implémenter l'effet
 	}
 

@@ -6,13 +6,26 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
-public class Effect0002 extends Effect{
+import java.util.ArrayList;
 
-    public Effect0002() {
-        super(2, "Renforcer Shiryu avec l'Armure du Dragon.", EffectType.STRENGTHEN);
-    }
+public class Effect0002 extends Effect {
 
-    @Override
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat) {
-    }
+	/**
+	 * The constructor of the effect.
+	 */
+	public Effect0002() {
+		super(3, "Renforcer Hyoga avec l'Armure du Cygne.", EffectType.OTHER);
+	}
+
+	/**
+	 * The method that applies the effect.
+	 * @param cards The cards that the effect is applied to.
+	 * @param players The players that the effect is applied to.
+	 * @param playMat The playMat that the effect is applied to.
+	 */
+	@Override
+	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
+		// TODO : implémenter l'effet
+	}
+
 }

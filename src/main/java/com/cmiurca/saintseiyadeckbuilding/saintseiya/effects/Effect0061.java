@@ -1,24 +1,31 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya.effects;
 
-import com.cmiurca.saintseiyadeckbuilding.saintseiya.*;
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.Effect;
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.Card;
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
+
+import java.util.ArrayList;
 
 public class Effect0061 extends Effect {
 
-    /**
-     * The constructor of the effect.
-     */
-    public Effect0061() {
-        super(61, "Défausser - Toutes les cartes Très Commun (Vert) et Commun (Orange) présentes sur le terrain sont retirées du terrain, puis compléter le terrain.", EffectType.DISCARD);
-    }
+	/**
+	 * The constructor of the effect.
+	 */
+	public Effect0061() {
+		super(62, "Hyoga gagne +1 de Cosmos lorsqu'il est joué aux côtés de Chevalier de Cristal. Mise en jeu - Piocher 1 carte puis défausser 1 carte.", EffectType.OTHER);
+	}
 
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    @Override
-    public void applyEffect(Card[] card, Player[] player, PlayMat playMat) {
-        // TODO Auto-generated method stub
-    }
+	/**
+	 * The method that applies the effect.
+	 * @param cards The cards that the effect is applied to.
+	 * @param players The players that the effect is applied to.
+	 * @param playMat The playMat that the effect is applied to.
+	 */
+	@Override
+	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
+		// TODO : implémenter l'effet
+	}
+
 }

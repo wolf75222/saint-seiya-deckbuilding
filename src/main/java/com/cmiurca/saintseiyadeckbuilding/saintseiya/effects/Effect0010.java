@@ -6,49 +6,26 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.PlayMat;
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.EffectType;
 
-import java.io.IOException;
+import java.util.ArrayList;
 
-
-/**
- * Effect0010 class, where the effect "Défausser - Détruire 2 Ikki identiques de votre main puis ajouter à votre défausse 1 Ikki de rang immédiatement supérieur" is created.
- * 
- * @author Sirwolf, elisemag
- * @version 1.1
- * @since 2023-02-04
- */
 public class Effect0010 extends Effect {
 
-    /**
-     * The constructor of the effect.
-     * 
-     * @param id The id of the effect.
-     * @param description The description of the effect.
-     */
-    public Effect0010(int id, String description) {
-        super(10, "Défausser - Détruire 2 Ikki identiques de votre main puis ajouter à votre défausse 1 Ikki de rang immédiatement supérieur", EffectType.DISCARD);
-    }
+	/**
+	 * The constructor of the effect.
+	 */
+	public Effect0010() {
+		super(11, "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte.", EffectType.OTHER);
+	}
 
-    /**
-     * The constructor of the effect.
-     */
-    public Effect0010() {
-        super(10, "Défausser - Détruire 2 Ikki identiques de votre main puis ajouter à votre défausse 1 Ikki de rang immédiatement supérieur", EffectType.DISCARD);
-    }
+	/**
+	 * The method that applies the effect.
+	 * @param cards The cards that the effect is applied to.
+	 * @param players The players that the effect is applied to.
+	 * @param playMat The playMat that the effect is applied to.
+	 */
+	@Override
+	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
+		// TODO : implémenter l'effet
+	}
 
-    /**
-     * The method that applies the effect.
-     * @param card The card that the effect is applied to.
-     * @param player The player that the effect is applied to.
-     * @param playMat The playMat that the effect is applied to.
-     */
-    public void applyEffect(Card [] card, Player [] player, PlayMat playMat)  {
-        // "Défausser - Détruire 2 Ikki identiques de votre main puis ajouter à votre défausse 1 Ikki de rang immédiatement supérieur"
-        int id = 005;
-        if(player[0].occurenceInHand(005) >= 2){
-            player[0].moveCardFromHandToDestroyedCards(id);
-            player[0].moveCardFromHandToDestroyedCards(id);
-            id = 015;
-            player[0].addCardToDiscard(id);
-        }
-    }
 }

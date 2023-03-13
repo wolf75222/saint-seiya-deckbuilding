@@ -3,6 +3,8 @@ package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.ArrayList;
+
 
 /**
  * Player class, where the player is created
@@ -26,22 +28,22 @@ public class Player {
     /**
      * The deck of the player
      */
-    private Card [] deck;
+    private ArrayList<Card> deck;
 
     /**
      * The hand of the player
      */
-    private Card [] hand;
-    
+    private ArrayList<Card> hand;
+
     /**
      * The discard of the player
      */
-    private Card [] discard;
-    
+    private ArrayList<Card> discard;
+
     /**
      * The destroyed Cards of the player
      */
-    private Card [] destroyedCards;
+    private ArrayList<Card> destroyedCards;
 
     /**
      * The armor of the player
@@ -51,7 +53,7 @@ public class Player {
     /**
      * The injured characters of the player
      */
-    private Card [] injuredCharacters; 
+    private ArrayList<Card> injuredCharacters;
 
 
     /**
@@ -65,7 +67,7 @@ public class Player {
      * @param armor armor of the player
      * @param injuredCharacters injured characters of the player
      */
-    public Player(String name, Hero hero, Card [] deck, Card [] hand, Card [] discard, Card [] destroyedCards, Card armor, Card [] injuredCharacters) {
+    public Player(String name, Hero hero, ArrayList<Card> deck, ArrayList<Card> hand, ArrayList<Card> discard, ArrayList<Card> destroyedCards, Card armor, ArrayList<Card> injuredCharacters) {
         this.name = name;
         this.hero = hero;
         this.deck = deck;
@@ -84,13 +86,14 @@ public class Player {
     public Player(String name, Hero hero) {
         this.name = name;
         this.hero = hero;
-        this.deck = new Card[90];
-        this.hand = new Card[10];
-        this.discard = new Card[90];
-        this.destroyedCards = new Card[90];
+        this.deck = new ArrayList<Card>();
+        this.hand = new ArrayList<Card>();
+        this.discard = new ArrayList<Card>();
+        this.destroyedCards = new ArrayList<Card>();
         this.armor = null;
-        this.injuredCharacters = new Card[10];
+        this.injuredCharacters = new ArrayList<Card>();
     }
+
 
     /**
      * Constructor of the player with no parameters
@@ -98,13 +101,14 @@ public class Player {
     public Player() {
         this.name = "Player";
         this.hero = Hero.SEIYA;
-        this.deck = new Card[90];
-        this.hand = new Card[10];
-        this.discard = new Card[90];
-        this.destroyedCards = new Card[90];
+        this.deck = new ArrayList<Card>(90);
+        this.hand = new ArrayList<Card>(10);
+        this.discard = new ArrayList<Card>(90);
+        this.destroyedCards = new ArrayList<Card>(90);
         this.armor = null;
-        this.injuredCharacters = new Card[10];
+        this.injuredCharacters = new ArrayList<Card>(10);
     }
+
 
     /**
      * Method that return all the things the palyer can do
@@ -112,9 +116,9 @@ public class Player {
      */
     public String help(PlayMat playMat) {
         String effect = "";
-        for (int i = 0; i < this.hand.length; i++) {
-            if (this.hand[i] != null) {
-                effect += this.hand[i].getEffect().getDescription() + "\n";
+        for (Card card : hand) {
+            if (card != null) {
+                effect += card.getEffect().getDescription() + "\n";
             }
         }
         String aquire = "";
@@ -129,9 +133,9 @@ public class Player {
             }
         }
         String heal = "";
-        for (int i = 0; i < this.injuredCharacters.length; i++) {
-            if (this.injuredCharacters[i] != null) {
-                heal += "Vous pouvez soigner la carte " + this.injuredCharacters[i].getName() + "\n";
+        for (Card card : injuredCharacters) {
+            if (card != null) {
+                heal += "Vous pouvez soigner la carte " + card.getName() + "\n";
             }
         }
         String help = "Voici les actions que vous pouvez faire : \n" + effect + aquire + heal;
@@ -148,14 +152,14 @@ public class Player {
     public boolean canAcquireByStrength(PlayMat playMat, int index) {
         int acquisitionCostInStrength = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInStrength();
         int strength = 0;
-        for (int i = 0; i < this.hand.length; i++) {
-            if (this.hand[i] != null) {
-                strength += this.hand[i].getStrength();
+        for (Card card : hand) {
+            if (card != null) {
+                strength += card.getStrength();
             }
         }
         if (strength < acquisitionCostInStrength) {
             return false;
-        }else {
+        } else {
             return true;
         }
     }
@@ -168,14 +172,14 @@ public class Player {
     public boolean canAcquireByCosmos(PlayMat playMat, int index) {
         int acquisitionCostInCosmos = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInCosmos();
         int cosmos = 0;
-        for (int i = 0; i < this.hand.length; i++) {
-            if (this.hand[i] != null) {
-                cosmos += this.hand[i].getCosmos();
+        for (Card card : hand) {
+            if (card != null) {
+                cosmos += card.getCosmos();
             }
         }
         if (cosmos < acquisitionCostInCosmos) {
             return false;
-        }else {
+        } else {
             return true;
         }
     }
@@ -185,64 +189,71 @@ public class Player {
      * Method to acquire by Strength a card from the PlayMat
      * @param index index of the card to be acquired
      */
-    public void acquireByStrength(PlayMat playMat, int index, Card [] cards) {
+    public void acquireByStrength(PlayMat playMat, int index, ArrayList<Card> cards) {
         int acquisitionCostInStrength = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInStrength();
         try {
             int strength = 0;
-            for (int i = 0; i < cards.length; i++) {
-                if (!hasCardInHand(cards[i])) {
-                    throw new IllegalArgumentException("Vous n'avez pas la carte " + cards[i].getName() + " dans votre main");
+            ArrayList<Card> cardsToRemove = new ArrayList<>(); // nouvelle liste
+            for (Card card : cards) {
+                if (!hasCardInHand(card)) {
+                    throw new IllegalArgumentException("Vous n'avez pas la carte " + card.getName() + " dans votre main");
                 }
-                strength += cards[i].getStrength();
+                strength += card.getStrength();
+                cardsToRemove.add(card); // ajouter la carte à la nouvelle liste
             }
             if (strength < acquisitionCostInStrength) {
                 throw new IllegalArgumentException("Vous n'avez pas assez de force pour acquérir cette carte");
-            }else {
-                this.addCardToDiscard(playMat.getCardInLocationFromIndex(index));
+            } else {
+                addCardToDiscard(playMat.getCardInLocationFromIndex(index));
                 playMat.removeCardFromLocationFromIndex(index);
-                for (int i = 0; i < cards.length; i++) {
-                    this.moveCardFromHandToDiscard(cards[i]);
+                for (Card card : cardsToRemove) {
+                    moveCardFromHandToDiscard(card);
                 }
                 /**
-                if (playMat.getCardInLocationFromIndex(index).getEffect().getType() == EffectType.DEFEATED) {
-                    playMat.getCardInLocationFromIndex(index).applyEffect(...);
-                }
-                */
+                 if (playMat.getCardInLocationFromIndex(index).getEffect().getType() == EffectType.DEFEATED) {
+                 playMat.getCardInLocationFromIndex(index).applyEffect(...);
+                 }
+                 */
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
 
+
+
     /**
      * Method to acquire by Cosmos a card from the PlayMat
      * @param index index of the card to be acquired
      */
-    public void acquireByCosmos(PlayMat playMat, int index, Card [] cards) {
+    public void acquireByCosmos(PlayMat playMat, int index, ArrayList<Card> cards) {
         int acquisitionCostInCosmos = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInCosmos();
         try {
             int cosmos = 0;
-            for (int i = 0; i < cards.length; i++) {
-                if (!hasCardInHand(cards[i])) {
-                    throw new IllegalArgumentException("Vous n'avez pas la carte " + cards[i].getName() + " dans votre main");
+            ArrayList<Card> cardsToRemove = new ArrayList<>();
+            for (Card card : cards) {
+                if (!hasCardInHand(card)) {
+                    throw new IllegalArgumentException("Vous n'avez pas la carte " + card.getName() + " dans votre main");
                 }
-                cosmos += cards[i].getCosmos();
+                cosmos += card.getCosmos();
+                cardsToRemove.add(card);
             }
             if (cosmos < acquisitionCostInCosmos) {
                 throw new IllegalArgumentException("Vous n'avez pas assez de cosmos pour acquérir cette carte");
-            }else {
-                this.addCardToHand(playMat.getCardInLocationFromIndex(index));
+            } else {
+                addCardToHand(playMat.getCardInLocationFromIndex(index));
                 playMat.removeCardFromLocationFromIndex(index);
-                for (int i = 0; i < cards.length; i++) {
-                    this.moveCardFromHandToDiscard(cards[i]);
+                for (Card card : cardsToRemove) {
+                    moveCardFromHandToDiscard(card);
                 }
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
+
 
     /**
      * Method to heal a card from the Injured Characters
@@ -250,13 +261,13 @@ public class Player {
      */
     public void healCardFromInjuredCharacters(int index) {
         try {
-            if (injuredCharacters[index] == null) {
+            if (injuredCharacters.get(index) == null) {
                 throw new IllegalArgumentException("La carte n'est pas dans les characters blessés");
-            }else {
-                injuredCharacters[index].addCare(1);
-                this.moveCardFromInjuredCharactersToDiscard(injuredCharacters[index]);
+            } else {
+                injuredCharacters.get(index).addCare(1);
+                moveCardFromInjuredCharactersToDiscard(injuredCharacters.get(index));
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
@@ -266,9 +277,9 @@ public class Player {
      * Method to apply the effect of a card
      * @param card card to be applied
      */
-    public void applyEffect(Card card, Card [] cards, PlayMat playMat, Player [] players) {
-        card.getEffect().applyEffect(cards, players, playMat);
-    }
+    public void applyEffect(Card card, ArrayList<Card> cards, PlayMat playMat, ArrayList<Player> players) {
+        card.getEffect().applyEffect( cards, players, playMat);
+   }
 
 
     /**
@@ -276,12 +287,7 @@ public class Player {
      * @param card card to be checked
      */
     public boolean hasCardInHand(Card card) {
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i] == card) {
-                return true;
-            }
-        }
-        return false;
+        return hand.contains(card);
     }
 
     /**
@@ -289,14 +295,13 @@ public class Player {
      * @param id of card to be checked
      */
     public boolean hasCardInHandById(int id) {
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getId() == id) {
+        for (Card card : hand) {
+            if (card.getId() == id) {
                 return true;
             }
         }
         return false;
     }
-
 
 
 
@@ -338,9 +343,9 @@ public class Player {
 
     /**
      * Getter for deck
-     * @return Card[] deck
+     * @return ArrayList<Card> deck
      */
-    public Card[] getDeck() {
+    public ArrayList<Card> getDeck() {
         return deck;
     }
 
@@ -349,15 +354,15 @@ public class Player {
      * Setter for deck
      * @param deck deck of the player
      */
-    public void setDeck(Card[] deck) {
+    public void setDeck(ArrayList<Card> deck) {
         this.deck = deck;
     }
 
     /**
      * Getter for hand
-     * @return Card[] hand
+     * @return ArrayList<Card> hand
      */
-    public Card[] getHand() {
+    public ArrayList<Card> getHand() {
         return hand;
     }
 
@@ -366,16 +371,16 @@ public class Player {
      * Setter for hand
      * @param hand hand of the player
      */
-    public void setHand(Card[] hand) {
+    public void setHand(ArrayList<Card> hand) {
         this.hand = hand;
     }
-    
+
 
     /**
      * Getter for discard
-     * @return Card[] discard
+     * @return ArrayList<Card> discard
      */
-    public Card[] getDiscard() {
+    public ArrayList<Card> getDiscard() {
         return discard;
     }
 
@@ -383,15 +388,15 @@ public class Player {
      * Setter for discard
      * @param discard discard of the player
      */
-    public void setDiscard(Card[] discard) {
+    public void setDiscard(ArrayList<Card> discard) {
         this.discard = discard;
     }
 
     /**
      * Getter for destroyedCards
-     * @return Card[] destroyedCards
+     * @return ArrayList<Card> destroyedCards
      */
-    public Card[] getDestroyedCards() {
+    public ArrayList<Card> getDestroyedCards() {
         return destroyedCards;
     }
 
@@ -399,7 +404,7 @@ public class Player {
      * Setter for destroyedCards
      * @param destroyedCards destroyed cards of the player
      */
-    public void setDestroyedCards(Card[] destroyedCards) {
+    public void setDestroyedCards(ArrayList<Card> destroyedCards) {
         this.destroyedCards = destroyedCards;
     }
     
@@ -418,21 +423,21 @@ public class Player {
     public void setArmor(Card armor) {
         if (armor.getId() == this.hero.getArmorId())
             this.armor = armor;
-    } 
+    }
 
     /**
      * Getter for injuredCharacters
-     * @return Card[] injuredCharacters
+     * @return ArrayList<Card> injuredCharacters
      */
-    public Card[] getInjuredCharacters() {
+    public ArrayList<Card> getInjuredCharacters() {
         return injuredCharacters;
-    }    
-    
+    }
+
     /**
      * Setter for injuredCharacters
      * @param injuredCharacters injured characters of the player
      */
-    public void setInjuredCharacters(Card[] injuredCharacters) {
+    public void setInjuredCharacters(ArrayList<Card> injuredCharacters) {
         this.injuredCharacters = injuredCharacters;
     }
 
@@ -441,11 +446,12 @@ public class Player {
      * @return Card card
      */
     public Card drawCard() {
-        Card card = deck[0];
-        deck[0] = null;
+        Card card = deck.get(0);
+        deck.remove(0);
         return card;
     }
-    
+
+
     /**
      * Method to add a card to the hand
      * @param card card to be added to the hand
@@ -453,21 +459,17 @@ public class Player {
     public void addCardToHand(Card card) {
         // Check if Hand is full
         try {
-            if (hand[hand.length - 1] != null) {
+            if (hand.size() == 10) {
                 throw new IllegalArgumentException("La main est pleine");
             } else {
-                for (int i = 0; i < hand.length; i++) {
-                    if (hand[i] == null) {
-                        hand[i] = card;
-                        break;
-                    }
-                }
+                hand.add(card);
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
+
 
     /**
      * Method to add card to the hand
@@ -478,29 +480,25 @@ public class Player {
         addCardToHand(card);
     }
 
-    
-    
+
+
     /**
      * Method to add a card to the discard
      * @param card card to be added to the discard
      */
     public void addCardToDiscard(Card card) {
         try {
-            if (discard[discard.length - 1] != null) {
+            if (discard.size() == 90) {
                 throw new IllegalArgumentException("La défausse est pleine");
             } else {
-                for (int i = 0; i < discard.length; i++) {
-                    if (discard[i] == null) {
-                        discard[i] = card;
-                        break;
-                    }
-                }
+                discard.add(card);
             }
         }catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
+
 
     /**
      * Method to add card to the discard
@@ -510,28 +508,26 @@ public class Player {
         Card card = new Card(id);
         addCardToDiscard(card);
     }
-    
+
     /**
      * Method to add a card to the destroyed cards
      * @param card card to be added to the destroyed cards
      */
     public void addCardToDestroyedCards(Card card) {
         try {
-            if (destroyedCards[destroyedCards.length - 1] != null) {
+            if (destroyedCards.size() >= 90) {
                 throw new IllegalArgumentException("La main de personnages détruits est pleine");
             } else {
-                for (int i = 0; i < destroyedCards.length; i++) {
-                    if (destroyedCards[i] == null) {
-                        destroyedCards[i] = card;
-                        break;
-                    }
-                }
+                destroyedCards.add(card);
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
+
+
+
 
     /**
      * Method to add card to the destroyed cards
@@ -548,21 +544,18 @@ public class Player {
      */
     public void addCardToInjuredCharacters(Card card) {
         try {
-            if (injuredCharacters[injuredCharacters.length - 1] != null) {
-                throw new IllegalArgumentException("La main de personnages détruits est pleine");
+            if (injuredCharacters.size() >= 90) {
+                throw new IllegalArgumentException("La liste des personnages blessés est pleine");
             } else {
-                for (int i = 0; i < injuredCharacters.length; i++) {
-                    if (injuredCharacters[i] == null) {
-                        injuredCharacters[i] = card;
-                        break;
-                    }
-                }
+                injuredCharacters.add(card);
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
+
+
 
     /**
      * Method to add card to the injured characters
@@ -578,76 +571,64 @@ public class Player {
      * @param card card to be removed from the hand
      */
     public void removeCardFromHand(Card card) {
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i] == card) {
-                hand[i] = null;
-                break;
-            }
-        }
+        hand.remove(card);
     }
+
 
     /**
      * Method to remove a card from the hand
      * @param id of the card to be removed from the hand
      */
     public void removeCardFromHand(int id) {
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getId() == id) {
-                hand[i] = null;
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).getId() == id) {
+                hand.remove(i);
                 break;
             }
         }
     }
+
 
     /**
      * Method to remove a card from the discard
      * @param card card to be removed from the discard
      */
     public void removeCardFromDiscard(Card card) {
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i] == card) {
-                discard[i] = null;
-                break;
-            }
-        }
-
+        discard.remove(card);
     }
+
 
     /**
      * Method to remove a card from the discard
-     * @param id of the card to be removed from the discard
+     * @param id id of the card to be removed from the discard
      */
     public void removeCardFromDiscard(int id) {
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i].getId() == id) {
-                discard[i] = null;
+        for (int i = 0; i < discard.size(); i++) {
+            if (discard.get(i).getId() == id) {
+                discard.remove(i);
                 break;
             }
         }
     }
+
 
     /**
      * Method to remove a card from the destroyed cards
      * @param card card to be removed from the destroyed cards
      */
     public void removeCardFromDestroyedCards(Card card) {
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i] == card) {
-                destroyedCards[i] = null;
-                break;
-            }
-        }
-
+        destroyedCards.remove(card);
     }
+
 
     /**
      * Method to remove a card from the destroyed cards
      * @param id of the card to be removed from the destroyed cards
      */
     public void removeCardFromDestroyedCards(int id) {
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i].getId() == id) {
-                destroyedCards[i] = null;
+        for (int i = 0; i < destroyedCards.size(); i++) {
+            if (destroyedCards.get(i).getId() == id) {
+                destroyedCards.remove(i);
                 break;
             }
         }
@@ -658,52 +639,41 @@ public class Player {
      * @param card card to be removed from the injured characters
      */
     public void removeCardFromInjuredCharacters(Card card) {
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i] == card) {
-                injuredCharacters[i] = null;
-                break;
-            }
-        }
+        injuredCharacters.remove(card);
     }
+
 
     /**
      * Method to remove a card from the injured characters
      * @param id of the card to be removed from the injured characters
      */
     public void removeCardFromInjuredCharacters(int id) {
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i].getId() == id) {
-                injuredCharacters[i] = null;
-                break;
-            }
-        }
+        injuredCharacters.removeIf(c -> c.getId() == id);
     }
+
 
     /**
      * Method to remove a card from the deck
      * @param card card to be removed from the deck
      */
     public void removeCardFromDeck(Card card) {
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i] == card) {
-                deck[i] = null;
-                break;
-            }
-        }
+        deck.remove(card);
     }
+
 
     /**
      * Method to remove a card from the deck
      * @param id of the card to be removed from the deck
      */
     public void removeCardFromDeck(int id) {
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i].getId() == id) {
-                deck[i] = null;
+        for (int i = 0; i < deck.size(); i++) {
+            if (deck.get(i).getId() == id) {
+                deck.remove(i);
                 break;
             }
         }
     }
+
 
     /**
      * Method to add a card to the deck
@@ -711,21 +681,17 @@ public class Player {
      */
     public void addCardToDeck(Card card) {
         try {
-            if (deck[deck.length - 1] != null) {
+            if (deck.size() >= 90) {
                 throw new IllegalArgumentException("Le deck est plein");
             } else {
-                for (int i = 0; i < deck.length; i++) {
-                    if (deck[i] == null) {
-                        deck[i] = card;
-                        break;
-                    }
-                }
+                deck.add(card);
             }
-        }catch (IllegalArgumentException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
             return;
         }
     }
+
 
     /**
      * Method to add a card to the deck
@@ -743,14 +709,15 @@ public class Player {
      */
     public int occurenceInHand(Card card) {
         int occurence = 0;
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i] == card) {
+        for (Card c : hand) {
+            if (c == card) {
                 occurence++;
             }
         }
         return occurence;
     }
-    
+
+
     /**
      * Method that returns the occurence of a card in the hand
      * @param id of the card to be searched for
@@ -758,59 +725,61 @@ public class Player {
      */
     public int occurenceInHand(int id) {
         int occurence = 0;
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getId() == id) {
+        for (Card card : hand) {
+            if (card.getId() == id) {
                 occurence++;
             }
         }
         return occurence;
     }
 
+
     /**
-     * Method that returns the occurence of a card in the discard
+     * Method that returns the occurrence of a card in the discard
      * @param card card to be searched for
-     * @return int occurence
+     * @return int occurrence
      */
     public int occurenceInDiscard(Card card) {
-        int occurence = 0;
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i] == card) {
-                occurence++;
+        int occurrence = 0;
+        for (Card c : discard) {
+            if (c == card) {
+                occurrence++;
             }
         }
-        return occurence;
+        return occurrence;
     }
-    
+
+
     /**
-     * Method that returns the occurence of a card in the discard
+     * Method that returns the occurrence of a card in the discard
      * @param id of the card to be searched for
-     * @return int occurence
+     * @return int occurrence
      */
-    public int occurenceInDiscard(int id) {
-        int occurence = 0;
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i].getId() == id) {
-                occurence++;
+    public int occurrenceInDiscard(int id) {
+        int occurrence = 0;
+        for (Card c : discard) {
+            if (c.getId() == id) {
+                occurrence++;
             }
         }
-        return occurence;
+        return occurrence;
     }
 
     /**
-     * Method that returns the occurence of a card in the destroyed cards
+     * Method that returns the occurrence of a card in the destroyed cards
      * @param card card to be searched for
-     * @return int occurence
+     * @return int occurrence
      */
-    public int occurenceInDestroyedCards(Card card) {
-        int occurence = 0;
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i] == card) {
-                occurence++;
+    public int occurrenceInDestroyedCards(Card card) {
+        int occurrence = 0;
+        for (Card c : destroyedCards) {
+            if (c == card) {
+                occurrence++;
             }
         }
-        return occurence;
-
+        return occurrence;
     }
+
 
     /**
      * Method that returns the occurence of a card in the destroyed cards
@@ -819,30 +788,32 @@ public class Player {
      */
     public int occurenceInDestroyedCards(int id) {
         int occurence = 0;
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i].getId() == id) {
+        for (Card card : destroyedCards) {
+            if (card.getId() == id) {
                 occurence++;
             }
         }
         return occurence;
     }
+
 
 
     /**
-     * Method that returns the occurence of a card in the injured characters
+     * Method that returns the occurrence of a card in the injured characters
      * @param card card to be searched for
-     * @return int occurence
+     * @return int occurrence
      */
-    public int occurenceInInjuredCharacters(Card card) {
-        int occurence = 0;
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i] == card) {
-                occurence++;
+    public int occurrenceInInjuredCharacters(Card card) {
+        int occurrence = 0;
+        for (Card c : injuredCharacters) {
+            if (c.equals(card)) {
+                occurrence++;
             }
         }
-        return occurence;
+        return occurrence;
     }
-    
+
+
     /**
      * Method that returns the occurence of a card in the injured characters
      * @param id of the card to be searched for
@@ -850,8 +821,8 @@ public class Player {
      */
     public int occurenceInInjuredCharacters(int id) {
         int occurence = 0;
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i].getId() == id) {
+        for (Card c : injuredCharacters) {
+            if (c.getId() == id) {
                 occurence++;
             }
         }
@@ -865,58 +836,56 @@ public class Player {
      */
     public int occurenceInDeck(Card card) {
         int occurence = 0;
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i] == card) {
+        for (Card c : deck) {
+            if (c == card) {
                 occurence++;
             }
         }
         return occurence;
     }
 
+
     /**
-     * Method that returns the occurence of a card in the deck
+     * Method that returns the occurrence of a card in the deck
      * @param id of the card to be searched for
-     * @return int occurence
+     * @return int occurrence
      */
-    public int occurenceInDeck(int id) {
-        int occurence = 0;
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i].getId() == id) {
-                occurence++;
+    public int occurrenceInDeck(int id) {
+        int occurrence = 0;
+        for (Card c : deck) {
+            if (c.getId() == id) {
+                occurrence++;
             }
         }
-        return occurence;
+        return occurrence;
     }
 
     /**
      * Method that returns all the positions of a card in the hand
      * @param card card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInHand(Card card) {
-        int[] positions = new int[occurenceInHand(card)];
-        int j = 0;
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i] == card) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInHand(Card card) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i) == card) {
+                positions.add(i);
             }
         }
         return positions;
     }
 
+
     /**
      * Method that returns all the positions of a card in the hand
      * @param id id of the card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInHand(int id) {
-        int[] positions = new int[occurenceInHand(id)];
-        int j = 0;
-        for (int i = 0; i < hand.length; i++) {
-            if (hand[i].getId() == id) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInHand(int id) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).getId() == id) {
+                positions.add(i);
             }
         }
         return positions;
@@ -927,102 +896,95 @@ public class Player {
     /**
      * Method that returns all the positions of a card in the discard
      * @param card card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInDiscard(Card card) {
-        int[] positions = new int[occurenceInDiscard(card)];
-        int j = 0;
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i] == card) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInDiscard(Card card) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < discard.size(); i++) {
+            if (discard.get(i) == card) {
+                positions.add(i);
             }
         }
         return positions;
     }
 
-    /**
-     * Method that returns all the positions of a card in the discard
-     * @param id of the card to be searched for
-     * @return int[] positions
-     */
-    public int[] positionsInDiscard(int id) {
-        int[] positions = new int[occurenceInDiscard(id)];
-        int j = 0;
-        for (int i = 0; i < discard.length; i++) {
-            if (discard[i].getId() == id) {
-                positions[j] = i;
-                j++;
-            }
-        }
-        return positions;
-    }
+
+
 
     /**
      * Method that returns all the positions of a card in the destroyed cards
      * @param card card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInDestroyedCards(Card card) {
-        int[] positions = new int[occurenceInDestroyedCards(card)];
-        int j = 0;
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i] == card) {
-                positions[j] = i;
-                j++;
-            }
+    public ArrayList<Integer> positionsInDestroyedCards(Card card) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < destroyedCards.size(); i++) {
+
         }
         return positions;
-
     }
 
     /**
      * Method that returns all the positions of a card in the destroyed cards
      * @param id of the card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInDestroyedCards(int id) {
-        int[] positions = new int[occurenceInDestroyedCards(id)];
-        int j = 0;
-        for (int i = 0; i < destroyedCards.length; i++) {
-            if (destroyedCards[i].getId() == id) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInDestroyedCards(int id) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < destroyedCards.size(); i++) {
+            if (destroyedCards.get(i).getId() == id) {
+                positions.add(i);
             }
         }
         return positions;
     }
+
+
+
 
     /**
      * Method that returns all the positions of a card in the injured characters
      * @param card card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInInjuredCharacters(Card card) {
-        int[] positions = new int[occurenceInInjuredCharacters(card)];
-        int j = 0;
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i] == card) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInInjuredCharacters(Card card) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < injuredCharacters.size(); i++) {
+            if (injuredCharacters.get(i) == card) {
+                positions.add(i);
             }
         }
         return positions;
-
     }
+
 
     /**
      * Method that returns all the positions of a card in the injured characters
      * @param id id of the card to be searched for
-     * @return int[] positions
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInInjuredCharacters(int id) {
-        int[] positions = new int[occurenceInInjuredCharacters(id)];
-        int j = 0;
-        for (int i = 0; i < injuredCharacters.length; i++) {
-            if (injuredCharacters[i].getId() == id) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInInjuredCharacters(int id) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < injuredCharacters.size(); i++) {
+            if (injuredCharacters.get(i).getId() == id) {
+                positions.add(i);
+            }
+        }
+        return positions;
+    }
+
+
+
+    /**
+     * Method that returns all the positions of a card in the deck
+     * @param card card to be searched for
+     * @return ArrayList<Integer> positions
+     */
+    public ArrayList<Integer> positionsInDeck(Card card) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < deck.size(); i++) {
+            if (deck.get(i) == card) {
+                positions.add(i);
             }
         }
         return positions;
@@ -1031,49 +993,36 @@ public class Player {
 
     /**
      * Method that returns all the positions of a card in the deck
-     * @param card card to be searched for
-     * @return int[] positions
+     * @param id id of the card to be searched for
+     * @return ArrayList<Integer> positions
      */
-    public int[] positionsInDeck(Card card) {
-        int[] positions = new int[occurenceInDeck(card)];
-        int j = 0;
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i] == card) {
-                positions[j] = i;
-                j++;
+    public ArrayList<Integer> positionsInDeck(int id) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < deck.size(); i++) {
+            if (deck.get(i).getId() == id) {
+                positions.add(i);
             }
         }
         return positions;
     }
 
-    /**
-     * Method that returns all the positions of a card in the deck
-     * @param id id of the card to be searched for
-     * @return int[] positions
-     */
-    public int[] positionsInDeck(int id) {
-        int[] positions = new int[occurenceInDeck(id)];
-        int j = 0;
-        for (int i = 0; i < deck.length; i++) {
-            if (deck[i].getId() == id) {
-                positions[j] = i;
-                j++;
-            }
-        }
-        return positions;
-    }
 
     /**
      * Method thar move one card from the hand to the discard and removes it from the hand
      * @param card card to be moved
      */
     public void moveCardFromHandToDiscard(Card card) {
-        int[] positions = positionsInHand(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDiscard(card);
         removeCardFromHand(card);
     }
+
+    /**
+     * Method that move one card from the discard to the destroyed cards and removes it from the discard
+     * @param card card to be moved
+     */
     public void moveCardFromDiscardToDestroyedCards(Card card) {
-        int[] positions = positionsInDiscard(card);
+        ArrayList<Integer> positions = positionsInDiscard(card);
         addCardToDestroyedCards(card);
         removeCardFromDiscard(card);
     }
@@ -1083,7 +1032,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromHandToDiscard(int id)  {
-        int[] positions = positionsInHand(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDiscard(id);
         removeCardFromHand(id);
     }
@@ -1093,7 +1042,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromHandToInjuredCharacters(Card card) {
-        int[] positions = positionsInHand(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToInjuredCharacters(card);
         removeCardFromHand(card);
     }
@@ -1103,7 +1052,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromHandToInjuredCharacters(int id)  {
-        int[] positions = positionsInHand(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToInjuredCharacters(id);
         removeCardFromHand(id);
     }
@@ -1114,7 +1063,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromHandToDestroyedCards(Card card) {
-        int[] positions = positionsInHand(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDestroyedCards(card);
         removeCardFromHand(card);
     }
@@ -1124,7 +1073,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromHandToDestroyedCards(int id)  {
-        int[] positions = positionsInHand(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDestroyedCards(id);
         removeCardFromHand(id);
     }
@@ -1135,7 +1084,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromDiscardToHand(Card card) {
-        int[] positions = positionsInDiscard(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToHand(card);
         removeCardFromDiscard(card);
     }
@@ -1145,7 +1094,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromDiscardToHand(int id)  {
-        int[] positions = positionsInDiscard(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToHand(id);
         removeCardFromDiscard(id);
     }
@@ -1155,7 +1104,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromHandToDeck(Card card) {
-        int[] positions = positionsInHand(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDeck(card);
         removeCardFromHand(card);
     }
@@ -1165,7 +1114,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromHandToDeck(int id)  {
-        int[] positions = positionsInHand(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDeck(id);
         removeCardFromHand(id); 
     }
@@ -1175,7 +1124,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromDeckToHand(Card card) {
-        int[] positions = positionsInDeck(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToHand(card);
         removeCardFromDeck(card);
     }
@@ -1185,7 +1134,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromDeckToHand(int id)  {
-        int[] positions = positionsInDeck(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToHand(id);
         removeCardFromDeck(id);
     }
@@ -1195,7 +1144,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromDeckToDiscard(Card card) {
-        int[] positions = positionsInDeck(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDiscard(card);
         removeCardFromDeck(card);
     }
@@ -1205,7 +1154,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromDeckToDiscard(int id)  {
-        int[] positions = positionsInDeck(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDiscard(id);
         removeCardFromDeck(id);
     }
@@ -1215,7 +1164,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromDiscardToDeck(Card card) {
-        int[] positions = positionsInDiscard(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDeck(card);
         removeCardFromDiscard(card);
     }
@@ -1225,7 +1174,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromDiscardToDeck(int id)  {
-        int[] positions = positionsInDiscard(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDeck(id);
         removeCardFromDiscard(id);
     }
@@ -1235,7 +1184,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromDeckToInjuredCharacters(Card card) {
-        int[] positions = positionsInDeck(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToInjuredCharacters(card);
         removeCardFromDeck(card);
     }
@@ -1245,7 +1194,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromDeckToInjuredCharacters(int id)  {
-        int[] positions = positionsInDeck(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToInjuredCharacters(id);
         removeCardFromDeck(id);
     }
@@ -1255,7 +1204,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromInjuredCharactersToDeck(Card card) {
-        int[] positions = positionsInInjuredCharacters(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDeck(card);
         removeCardFromInjuredCharacters(card);
     }
@@ -1265,7 +1214,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromInjuredCharactersToDeck(int id)  {
-        int[] positions = positionsInInjuredCharacters(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDeck(id);
         removeCardFromInjuredCharacters(id);
     }
@@ -1275,7 +1224,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromInjuredCharactersToDiscard(Card card) {
-        int[] positions = positionsInInjuredCharacters(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToDiscard(card);
         removeCardFromInjuredCharacters(card);
     }
@@ -1285,7 +1234,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromInjuredCharactersToDiscard(int id)  {
-        int[] positions = positionsInInjuredCharacters(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToDiscard(id);
         removeCardFromInjuredCharacters(id);
     }
@@ -1295,7 +1244,7 @@ public class Player {
      * @param card card to be moved
      */
     public void moveCardFromDiscardToInjuredCharacters(Card card) {
-        int[] positions = positionsInDiscard(card);
+        ArrayList<Integer> positions = positionsInHand(card);
         addCardToInjuredCharacters(card);
         removeCardFromDiscard(card);
     }
@@ -1305,7 +1254,7 @@ public class Player {
      * @param id id of the card to be moved
      */
     public void moveCardFromDiscardToInjuredCharacters(int id)  {
-        int[] positions = positionsInDiscard(id);
+        ArrayList<Integer> positions = positionsInHand(id);
         addCardToInjuredCharacters(id);
         removeCardFromDiscard(id);
     }
@@ -1316,15 +1265,16 @@ public class Player {
      */
     public String showHand() {
         String hand = "";
-        for (int i = 0; i < this.hand.length; i++) {
-            if (this.hand[i] != null) {
-                hand += this.hand[i].getName() + ", ";
-            }else {
+        for (Card card : this.hand) {
+            if (card != null) {
+                hand += card.getName() + ", ";
+            } else {
                 hand += "null, ";
             }
         }
         return hand;
     }
+
 
     /**
      * Method to show the cards in the deck
@@ -1332,15 +1282,16 @@ public class Player {
      */
     public String showDeck() {
         String deck = "";
-        for (int i = 0; i < this.deck.length; i++) {
-            if (this.deck[i] != null) {
-                deck += this.deck[i].getName() + ", ";
-            }else {
+        for (Card card : this.deck) {
+            if (card != null) {
+                deck += card.getName() + ", ";
+            } else {
                 deck += "null, ";
             }
         }
         return deck;
     }
+
 
     /**
      * Method toString to show the player
@@ -1351,14 +1302,15 @@ public class Player {
         return "Player{" +
                 "name='" + name + '\'' +
                 ", hero=" + hero +
-                ", deck=" + Arrays.toString(deck) +
-                ", hand=" + Arrays.toString(hand) +
-                ", discard=" + Arrays.toString(discard) +
-                ", destroyedCards=" + Arrays.toString(destroyedCards) +
+                ", deck=" + deck +
+                ", hand=" + hand +
+                ", discard=" + discard +
+                ", destroyedCards=" + destroyedCards +
                 ", armor=" + armor +
-                ", injuredCharacters=" + Arrays.toString(injuredCharacters) +
+                ", injuredCharacters=" + injuredCharacters +
                 '}';
     }
+
 
 
 
@@ -1368,15 +1320,16 @@ public class Player {
      */
     public String showDiscard() {
         String discard = "";
-        for (int i = 0; i < this.discard.length; i++) {
-            if (this.discard[i] != null) {
-                discard += this.discard[i].getName() + ", ";
-            }else {
+        for (Card card : this.discard) {
+            if (card != null) {
+                discard += card.getName() + ", ";
+            } else {
                 discard += "null, ";
             }
         }
         return discard;
     }
+
 
     /**
      * Method to show the cards in the injured characters
@@ -1384,14 +1337,15 @@ public class Player {
      */
     public String showInjuredCharacters() {
         String injuredCharacters = "";
-        for (int i = 0; i < this.injuredCharacters.length; i++) {
-            if (this.injuredCharacters[i] != null) {
-                injuredCharacters += this.injuredCharacters[i].getName() + ", ";
-            }else {
+        for (Card card : this.injuredCharacters) {
+            if (card != null) {
+                injuredCharacters += card.getName() + ", ";
+            } else {
                 injuredCharacters += "null, ";
             }
         }
         return injuredCharacters;
     }
+
 
 }

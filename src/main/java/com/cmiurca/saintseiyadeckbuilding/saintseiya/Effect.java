@@ -1,10 +1,11 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Effect class, where the effect is created.
- * 
+ *
  * @author Sirwolf
  * @version 2,0
  * @since 2023-02-04
@@ -15,20 +16,20 @@ public abstract class Effect{
      * The id of the effect.
      */
     private final int id;
-    
+
     /**
      * The description of the effect.
      */
     private final String description;
-    
+
     /**
      * The type of the effect.
      */
     private final EffectType type;
-    
+
     /**
      * The constructor of the effect.
-     * 
+     *
      * @param id The id of the effect.
      * @param description The description of the effect.
      * @param type The type of the effect.
@@ -69,7 +70,7 @@ public abstract class Effect{
      * @param player The player that the effect is applied to.
      * @param playMat The playMat that the effect is applied to.
      */
-    public abstract void applyEffect(Card [] card, Player [] player, PlayMat playMat)  ;
+    public abstract void applyEffect(ArrayList<Card> card, ArrayList<Player> player, PlayMat playMat)  ;
 
     /**
      * The ToString method.
@@ -80,5 +81,3 @@ public abstract class Effect{
     }
 
 }
-
-
