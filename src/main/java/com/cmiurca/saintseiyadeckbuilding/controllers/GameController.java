@@ -17,6 +17,8 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Game;
  */
 @Controller
 public class GameController {
+	static Game game = null;
+	static String last_info = null;
 
 	/** 
 	 * Main webpage, where the user types in basic game info
@@ -48,6 +50,23 @@ public class GameController {
 		System.out.println(a + b);
 
 		return "nothing";
+	}
+
+	@GetMapping(path = "/api/start_game")
+	public String start_game(int player_count) {
+		game = new Game(player_count);
+		game.initPlayers();
+		System.out.println(game);
+		return "nothing";
+	}
+
+	@GetMapping(path = "/api/get_info")
+	public String get_info(Model model) {
+		var player = game.getPlayer(game.getCurrentPlayerIndex());
+		last_info = player.help(game.getPlayMat());
+		model.addAttribute("last_info", last_info);
+
+		return "info.html";
 	}
 
 }

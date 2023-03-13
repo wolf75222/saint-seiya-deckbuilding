@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style/full_help.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="icon" type="image/png" href="pictures/logo.webp">
+    <title>Saint-seya</title>
+</head>
+<body>
+    <script type="text/javascript" src="script/full_help_handler.js"></script>
+
+    <div class="wrapper">
+        <div class="header">
+            <img src="pictures/logo.webp" alt="Saint Seya logo" class="logo">
+            <a href="index.html">Accueil</a>
+            <a href="count.html">Décompte</a>
+            <a href="help.html">Aide</a>
+        </div>
+        <div class="home">
+            <input type="number" name="" id="player_count" placeholder="nombre de joueur" onkeypress="start_game(event, false)">
+            <button onclick="start_game(undefined, true)">Lancer la partie</button>
+
+            <button onclick="get_info()">Informations sur le joueur courant</button>
+            <div id="draft"></div>
+        </div>
+    </div>
+</body>
+</html>
