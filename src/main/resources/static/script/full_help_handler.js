@@ -1,18 +1,20 @@
-function start_game(event, force) {
-	if(force || event.key == 'Enter') {
-		input = document.getElementById('player_count');
+function add_player() {
+	inputs = document.getElementsByTagName('input');
+	input = inputs[inputs.length - 1];
 
-		var xmlHttp = new XMLHttpRequest();
-    	xmlHttp.open("GET", "api/start_game?player_count=" + input.value, false); // false for synchronous request
-    	xmlHttp.send(null);
+	selects = document.getElementsByTagName('select');
+	select = selects[selects.length - 1];
+
+	if(inputs.length < 5) {
+		name_input = document.getElementsByClassName('name_input')[0];
+		name_input.appendChild(document.createElement('input'));
+		name_input.appendChild(select.cloneNode(true));
 	}
-}
 
-function get_info() {
+	input.disabled = true;
+	select.disabled = true;
+
 	var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "api/get_info", false); // false for synchronous request
+    xmlHttp.open("GET", "api/add_player?player_name=" + input.value + "&hero=" + select.value, false); // false for synchronous request
     xmlHttp.send(null);
-
-    draft = document.getElementById('draft');
-    draft.innerHTML = xmlHttp.responseText;
 }

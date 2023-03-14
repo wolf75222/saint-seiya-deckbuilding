@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/style/current.css}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="icon" type="image/png" th:href="@{pictures/logo.webp}">
+    <title>Saint-seya</title>
+</head>
+<body>
+    <script type="text/javascript" th:src="@{/script/current_handler.js}"></script>
+
+    <div class="wrapper">
+        <div class="header">
+            <img th:src="@{/pictures/logo.webp}" alt="Saint Seya logo" class="logo">
+            <a href="/index.html">Accueil</a>
+            <a href="/count.html">Décompte</a>
+            <a href="/help.html">Aide</a>
+        </div>
+        <div class="home">
+            <div class="block">
+                <h2 th:text="'Vous êtes ' + ${player_name}"/>
+                <div class="line"></div>
+
+                <input type="number" name="new_card">
+                <button onclick="add_card()">Acquérir</button>
+
+                <input type="number" name="remove_card">
+                <button onclick="remove_card()">Défausser</button>
+
+                <input type="number" name="remove_card">
+                <button onclick="kill_card()">Détruire</button>
+
+                <input type="number" name="remove_card">
+                <button onclick="mark_card()">Marquer</button>
+
+                <input type="number" name="remove_card">
+                <button onclick="heal_card()">Soigner</button>
+
+                <button class="next" onclick="window.location.href = '/api/next_player'">Prochain joeur</button>
+            </div>
+            <div class="block">
+                <h2>Votre main</h2>
+                <ul th:each="card : ${hand}">
+                  <li th:text="${card}"></li>
+                </ul>
+            </div>
+            <div class="block">
+              <h2>Info</h2>
+              <p th:text="${info}"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

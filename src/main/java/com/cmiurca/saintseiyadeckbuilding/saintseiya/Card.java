@@ -24,7 +24,7 @@ public class Card {
     /**
      * The name of the {@link Card}.
      */
-    private String name;
+    public String name;
 
     /**
      * The category of the {@link Card}.

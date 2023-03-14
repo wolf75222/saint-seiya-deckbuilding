@@ -19,11 +19,22 @@
             <a href="help.html">Aide</a>
         </div>
         <div class="home">
-            <input type="number" name="" id="player_count" placeholder="nombre de joueur" onkeypress="start_game(event, false)">
-            <button onclick="start_game(undefined, true)">Lancer la partie</button>
-
-            <button onclick="get_info()">Informations sur le joueur courant</button>
-            <div id="draft"></div>
+            <div class="block">
+                <h2>Entrez le nom des joueurs</h2>
+                <div class="line"></div>
+                <div class="name_input">
+                    <input type="text" name="player_name">
+                    <select name="hero">
+                        <option value="SEIYA">Seiya</option>
+                        <option value="SHIRYU">Shiryu</option>
+                        <option value="SHUN">Shun</option>
+                        <option value="HYOGA">Hyoga</option>
+                        <option value="IKKI">Ikki</option>
+                    </select>
+                </div>
+                <button onclick="add_player()">Entrer</button>
+                <button onclick="window.location.href = '/api/current';">Lancer la partie</button>
+            </div>
         </div>
     </div>
 </body>
