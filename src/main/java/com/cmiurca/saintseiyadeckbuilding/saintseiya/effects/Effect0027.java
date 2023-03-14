@@ -14,7 +14,7 @@ public class Effect0027 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0027() {
-		super(28, "Défausser - Soigner tous vos Chevaliers blessés.", EffectType.OTHER);
+		super(27, "Défausser - Toutes les cartes très communes, communes et peu communes présentes sur le terrain sont retirées du terrain, puis compléter le terrain.", EffectType.OTHER);
 	}
 
 	/**

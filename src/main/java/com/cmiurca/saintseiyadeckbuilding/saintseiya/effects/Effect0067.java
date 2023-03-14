@@ -14,7 +14,7 @@ public class Effect0067 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0067() {
-		super(68, "Arrivée - Chaque joueur peut blesser un Personnage de sa main pour piocher 1 carte.", EffectType.OTHER);
+		super(67, "Mise en jeu - Le joueur de votre choix place un de ses Héros très communes détruits sur sa pioche.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0034 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0034() {
-		super(35, "Mise en jeu - Blesser un Personnage présent dans la défausse d'un joueur.", EffectType.OTHER);
+		super(34, "Aiolia du Lion gagne +1 de Force et +1 de Cosmos lorsqu'il affronte la dernière carte du terrain.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0068 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0068() {
-		super(69, "Léda gagne +1 de Force lorsqu'il combat aux côtés de Spica.", EffectType.OTHER);
+		super(68, "Arrivée - Chaque joueur peut blesser un Personnage de sa main pour piocher 1 carte.", EffectType.OTHER);
 	}
 
 	/**

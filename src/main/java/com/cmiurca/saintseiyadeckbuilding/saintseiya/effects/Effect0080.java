@@ -14,7 +14,7 @@ public class Effect0080 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0080() {
-		super(81, "Défausser - Chaque adversaire blesse tous les Héros communes de sa défausse.", EffectType.OTHER);
+		super(80, "Défausser - Chaque adversaire défausse 1 Héros de sa main.", EffectType.OTHER);
 	}
 
 	/**

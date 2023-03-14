@@ -14,7 +14,7 @@ public class Effect0038 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0038() {
-		super(39, "Vaincu - Acquérir gratuitement un Personnage adjacent à Shura du Capricorne.", EffectType.OTHER);
+		super(38, "Aiolos du Sagittaire gagne +1 de Cosmos pour chaque Chevalier d'Or présent sur le terrain. Arrivée - Si un autre Chevalier d'Or est présent sur le terrain ; retirer 1 flammes.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0088 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0088() {
-		super(89, "Détruire - Chaque adversaire détruit 1 Chevalier de sa main.", EffectType.OTHER);
+		super(88, "Mise en jeu - Détruire un Personnage de votre main puis piocher 2 cartes.", EffectType.OTHER);
 	}
 
 	/**

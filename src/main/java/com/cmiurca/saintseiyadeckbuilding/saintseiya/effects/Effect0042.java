@@ -14,7 +14,7 @@ public class Effect0042 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0042() {
-		super(43, "Arrivée - Tous les joueurs défaussent leur Armure en jeu.", EffectType.OTHER);
+		super(42, "Seiya gagne +1 de Cosmos lorsqu'il est joué aux côtés de Marine de l'Aigle.", EffectType.OTHER);
 	}
 
 	/**

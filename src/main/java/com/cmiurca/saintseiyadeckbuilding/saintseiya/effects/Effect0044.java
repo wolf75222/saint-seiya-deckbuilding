@@ -14,7 +14,7 @@ public class Effect0044 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0044() {
-		super(45, "Vaincu - Blesser tous les Personnages très communes ou communes utilisés pour le combattre.", EffectType.OTHER);
+		super(44, "Défausser - Détruire un de vos Personnages blessés puis piocher 2 cartes. Arrivée - Chaque joueur détruit un de ses Personnages blessés.", EffectType.OTHER);
 	}
 
 	/**

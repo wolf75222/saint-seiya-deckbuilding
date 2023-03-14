@@ -14,7 +14,7 @@ public class Effect0079 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0079() {
-		super(80, "Défausser - Chaque adversaire défausse 1 Héros de sa main.", EffectType.OTHER);
+		super(79, "Le coût du Chevalier que Daichi affronte est réduit de -1 de Cosmos pour chaque Héros joué à ses côtés (coût minimum de 1 de Cosmos).", EffectType.OTHER);
 	}
 
 	/**

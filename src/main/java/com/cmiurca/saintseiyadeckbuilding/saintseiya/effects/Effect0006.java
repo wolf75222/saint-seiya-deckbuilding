@@ -14,7 +14,7 @@ public class Effect0006 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0006() {
-		super(7, "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur.", EffectType.OTHER);
+		super(6, "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur.", EffectType.OTHER);
 	}
 
 	/**
@@ -25,7 +25,14 @@ public class Effect0006 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(1) >= 2) {
+			players.get(0).moveCardFromHandToDestroyedCards(1);
+			players.get(0).moveCardFromHandToDestroyedCards(1);
+			players.get(0).addCardToDiscard(11);
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Seiya dans votre main.");
+		}
 	}
 
 }

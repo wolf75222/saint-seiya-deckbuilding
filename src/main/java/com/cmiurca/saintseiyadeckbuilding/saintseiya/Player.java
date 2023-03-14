@@ -1,8 +1,5 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
-
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.ArrayList;
 
 
@@ -146,6 +143,7 @@ public class Player {
 
     /**
      * Method to verify if a card can be aquired by strength with all the cards in the hand
+     * @param playMat the playmat
      * @param index index of the card to be acquired
      * @return true if the card can be acquired by strength, false otherwise
      */
@@ -164,8 +162,27 @@ public class Player {
         }
     }
 
+
+    /**
+     * Method to verify if a card can be aquired by strength with all the cards in the hand
+     * @param playMat the playmat
+     * @return true if the card can be acquired by strength, false otherwise
+     */
+    public boolean canAcquireByStrength(PlayMat playMat) {
+        for (int i = 0; i < playMat.getCardLocation().length; i++) {
+            if (playMat.getCardInLocationFromIndex(i) != null) {
+                if (canAcquireByStrength(playMat, i)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
     /**
      * Method to verify if a card can be aquired by cosmos with all the cards in the hand
+     * @param playMat the playmat
      * @param index index of the card to be acquired
      * @return true if the card can be acquired by cosmos, false otherwise
      */
@@ -182,6 +199,23 @@ public class Player {
         } else {
             return true;
         }
+    }
+
+
+    /**
+     * Method to verify if a card can be aquired by cosmos with all the cards in the hand
+     * @param playMat the playmat
+     * @return true if the card can be acquired by cosmos, false otherwise
+     */
+    public boolean canAcquireByCosmos(PlayMat playMat) {
+        for (int i = 0; i < playMat.getCardLocation().length; i++) {
+            if (playMat.getCardInLocationFromIndex(i) != null) {
+                if (canAcquireByCosmos(playMat, i)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 
@@ -909,6 +943,22 @@ public class Player {
     }
 
 
+    /**
+     * Method that returns all the positions of a card in the discard
+     * @param id of the card to be searched for
+     * @return ArrayList<Integer> positions
+     */
+    public ArrayList<Integer> positionsInDiscard(int id) {
+        ArrayList<Integer> positions = new ArrayList<>();
+        for (int i = 0; i < discard.size(); i++) {
+            if (discard.get(i).getId() == id) {
+                positions.add(i);
+            }
+        }
+        return positions;
+    }
+
+
 
 
     /**
@@ -1025,6 +1075,16 @@ public class Player {
         ArrayList<Integer> positions = positionsInDiscard(card);
         addCardToDestroyedCards(card);
         removeCardFromDiscard(card);
+    }
+
+    /**
+     * Method that move one card from the discard to the destroyed cards and removes it from the discard
+     * @param id id of the card to be moved
+     */
+    public void moveCardFromDiscardToDestroyedCards(int id) {
+        ArrayList<Integer> positions = positionsInDiscard(id);
+        addCardToDestroyedCards(id);
+        removeCardFromDiscard(id);
     }
 
     /**
@@ -1346,6 +1406,74 @@ public class Player {
         }
         return injuredCharacters;
     }
+
+    /**
+     * Method to check if the hand is empty
+     * @return true if the hand is empty, false if not
+     */
+    public boolean handIsEmpty() {
+        for (Card card : this.hand) {
+            if (card != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to check if the deck is empty
+     * @return true if the deck is empty, false if not
+     */
+    public boolean deckIsEmpty() {
+        for (Card card : this.deck) {
+            if (card != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to check if the discard is empty
+     * @return true if the discard is empty, false if not
+     */
+    public boolean discardIsEmpty() {
+        for (Card card : this.discard) {
+            if (card != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to check if the injured characters is empty
+     * @return true if the injured characters is empty, false if not
+     */
+    public boolean injuredCharactersIsEmpty() {
+        for (Card card : this.injuredCharacters) {
+            if (card != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /**
+     * Method to check if the destroyed cards is empty
+     * @return true if the destroyed cards is empty, false if not
+     */
+    public boolean destroyedCardsIsEmpty() {
+        for (Card card : this.destroyedCards) {
+            if (card != null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
 
 
 }

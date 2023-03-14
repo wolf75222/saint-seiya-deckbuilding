@@ -14,7 +14,7 @@ public class Effect0007 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0007() {
-		super(8, "Défausser - Détruire 2 Hyoga identiques de votre main puis ajouter à votre défausse 1 Hyoga de rang immédiatement supérieur.", EffectType.OTHER);
+		super(7, "Défausser - Détruire 2 Shiryu identiques de votre main puis ajouter à votre défausse 1 Shiryu de rang immédiatement supérieur.", EffectType.DISCARD);
 	}
 
 	/**
@@ -25,7 +25,14 @@ public class Effect0007 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(2) >= 2) {
+			players.get(0).moveCardFromHandToDestroyedCards(2);
+			players.get(0).moveCardFromHandToDestroyedCards(2);
+			players.get(0).addCardToDiscard(12);
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Shiryu dans votre main.");
+		}
 	}
 
 }

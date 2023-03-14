@@ -14,7 +14,7 @@ public class Effect0076 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0076() {
-		super(77, "Les Chevaliers combattant aux côtés de Sho ne peuvent pas être blessés.", EffectType.OTHER);
+		super(76, "Si Ikki combat Phoenix Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0081 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0081() {
-		super(82, "Défausser - Chaque adversaire défausse son Armure en jeu.", EffectType.OTHER);
+		super(81, "Défausser - Chaque adversaire blesse tous les Héros communes de sa défausse.", EffectType.OTHER);
 	}
 
 	/**

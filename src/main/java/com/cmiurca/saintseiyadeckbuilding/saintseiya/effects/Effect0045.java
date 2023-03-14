@@ -14,7 +14,7 @@ public class Effect0045 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0045() {
-		super(46, "Mise en jeu - Échanger les positions de 2 cartes présentes sur le terrain.", EffectType.OTHER);
+		super(45, "Vaincu - Blesser tous les Personnages très communes ou communes utilisés pour le combattre.", EffectType.OTHER);
 	}
 
 	/**

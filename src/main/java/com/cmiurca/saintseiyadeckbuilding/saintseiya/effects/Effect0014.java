@@ -14,7 +14,7 @@ public class Effect0014 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0014() {
-		super(15, "Mise en jeu - Détruire 1 Personnage de votre défausse ; piocher 1 carte.", EffectType.OTHER);
+		super(14, "Mise en jeu - Si Shun utilise son cosmos pour acquérir un Personnage du terrain ; piocher 1 carte.", EffectType.SETTINGGAME);
 	}
 
 	/**
@@ -25,7 +25,13 @@ public class Effect0014 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(4) >= 1 && players.get(0).canAcquireByCosmos(playMat)) {
+			players.get(0).drawCard();
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Shun dans votre main.");
+		}
+
 	}
 
 }

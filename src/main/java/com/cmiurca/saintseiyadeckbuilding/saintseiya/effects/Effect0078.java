@@ -14,7 +14,7 @@ public class Effect0078 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0078() {
-		super(79, "Le coût du Chevalier que Daichi affronte est réduit de -1 de Cosmos pour chaque Héros joué à ses côtés (coût minimum de 1 de Cosmos).", EffectType.OTHER);
+		super(78, "Ushio gagne +1 de Force pour chaque Héros communes combattant à ses côtés.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0058 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0058() {
-		super(59, "Vaincu - Vos adversaires défaussent toutes leurs Armures en main.", EffectType.OTHER);
+		super(58, "Vaincu - Blesser tous les Personnages utilisés pour le combattre ne possédant pas de cosmos.", EffectType.OTHER);
 	}
 
 	/**

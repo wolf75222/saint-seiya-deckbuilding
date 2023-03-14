@@ -14,7 +14,7 @@ public class Effect0051 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0051() {
-		super(52, "Blesser - Chaque adversaire mélange 1 carte Athéna de sa main dans la réserve. Arrivée - Retirer 1 flammes de l'horloge.", EffectType.OTHER);
+		super(51, "Shun gagne +1 de Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée. Défausser - Récupérer en main 1 Personnage présent dans votre défausse.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0041 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0041() {
-		super(42, "Seiya gagne +1 de Cosmos lorsqu'il est joué aux côtés de Marine de l'Aigle.", EffectType.OTHER);
+		super(41, "Vaincu - Chaque adversaire blesse 2 Personnages de sa main.", EffectType.OTHER);
 	}
 
 	/**

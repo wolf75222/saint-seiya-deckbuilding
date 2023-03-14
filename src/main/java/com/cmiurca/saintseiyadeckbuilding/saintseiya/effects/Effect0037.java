@@ -14,7 +14,7 @@ public class Effect0037 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0037() {
-		super(38, "Aiolos du Sagittaire gagne +1 de Cosmos pour chaque Chevalier d'Or présent sur le terrain. Arrivée - Si un autre Chevalier d'Or est présent sur le terrain ; retirer 1 flammes.", EffectType.OTHER);
+		super(37, "Mise en jeu - Un adversaire défausse 1 carte de sa main.", EffectType.OTHER);
 	}
 
 	/**

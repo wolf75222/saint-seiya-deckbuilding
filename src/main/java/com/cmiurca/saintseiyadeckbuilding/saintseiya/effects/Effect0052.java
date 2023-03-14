@@ -14,7 +14,7 @@ public class Effect0052 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0052() {
-		super(53, "Blesser - Détruire un de vos Héros très communes en main puis ajouter à votre défausse un de vos Héros communes.", EffectType.OTHER);
+		super(52, "Blesser - Chaque adversaire mélange 1 carte Athéna de sa main dans la réserve. Arrivée - Retirer 1 flammes de l'horloge.", EffectType.OTHER);
 	}
 
 	/**

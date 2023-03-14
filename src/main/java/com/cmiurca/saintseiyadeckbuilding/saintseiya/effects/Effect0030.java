@@ -14,7 +14,7 @@ public class Effect0030 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0030() {
-		super(31, "Aldébaran du Taureau gagne +2 de Force lorsqu'il combat la première carte du terrain.", EffectType.OTHER);
+		super(30, "Blesser - Récupérer en main 1 Armure présente dans votre défausse.", EffectType.OTHER);
 	}
 
 	/**

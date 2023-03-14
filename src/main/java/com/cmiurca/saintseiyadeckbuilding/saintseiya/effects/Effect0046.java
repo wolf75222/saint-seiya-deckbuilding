@@ -14,7 +14,7 @@ public class Effect0046 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0046() {
-		super(47, "Vaincu - Détruire un Personnage blessé.", EffectType.OTHER);
+		super(46, "Mise en jeu - Échanger les positions de 2 cartes présentes sur le terrain.", EffectType.OTHER);
 	}
 
 	/**

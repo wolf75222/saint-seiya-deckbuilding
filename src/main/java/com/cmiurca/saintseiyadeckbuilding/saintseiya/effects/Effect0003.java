@@ -14,7 +14,7 @@ public class Effect0003 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0003() {
-		super(4, "Renforcer Shun avec l'Armure d'Andromède.", EffectType.OTHER);
+		super(3, "Renforcer Hyoga avec l'Armure du Cygne.", EffectType.STRENGTHEN);
 	}
 
 	/**
@@ -25,7 +25,7 @@ public class Effect0003 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		// Nothing to do here.
 	}
 
 }

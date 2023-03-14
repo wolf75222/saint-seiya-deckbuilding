@@ -14,7 +14,7 @@ public class Effect0022 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0022() {
-		super(23, "Défausser - Piocher 2 cartes.", EffectType.OTHER);
+		super(22, "Défausser - Blesser 1 de vos Chevaliers en main puis un Chevalier en jeu gagne +4 de Force.", EffectType.OTHER);
 	}
 
 	/**

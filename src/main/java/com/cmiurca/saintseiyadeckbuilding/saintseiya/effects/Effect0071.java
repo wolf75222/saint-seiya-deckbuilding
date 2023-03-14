@@ -14,7 +14,7 @@ public class Effect0071 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0071() {
-		super(72, "Si Seiya combat Pégase Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
+		super(71, "Défausser - Placer dans votre défausse un Chevalier Noir présent dans la défausse d'un adversaire (hormis Jango).", EffectType.OTHER);
 	}
 
 	/**

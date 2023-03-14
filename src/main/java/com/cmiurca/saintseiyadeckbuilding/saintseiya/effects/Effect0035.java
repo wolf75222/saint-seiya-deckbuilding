@@ -14,7 +14,7 @@ public class Effect0035 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0035() {
-		super(36, "Shiryu double ses valeurs de force et cosmos si celui-ci est joué aux côtés de Doko de la Balance. Arrivée - Chaque joueur peut récupérer un Héros de sa défausse.", EffectType.OTHER);
+		super(35, "Mise en jeu - Blesser un Personnage présent dans la défausse d'un joueur.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0075 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0075() {
-		super(76, "Si Ikki combat Phoenix Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
+		super(75, "Si Shun combat Andromède Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
 	}
 
 	/**

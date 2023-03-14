@@ -14,7 +14,7 @@ public class Effect0064 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0064() {
-		super(65, "Défausser une carte de votre main pour combattre Dauphin.", EffectType.OTHER);
+		super(64, "Serpent des Mers ne peut être combattu que par au moins 3 Personnages.", EffectType.OTHER);
 	}
 
 	/**

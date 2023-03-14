@@ -14,7 +14,7 @@ public class Effect0086 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0086() {
-		super(87, "Défausser - Retirer un Personnage présent sur le terrain puis révéler à sa place la première carte de la réserve.  Arrivée - Le joueur actif place Gigas dans la défausse du joueur de son choix.", EffectType.OTHER);
+		super(86, "Détruire - Le coût d'un Chevalier présent sur le terrain est réduit de -2 de Force et -2 de Cosmos (coût minimum de 1 de Force et 1 de Cosmos).", EffectType.OTHER);
 	}
 
 	/**

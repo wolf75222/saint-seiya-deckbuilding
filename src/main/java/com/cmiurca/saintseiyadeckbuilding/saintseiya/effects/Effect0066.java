@@ -14,7 +14,7 @@ public class Effect0066 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0066() {
-		super(67, "Mise en jeu - Le joueur de votre choix place un de ses Héros très communes détruits sur sa pioche.", EffectType.OTHER);
+		super(66, "Aucun autre Chevalier ne peut être acquis tant que Kuraggu est présent sur le terrain.", EffectType.OTHER);
 	}
 
 	/**

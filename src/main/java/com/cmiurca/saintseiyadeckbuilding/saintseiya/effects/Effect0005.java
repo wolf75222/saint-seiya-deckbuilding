@@ -14,7 +14,7 @@ public class Effect0005 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0005() {
-		super(6, "Défausser - Détruire 2 Seiya identiques de votre main puis ajouter à votre défausse 1 Seiya de rang immédiatement supérieur.", EffectType.OTHER);
+		super(5, "Renforcer Ikki avec l'Armure du Phoenix.", EffectType.STRENGTHEN);
 	}
 
 	/**
@@ -25,7 +25,7 @@ public class Effect0005 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		// Nothing to do here.
 	}
 
 }

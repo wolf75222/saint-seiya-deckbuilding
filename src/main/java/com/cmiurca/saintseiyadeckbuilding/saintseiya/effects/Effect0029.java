@@ -14,7 +14,7 @@ public class Effect0029 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0029() {
-		super(30, "Blesser - Récupérer en main 1 Armure présente dans votre défausse.", EffectType.OTHER);
+		super(29, "Défausser - Un joueur blesse tous les Personnages de sa main puis pioche autant de cartes que de Personnages ainsi blessés.", EffectType.OTHER);
 	}
 
 	/**

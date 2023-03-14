@@ -14,7 +14,7 @@ public class Effect0008 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0008() {
-		super(9, "Défausser - Détruire 2 Shun identiques de votre main puis ajouter à votre défausse 1 Shun de rang immédiatement supérieur.", EffectType.OTHER);
+		super(8, "Défausser - Détruire 2 Hyoga identiques de votre main puis ajouter à votre défausse 1 Hyoga de rang immédiatement supérieur.", EffectType.DISCARD);
 	}
 
 	/**
@@ -25,7 +25,14 @@ public class Effect0008 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(3) >= 2) {
+			players.get(0).moveCardFromHandToDestroyedCards(3);
+			players.get(0).moveCardFromHandToDestroyedCards(3);
+			players.get(0).addCardToDiscard(13);
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Hyoga dans votre main.");
+		}
 	}
 
 }

@@ -14,7 +14,7 @@ public class Effect0062 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0062() {
-		super(63, "Défausser - Acquérir gratuitement 1 Chevalier Fantôme présent sur le terrain.  Arrivée - Chaque joueur détruit un Personnage en main.", EffectType.OTHER);
+		super(62, "Hyoga gagne +1 de Cosmos lorsqu'il est joué aux côtés de Chevalier de Cristal. Mise en jeu - Piocher 1 carte puis défausser 1 carte.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0025 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0025() {
-		super(26, "Mise en jeu - Détruire un Personnage en main ; placer un Personnage du terrain dans votre défausse puis mélanger l'Armure du Sagittaire à la réserve.", EffectType.OTHER);
+		super(25, "Défausser - Détruire 1 Personnage blessé.", EffectType.OTHER);
 	}
 
 	/**

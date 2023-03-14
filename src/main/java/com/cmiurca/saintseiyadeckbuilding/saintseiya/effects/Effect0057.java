@@ -14,7 +14,7 @@ public class Effect0057 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0057() {
-		super(58, "Vaincu - Blesser tous les Personnages utilisés pour le combattre ne possédant pas de cosmos.", EffectType.OTHER);
+		super(57, "Vaincu - Blesser tous les Personnages utilisés pour le combattre possédant du cosmos.", EffectType.OTHER);
 	}
 
 	/**

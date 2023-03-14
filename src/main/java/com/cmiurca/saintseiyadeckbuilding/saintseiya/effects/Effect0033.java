@@ -14,7 +14,7 @@ public class Effect0033 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0033() {
-		super(34, "Aiolia du Lion gagne +1 de Force et +1 de Cosmos lorsqu'il affronte la dernière carte du terrain.", EffectType.OTHER);
+		super(33, "Vaincu - Détruire un Personnage utilisé pour le combattre.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0054 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0054() {
-		super(55, "Vaincu - Piocher une carte de la réserve puis l'ajouter à votre défausse (les effets de celle-ci ne sont pas appliqués).", EffectType.OTHER);
+		super(54, "Défausser - Les Armures présentes sur le terrain peuvent s'acquérir avec votre force pour un coût identique à son coût en cosmos.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0015 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0015() {
-		super(16, "Arrivée - Tous les joueurs piochent 1 carte puis soignent tous leurs Personnages blessés.", EffectType.OTHER);
+		super(15, "Mise en jeu - Détruire 1 Personnage de votre défausse ; piocher 1 carte.", EffectType.SETTINGGAME);
 	}
 
 	/**
@@ -25,7 +25,15 @@ public class Effect0015 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		// si la carte dans cards est dans la defausse du joueur
+		if (players.get(0).occurenceInDiscard(cards.get(0)) >= 1) {
+			players.get(0).moveCardFromDiscardToDestroyedCards(cards.get(0));
+			players.get(0).drawCard();
+		}
+
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Personnage dans votre défausse.");
+		}
 	}
 
 }

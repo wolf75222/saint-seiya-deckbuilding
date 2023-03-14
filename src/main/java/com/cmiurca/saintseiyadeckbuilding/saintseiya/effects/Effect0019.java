@@ -14,7 +14,7 @@ public class Effect0019 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0019() {
-		super(20, "Mise en jeu - Echanger l'Armure des Gémeaux avec une Armure d'Or en jeu d'un adversaire.", EffectType.OTHER);
+		super(19, "Défausser - Un Personnage très communes ou communes en jeu gagne +2 de Force.", EffectType.OTHER);
 	}
 
 	/**

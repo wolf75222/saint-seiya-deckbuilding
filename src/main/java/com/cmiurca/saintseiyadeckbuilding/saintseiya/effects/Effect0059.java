@@ -14,7 +14,7 @@ public class Effect0059 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0059() {
-		super(60, "Ikki gagne +1 de Cosmos lorsqu'il est joué aux côtés de Guilty.  Mise en jeu - Mélanger les cartes de votre défausse avec votre pioche.", EffectType.OTHER);
+		super(59, "Vaincu - Vos adversaires défaussent toutes leurs Armures en main.", EffectType.OTHER);
 	}
 
 	/**

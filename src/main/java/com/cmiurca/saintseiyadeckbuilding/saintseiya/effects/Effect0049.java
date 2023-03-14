@@ -14,7 +14,7 @@ public class Effect0049 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0049() {
-		super(50, "Détruire - Réduire le coût d'un Personnage présent sur le terrain de -3 de Force (coût minimum de 1 de Force).", EffectType.OTHER);
+		super(49, "Vaincu - Toutes les cartes très communes, communes et peu communes présentes sur le terrain sont retirées du terrain, puis compléter le terrain.", EffectType.OTHER);
 	}
 
 	/**

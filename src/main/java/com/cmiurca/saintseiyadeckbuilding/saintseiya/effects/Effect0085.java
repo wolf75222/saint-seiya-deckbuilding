@@ -14,7 +14,7 @@ public class Effect0085 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0085() {
-		super(86, "Détruire - Le coût d'un Chevalier présent sur le terrain est réduit de -2 de Force et -2 de Cosmos (coût minimum de 1 de Force et 1 de Cosmos).", EffectType.OTHER);
+		super(85, "Mise en jeu - Soigner un de vos Personnages blessés. Aucun Personnage ne peut être soigné tant que June du Caméléon est sur le terrain.", EffectType.OTHER);
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -15,16 +16,17 @@ public class PlayMat {
      * The card location of the playmat.
      */
     private Card [] cardLocation = new Card[6];
-    
+
     /*
      * The common discard of the playmat.
      */
-    private Card [] commonDiscard = new Card[90];
-    
+    private ArrayList<Card> commonDiscard = new ArrayList<>();
+
     /*
      * The card reserve of the playmat.
      */
-    private Card [] cardReserve = new Card[90];
+    private ArrayList<Card> cardReserve = new ArrayList<>();
+
 
     /*
      * The on going effect of the playmat.
@@ -50,7 +52,7 @@ public class PlayMat {
      * @param flameOfTheClockRemaining number of flameOfTheClock Remaining
      * @param currentGame current game
      */
-    public PlayMat(Card [] cardLocation, Card [] commonDiscard, Card [] cardReserve, Effect onGoingEffect, int flameOfTheClockRemaining, Game currentGame) {
+    public PlayMat(Card [] cardLocation, ArrayList<Card> commonDiscard, ArrayList<Card> cardReserve, Effect onGoingEffect, int flameOfTheClockRemaining, Game currentGame) {
         this.cardLocation = cardLocation;
         this.commonDiscard = commonDiscard;
         this.cardReserve = cardReserve;
@@ -67,8 +69,8 @@ public class PlayMat {
     public PlayMat(Game currentGame) {
         this.currentGame = currentGame;
         this.cardLocation = new Card[6];
-        this.commonDiscard = new Card[90];
-        this.cardReserve = new Card[90];
+        this.commonDiscard = new ArrayList<>(90);
+        this.cardReserve = new ArrayList<>(90);
         this.onGoingEffect = null;
         this.flameOfTheClockRemaining = 12;
 
@@ -112,7 +114,7 @@ public class PlayMat {
      * Getter for commonDiscard
      * @return Card[] commonDiscard
      */
-    public Card[] getCommonDiscard() {
+    public ArrayList<Card> getCommonDiscard() {
         return commonDiscard;
     }
 
@@ -120,7 +122,7 @@ public class PlayMat {
      * Setter for commonDiscard
      * @param commonDiscard common discard of the playmat
      */
-    public void setCommonDiscard(Card[] commonDiscard) {
+    public void setCommonDiscard(ArrayList<Card> commonDiscard) {
         this.commonDiscard = commonDiscard;
     }
 
@@ -128,7 +130,7 @@ public class PlayMat {
      * Getter for cardReserve
      * @return Card[] cardReserve
      */
-    public Card[] getCardReserve() {
+    public ArrayList<Card> getCardReserve() {
         return cardReserve;
     }
 
@@ -136,7 +138,7 @@ public class PlayMat {
      * Setter for cardReserve
      * @param cardReserve card reserve of the playmat
      */
-    public void setCardReserve(Card[] cardReserve) {
+    public void setCardReserve(ArrayList<Card> cardReserve) {
         this.cardReserve = cardReserve;
     }
 
@@ -203,12 +205,7 @@ public class PlayMat {
      * @param card card to be added
      */
     public void addCardToCommonDiscard(Card card) {
-        for (int i = 0; i < commonDiscard.length; i++) {
-            if (commonDiscard[i] == null) {
-                commonDiscard[i] = card;
-                break;
-            }
-        }
+        commonDiscard.add(card);
     }
 
     /**
@@ -216,13 +213,9 @@ public class PlayMat {
      * @param card card to be added
      */
     public void addCardToCardReserve(Card card) {
-        for (int i = 0; i < cardReserve.length; i++) {
-            if (cardReserve[i] == null) {
-                cardReserve[i] = card;
-                break;
-            }
-        }
+        cardReserve.add(card);
     }
+
 
     /**
      * Method to remove a card from the card location
@@ -237,12 +230,7 @@ public class PlayMat {
      * @param card card to be removed
      */
     public void removeCardFromCommonDiscard(Card card) {
-        for (int i = 0; i < commonDiscard.length; i++) {
-            if (commonDiscard[i] == card) {
-                commonDiscard[i] = null;
-                break;
-            }
-        }
+        commonDiscard.remove(card);
     }
 
     /**
@@ -250,26 +238,23 @@ public class PlayMat {
      * @param id of the card to be removed from the common discard
      */
     public void removeCardFromCommonDiscard(int id) {
-        for (int i = 0; i < commonDiscard.length; i++) {
-            if (commonDiscard[i].getId() == id) {
-                commonDiscard[i] = null;
+        for (int i = 0; i < commonDiscard.size(); i++) {
+            if (commonDiscard.get(i).getId() == id) {
+                commonDiscard.remove(i);
                 break;
             }
         }
     }
+
 
     /**
      * Method to remove a card from the card reserve
      * @param card card to be removed
      */
     public void removeCardFromCardReserve(Card card) {
-        for (int i = 0; i < cardReserve.length; i++) {
-            if (cardReserve[i] == card) {
-                cardReserve[i] = null;
-                break;
-            }
-        }
+        cardReserve.remove(card);
     }
+
 
     /**
      * Method to remove flame of the clock
@@ -308,26 +293,18 @@ public class PlayMat {
      * @return boolean true if the common discard is empty
      */
     public boolean isCommonDiscardEmpty() {
-        for (int i = 0; i < commonDiscard.length; i++) {
-            if (commonDiscard[i] != null) {
-                return false;
-            }
-        }
-        return true;
+        return commonDiscard.isEmpty();
     }
+
 
     /**
      * Method to check if the card reserve is empty
      * @return boolean true if the card reserve is empty
      */
     public boolean isCardReserveEmpty() {
-        for (int i = 0; i < cardReserve.length; i++) {
-            if (cardReserve[i] != null) {
-                return false;
-            }
-        }
-        return true;
+        return cardReserve.isEmpty();
     }
+
 
     /**
      * Method to check if the card location is full
@@ -343,26 +320,18 @@ public class PlayMat {
      * @return boolean true if the common discard is full
      */
     public boolean isCommonDiscardFull() {
-        for (int i = 0; i < commonDiscard.length; i++) {
-            if (commonDiscard[i] == null) {
-                return false;
-            }
-        }
-        return true;
+        return (commonDiscard.size() == 90);
     }
+
 
     /**
      * Method to check if the card reserve is full
      * @return boolean true if the card reserve is full
      */
     public boolean isCardReserveFull() {
-        for (int i = 0; i < cardReserve.length; i++) {
-            if (cardReserve[i] == null) {
-                return false;
-            }
-        }
-        return true;
+        return (cardReserve.size() == 90);
     }
+
 
     /**
      * To string method
@@ -372,8 +341,8 @@ public class PlayMat {
     public String toString() {
         return "PlayMat{" +
                 "cardLocation=" + Arrays.toString(cardLocation) +
-                ", commonDiscard=" + Arrays.toString(commonDiscard) +
-                ", cardReserve=" + Arrays.toString(cardReserve) +
+                ", commonDiscard=" + commonDiscard +
+                ", cardReserve=" + cardReserve +
                 ", onGoingEffect=" + onGoingEffect +
                 ", flameOfTheClockRemaining=" + flameOfTheClockRemaining +
                 ", currentGame=" + currentGame +

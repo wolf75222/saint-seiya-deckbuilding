@@ -14,7 +14,7 @@ public class Effect0032 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0032() {
-		super(33, "Vaincu - Détruire un Personnage utilisé pour le combattre.", EffectType.OTHER);
+		super(32, "Saga des Gémeaux gagne +2 de Force si l'horloge indique un nombre de flammes pair. Saga des Gémeaux gagne +2 de Cosmos si l'horloge indique un nombre de flammes impair.  Vaincu - Blesser tous les Personnages utilisés pour le combattre.", EffectType.OTHER);
 	}
 
 	/**

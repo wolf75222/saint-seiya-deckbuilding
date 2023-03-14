@@ -14,7 +14,7 @@ public class Effect0012 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0012() {
-		super(13, "Mise en jeu - Si au moins 1 autre Hyoga combat à ses côtés ; piocher 1 carte.", EffectType.OTHER);
+		super(12, "Mise en jeu - Blesser 1 Shiryu de votre main ; piocher 1 carte.", EffectType.SETTINGGAME);
 	}
 
 	/**
@@ -25,7 +25,13 @@ public class Effect0012 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(2) >= 1) {
+			players.get(0).moveCardFromHandToInjuredCharacters(2);
+			players.get(0).drawCard();
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Shiryu dans votre main.");
+		}
 	}
 
 }

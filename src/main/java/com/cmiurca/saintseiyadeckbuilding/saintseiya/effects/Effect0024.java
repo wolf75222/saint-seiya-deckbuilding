@@ -14,7 +14,7 @@ public class Effect0024 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0024() {
-		super(25, "Défausser - Détruire 1 Personnage blessé.", EffectType.OTHER);
+		super(24, "Défausser - Défausser 1 Personnage en main ; tous vos Personnages gagnent +1 de Force. (ce tour uniquement)", EffectType.OTHER);
 	}
 
 	/**

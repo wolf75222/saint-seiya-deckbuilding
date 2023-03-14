@@ -14,7 +14,7 @@ public class Effect0087 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0087() {
-		super(88, "Mise en jeu - Détruire un Personnage de votre main puis piocher 2 cartes.", EffectType.OTHER);
+		super(87, "Défausser - Retirer un Personnage présent sur le terrain puis révéler à sa place la première carte de la réserve. Arrivée - Le joueur actif place Gigas dans la défausse du joueur de son choix.", EffectType.OTHER);
 	}
 
 	/**

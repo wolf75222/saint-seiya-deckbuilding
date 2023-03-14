@@ -14,7 +14,7 @@ public class Effect0053 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0053() {
-		super(54, "Défausser - Les Armures présentes sur le terrain peuvent s'acquérir avec votre force pour un coût identique à son coût en cosmos.", EffectType.OTHER);
+		super(53, "Blesser - Détruire un de vos Héros très communes en main puis ajouter à votre défausse un de vos Héros communes.", EffectType.OTHER);
 	}
 
 	/**

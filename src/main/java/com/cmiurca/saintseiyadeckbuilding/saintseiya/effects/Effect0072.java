@@ -14,7 +14,7 @@ public class Effect0072 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0072() {
-		super(73, "Si Shiryu combat Dragon Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
+		super(72, "Si Seiya combat Pégase Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
 	}
 
 	/**

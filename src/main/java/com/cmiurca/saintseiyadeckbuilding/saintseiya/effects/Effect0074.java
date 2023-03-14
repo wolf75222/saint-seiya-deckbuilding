@@ -14,7 +14,7 @@ public class Effect0074 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0074() {
-		super(75, "Si Shun combat Andromède Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
+		super(74, "Si Hyoga combat Cygne Noir son coût est réduit de -2 de Force.", EffectType.OTHER);
 	}
 
 	/**

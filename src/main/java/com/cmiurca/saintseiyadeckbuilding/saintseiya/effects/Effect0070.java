@@ -14,7 +14,7 @@ public class Effect0070 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0070() {
-		super(71, "Défausser - Placer dans votre défausse un Chevalier Noir présent dans la défausse d'un adversaire (hormis Jango).", EffectType.OTHER);
+		super(70, "Spica gagne +1 de Force lorsqu'il combat aux côtés de Léda.", EffectType.OTHER);
 	}
 
 	/**

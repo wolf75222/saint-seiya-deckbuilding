@@ -14,7 +14,7 @@ public class Effect0010 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0010() {
-		super(11, "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte.", EffectType.OTHER);
+		super(10, "Défausser - Détruire 2 Ikki identiques de votre main puis ajouter à votre défausse 1 Ikki de rang immédiatement supérieur.", EffectType.DISCARD);
 	}
 
 	/**
@@ -25,7 +25,14 @@ public class Effect0010 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(5) >= 2) {
+			players.get(0).moveCardFromHandToDestroyedCards(5);
+			players.get(0).moveCardFromHandToDestroyedCards(5);
+			players.get(0).addCardToDiscard(15);
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Ikki dans votre main.");
+		}
 	}
 
 }

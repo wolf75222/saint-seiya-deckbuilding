@@ -14,7 +14,7 @@ public class Effect0056 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0056() {
-		super(57, "Vaincu - Blesser tous les Personnages utilisés pour le combattre possédant du cosmos.", EffectType.OTHER);
+		super(56, "Détruire - Acquérir 1 Armure présente sur le terrain (l'Armure est placée dans votre défausse).", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0047 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0047() {
-		super(48, "Défausser - Regarder la main d'un adversaire puis blesser un Personnage de sa main.", EffectType.OTHER);
+		super(47, "Vaincu - Détruire un Personnage blessé.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0031 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0031() {
-		super(32, "Saga des Gémeaux gagne +2 de Force si l'horloge indique un nombre de flammes pair. Saga des Gémeaux gagne +2 de Cosmos si l'horloge indique un nombre de flammes impair. Vaincu - Blesser tous les Personnages utilisés pour le combattre.", EffectType.OTHER);
+		super(31, "Aldébaran du Taureau gagne +2 de Force lorsqu'il combat la première carte du terrain.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0039 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0039() {
-		super(40, "Vaincu - Blesser Camus du Verseau. Hyoga peut acquérir Camus du Verseau pour un coût de 8 de Cosmos.", EffectType.OTHER);
+		super(39, "Vaincu - Acquérir gratuitement un Personnage adjacent à Shura du Capricorne.", EffectType.OTHER);
 	}
 
 	/**

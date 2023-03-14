@@ -14,7 +14,7 @@ public class Effect0020 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0020() {
-		super(21, "Défausser - Révéler 3 cartes de votre pioche, un adversaire blesse 1 Personnage ainsi révélé puis récupérer en main les autres cartes.", EffectType.OTHER);
+		super(20, "Mise en jeu - Echanger l'Armure des Gémeaux avec une Armure d'Or en jeu d'un adversaire.", EffectType.OTHER);
 	}
 
 	/**

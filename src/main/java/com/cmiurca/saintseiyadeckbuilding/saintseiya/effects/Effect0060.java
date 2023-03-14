@@ -14,7 +14,7 @@ public class Effect0060 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0060() {
-		super(61, "Défausser - Toutes les cartes très communes et communes présentes sur le terrain sont retirées du terrain, puis compléter le terrain.", EffectType.OTHER);
+		super(60, "Ikki gagne +1 de Cosmos lorsqu'il est joué aux côtés de Guilty. Mise en jeu - Mélanger les cartes de votre défausse avec votre pioche.", EffectType.OTHER);
 	}
 
 	/**

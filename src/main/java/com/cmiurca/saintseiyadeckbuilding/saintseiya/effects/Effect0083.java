@@ -14,7 +14,7 @@ public class Effect0083 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0083() {
-		super(84, "Défausser - Échanger un Héros communes de la défausse d'un joueur avec un de ses Héros très communes détruits.", EffectType.OTHER);
+		super(83, "Blesser - Chaque adversaire blesse un Chevalier de sa main.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0082 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0082() {
-		super(83, "Blesser - Chaque adversaire blesse un Chevalier de sa main.", EffectType.OTHER);
+		super(82, "Défausser - Chaque adversaire défausse son Armure en jeu.", EffectType.OTHER);
 	}
 
 	/**

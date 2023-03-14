@@ -14,7 +14,7 @@ public class Effect0063 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0063() {
-		super(64, "Serpent des Mers ne peut être combattu que par au moins 3 Personnages.", EffectType.OTHER);
+		super(63, "Défausser - Acquérir gratuitement 1 Chevalier Fantôme présent sur le terrain. Arrivée - Chaque joueur détruit un Personnage en main.", EffectType.OTHER);
 	}
 
 	/**

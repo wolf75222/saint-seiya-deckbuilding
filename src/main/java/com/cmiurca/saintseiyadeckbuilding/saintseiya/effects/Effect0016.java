@@ -14,7 +14,7 @@ public class Effect0016 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0016() {
-		super(17, "Arrivée - Pope et tous les Chevaliers d'Or retirés du jeu sont mélangés dans la réserve.", EffectType.OTHER);
+		super(16, "Arrivée - Tous les joueurs piochent 1 carte puis soignent tous leurs Personnages blessés.", EffectType.OTHER);
 	}
 
 	/**

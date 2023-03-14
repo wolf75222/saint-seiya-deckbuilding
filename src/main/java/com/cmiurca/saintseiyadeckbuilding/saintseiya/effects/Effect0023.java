@@ -14,7 +14,7 @@ public class Effect0023 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0023() {
-		super(24, "Défausser - Défausser 1 Personnage en main ; tous vos Personnages gagnent +1 de Force. (ce tour uniquement)", EffectType.OTHER);
+		super(23, "Défausser - Piocher 2 cartes.", EffectType.OTHER);
 	}
 
 	/**

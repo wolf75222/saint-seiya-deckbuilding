@@ -14,7 +14,7 @@ public class Effect0013 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0013() {
-		super(14, "Mise en jeu - Si Shun utilise son cosmos pour acquérir un Personnage du terrain ; piocher 1 carte.", EffectType.OTHER);
+		super(13, "Mise en jeu - Si au moins 1 autre Hyoga combat à ses côtés ; piocher 1 carte.", EffectType.SETTINGGAME);
 	}
 
 	/**
@@ -25,7 +25,12 @@ public class Effect0013 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(3) >= 2) {
+			players.get(0).drawCard();
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Hyoga dans votre main.");
+		}
 	}
 
 }

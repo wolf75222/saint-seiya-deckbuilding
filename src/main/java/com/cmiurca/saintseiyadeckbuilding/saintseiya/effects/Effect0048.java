@@ -14,7 +14,7 @@ public class Effect0048 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0048() {
-		super(49, "Vaincu - Toutes les cartes très communes, communes et peu communes présentes sur le terrain sont retirées du terrain, puis compléter le terrain.", EffectType.OTHER);
+		super(48, "Défausser - Regarder la main d'un adversaire puis blesser un Personnage de sa main.", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0055 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0055() {
-		super(56, "Détruire - Acquérir 1 Armure présente sur le terrain (l'Armure est placée dans votre défausse).", EffectType.OTHER);
+		super(55, "Vaincu - Piocher une carte de la réserve puis l'ajouter à votre défausse (les effets de celle-ci ne sont pas appliqués).", EffectType.OTHER);
 	}
 
 	/**

@@ -14,7 +14,7 @@ public class Effect0028 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0028() {
-		super(29, "Défausser - Un joueur blesse tous les Personnages de sa main puis pioche autant de cartes que de Personnages ainsi blessés.", EffectType.OTHER);
+		super(28, "Défausser - Soigner tous vos Chevaliers blessés.", EffectType.OTHER);
 	}
 
 	/**

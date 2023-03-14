@@ -14,7 +14,7 @@ public class Effect0065 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0065() {
-		super(66, "Aucun autre Chevalier ne peut être acquis tant que Kuraggu est présent sur le terrain.", EffectType.OTHER);
+		super(65, "Défausser une carte de votre main pour combattre Dauphin.", EffectType.OTHER);
 	}
 
 	/**

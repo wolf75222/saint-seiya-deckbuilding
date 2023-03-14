@@ -14,7 +14,7 @@ public class Effect0021 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0021() {
-		super(22, "Défausser - Blesser 1 de vos Chevaliers en main puis un Chevalier en jeu gagne +4 de Force.", EffectType.OTHER);
+		super(21, "Défausser - Révéler 3 cartes de votre pioche, un adversaire blesse 1 Personnage ainsi révélé puis récupérer en main les autres cartes.", EffectType.OTHER);
 	}
 
 	/**

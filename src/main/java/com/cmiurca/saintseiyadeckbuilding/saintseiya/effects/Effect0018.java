@@ -14,7 +14,7 @@ public class Effect0018 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0018() {
-		super(19, "Défausser - Un Personnage très communes ou communes en jeu gagne +2 de Force.", EffectType.OTHER);
+		super(18, "Défausser - Récupérer en main 1 Personnage de votre pioche puis mélanger votre pioche.", EffectType.OTHER);
 	}
 
 	/**

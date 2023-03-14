@@ -31,7 +31,7 @@ public class CreateEffects {
 
         for (int i = 1; i < numEffects; i++) {
             // Récupérer la description et l'ID à partir du fichier JSON
-            JsonNode effectNode = rootNode.get(i);
+            JsonNode effectNode = rootNode.get(i-1);
             if (effectNode == null) {
                 System.out.println("La description de l'effet " + i + " n'a pas été trouvée dans le fichier JSON.");
                 continue;

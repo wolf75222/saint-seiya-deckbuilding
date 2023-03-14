@@ -14,7 +14,7 @@ public class Effect0077 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0077() {
-		super(78, "Ushio gagne +1 de Force pour chaque Héros communes combattant à ses côtés.", EffectType.OTHER);
+		super(77, "Les Chevaliers combattant aux côtés de Sho ne peuvent pas être blessés.", EffectType.OTHER);
 	}
 
 	/**

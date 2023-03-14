@@ -14,7 +14,7 @@ public class Effect0050 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0050() {
-		super(51, "Shun gagne +1 de Cosmos lorsqu'il est joué aux côtés d'Albior de Céphée.  Défausser - Récupérer en main 1 Personnage présent dans votre défausse.", EffectType.OTHER);
+		super(50, "Détruire - Réduire le coût d'un Personnage présent sur le terrain de -3 de Force (coût minimum de 1 de Force).", EffectType.OTHER);
 	}
 
 	/**

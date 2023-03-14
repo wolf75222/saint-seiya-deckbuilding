@@ -14,7 +14,7 @@ public class Effect0011 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0011() {
-		super(12, "Mise en jeu - Blesser 1 Shiryu de votre main ; piocher 1 carte.", EffectType.OTHER);
+		super(11, "Mise en jeu - Si votre défausse comprend au moins 1 Seiya ; piocher 1 carte.", EffectType.SETTINGGAME);
 	}
 
 	/**
@@ -25,7 +25,12 @@ public class Effect0011 extends Effect {
 	 */
 	@Override
 	public void applyEffect(ArrayList<Card> cards, ArrayList<Player> players, PlayMat playMat) {
-		// TODO : implémenter l'effet
+		if (players.get(0).occurenceInHand(1) >= 1) {
+			players.get(0).drawCard();
+		}
+		else {
+			throw new IllegalArgumentException("Vous  n'avez pas assez de cartes Seiya dans votre défausse.");
+		}
 	}
 
 }

@@ -14,7 +14,7 @@ public class Effect0069 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0069() {
-		super(70, "Spica gagne +1 de Force lorsqu'il combat aux côtés de Léda.", EffectType.OTHER);
+		super(69, "Léda gagne +1 de Force lorsqu'il combat aux côtés de Spica.", EffectType.OTHER);
 	}
 
 	/**

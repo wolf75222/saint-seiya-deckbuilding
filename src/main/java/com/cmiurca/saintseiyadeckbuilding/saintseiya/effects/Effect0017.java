@@ -14,7 +14,7 @@ public class Effect0017 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0017() {
-		super(18, "Défausser - Récupérer en main 1 Personnage de votre pioche puis mélanger votre pioche.", EffectType.OTHER);
+		super(17, "Arrivée - Pope et tous les Chevaliers d'Or retirés du jeu sont mélangés dans la réserve.", EffectType.OTHER);
 	}
 
 	/**

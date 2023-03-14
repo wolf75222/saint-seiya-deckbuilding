@@ -14,7 +14,7 @@ public class Effect0061 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0061() {
-		super(62, "Hyoga gagne +1 de Cosmos lorsqu'il est joué aux côtés de Chevalier de Cristal. Mise en jeu - Piocher 1 carte puis défausser 1 carte.", EffectType.OTHER);
+		super(61, "Défausser - Toutes les cartes très communes et communes présentes sur le terrain sont retirées du terrain, puis compléter le terrain.", EffectType.OTHER);
 	}
 
 	/**

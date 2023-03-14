@@ -14,7 +14,7 @@ public class Effect0043 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0043() {
-		super(44, "Défausser - Détruire un de vos Personnages blessés puis piocher 2 cartes. Arrivée - Chaque joueur détruit un de ses Personnages blessés.", EffectType.OTHER);
+		super(43, "Arrivée - Tous les joueurs défaussent leur Armure en jeu.", EffectType.OTHER);
 	}
 
 	/**

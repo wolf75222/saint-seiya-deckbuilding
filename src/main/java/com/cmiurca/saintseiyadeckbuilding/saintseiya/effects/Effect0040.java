@@ -14,7 +14,7 @@ public class Effect0040 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0040() {
-		super(41, "Vaincu - Chaque adversaire blesse 2 Personnages de sa main.", EffectType.OTHER);
+		super(40, "Vaincu - Blesser Camus du Verseau. Hyoga peut acquérir Camus du Verseau pour un coût de 8 de Cosmos.", EffectType.OTHER);
 	}
 
 	/**

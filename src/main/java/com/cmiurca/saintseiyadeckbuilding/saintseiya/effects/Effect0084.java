@@ -14,7 +14,7 @@ public class Effect0084 extends Effect {
 	 * The constructor of the effect.
 	 */
 	public Effect0084() {
-		super(85, "Mise en jeu - Soigner un de vos Personnages blessés. Aucun Personnage ne peut être soigné tant que June du Caméléon est sur le terrain.", EffectType.OTHER);
+		super(84, "Défausser - Échanger un Héros communes de la défausse d'un joueur avec un de ses Héros très communes détruits.", EffectType.OTHER);
 	}
 
 	/**
