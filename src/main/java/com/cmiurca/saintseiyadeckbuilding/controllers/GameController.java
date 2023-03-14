@@ -1,5 +1,7 @@
 package com.cmiurca.saintseiyadeckbuilding.controllers;
 
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.Hero;
+import com.cmiurca.saintseiyadeckbuilding.saintseiya.Player;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,6 +9,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.cmiurca.saintseiyadeckbuilding.saintseiya.Game;
+
+import java.util.ArrayList;
 
 /**
  * GameController class
@@ -17,56 +21,81 @@ import com.cmiurca.saintseiyadeckbuilding.saintseiya.Game;
  */
 @Controller
 public class GameController {
-	static Game game = null;
-	static String last_info = null;
+	static Game game = new Game();
 
-	/** 
-	 * Main webpage, where the user types in basic game info
-	 * @param model The type of model the form is compatible with (Game class in this case)
-	 * @return String The home webpage (src/main/resources/templates/home.html)
-	 */
-	//@GetMapping("/")
-	//public String forms(Model model) {
-	//	model.addAttribute("game", new Game());
-	//	return "home.html";
-	//}
-	
-	/** 
-	 * The game UI page, where the user gets redirected after inputting basic game info
-	 * @param game The previously instanciated game
-	 * @param model The type of model the form is compatible with
-	 * @return String The game webpage (src/main/resources/templates/game.html)
-	 */
-	@PostMapping("/game")
-	public String gameSubmit(@ModelAttribute Game game, Model model) {
-		model.addAttribute("game", game); //Here, the game variable will have all the correct attributes to start
-		game.startGame();
-		
-		return "game.html";
-	}
+	@GetMapping(path = "/api/current")
+	public String current(Model model) {
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		model.addAttribute("player_name", current_player.getName());
+		var hand = current_player.getHand();
+		var hand_string = new ArrayList<String>();
+		hand.forEach(card -> hand_string.add(card.name));
+		model.addAttribute("hand", hand_string);
+		model.addAttribute("info", current_player.help(game.getPlayMat()));
 
-	@GetMapping(path = "/exemple")
-	public String exemple(int a, String b) {
-		System.out.println(a + b);
-
-		return "nothing";
-	}
-
-	@GetMapping(path = "/api/start_game")
-	public String start_game(int player_count) {
-		game = new Game(player_count);
-		game.initPlayers();
 		System.out.println(game);
+
+		return "current.html";
+	}
+
+	@GetMapping(path = "/api/add_player")
+	public String add_player(String player_name, Hero hero) {
+		game.addPlayer(new Player(player_name, hero));
+
 		return "nothing";
 	}
 
-	@GetMapping(path = "/api/get_info")
-	public String get_info(Model model) {
-		var player = game.getPlayer(game.getCurrentPlayerIndex());
-		last_info = player.help(game.getPlayMat());
-		model.addAttribute("last_info", last_info);
+	@GetMapping(path = "/api/next_player")
+	public String next_player(Model model) {
+		game.nextPlayer();
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		model.addAttribute("player_name", current_player.getName());
+		var hand = current_player.getHand();
+		var hand_string = new ArrayList<String>();
+		hand.forEach(card -> hand_string.add(card.name));
+		model.addAttribute("hand", hand_string);
+		model.addAttribute("info", current_player.help(game.getPlayMat()));
 
-		return "info.html";
+		return "current.html";
 	}
 
+	@GetMapping(path = "/api/add_card")
+	public String add_card(int card_id, Model model) {
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		current_player.addCardToHand(card_id);
+
+		return "current.html";
+	}
+
+	@GetMapping(path = "/api/remove_card")
+	public String remove_card(int card_id, Model model) {
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		current_player.moveCardFromHandToDiscard(card_id);
+
+		return "current.html";
+	}
+
+	@GetMapping(path = "/api/kill_card")
+	public String kill_card(int card_id, Model model) {
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		current_player.moveCardFromHandToDestroyedCards(card_id);
+
+		return "current.html";
+	}
+
+	@GetMapping(path = "/api/mark_card")
+	public String mark_card(int card_id, Model model) {
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		current_player.moveCardFromHandToInjuredCharacters(card_id);
+
+		return "current.html";
+	}
+
+	@GetMapping(path = "/api/heal_card")
+	public String heal_card(int card_id, Model model) {
+		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		current_player.moveCardFromInjuredCharactersToDiscard(card_id);
+
+		return "current.html";
+	}
 }

@@ -113,7 +113,7 @@ public class Game {
      * Constructor for Game class
      */
     public Game(){
-        this.playerCount = 4;
+        this.playerCount = 5;
         this.players = new Player[playerCount];
         this.playMat = new PlayMat(this);
         this.currentPlayerIndex = 0;
@@ -363,7 +363,7 @@ public class Game {
      * Method nextPlayer to set the next player as the current player
      */
     public void nextPlayer() {
-        if (this.currentPlayerIndex == this.playerCount - 1) {
+        if (this.currentPlayerIndex == this.playerCount - 1 || this.players[this.currentPlayerIndex + 1] == null) {
             this.currentPlayerIndex = 0;
         } else {
             this.currentPlayerIndex++;
