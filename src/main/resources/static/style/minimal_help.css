@@ -1,17 +1,64 @@
 body {
 	font-family: Montserrat;
+	background: linear-gradient(90deg, #fafcff 0%, #fffbf5 100%);
 }
 
-button, input {
-	font-size: 14px;
+.header {
+	grid-area: header;
+
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 4vw;
+
+	padding: 10px;
 }
 
-input {
-	width: 120px;
+.logo {
+	width: 100px;
 }
 
-.current {
-	color: gray !important;
+.header > a {
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+}
+
+.header > a:hover {
+	text-decoration: underline;
+}
+
+.block {
+	margin-top: 6vw;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 6vw;
+
+	width: 40%;
+	min-width: 200px;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	border-radius: 20px;
+}
+
+.block > button {
+	margin-top: 10px;
+}
+
+.name_input > input {
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.line {
+	height: 3px;
+	margin-bottom: 20px;
+	width: 60%;
+	border-radius: 2px;
+	background-image: linear-gradient(90deg, #e0c2ff 0%, #fef9ab 100%);
 }
 
 .wrapper {
@@ -22,33 +69,6 @@ input {
 		'result';
 }
 
-.header {
-	grid-area: header;
-
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-items: center;
-	gap: 32px;
-
-	padding: 16px;
-}
-
-.logo {
-	width: 6em;
-}
-
-.header > a {
-	text-decoration: none;
-	font-size: 1.2em;
-	font-weight: bold;
-	color: black;
-}
-
-.header > a:hover {
-	color: gray;
-}
-
 .home {
 	grid-area: home;
 
@@ -56,12 +76,6 @@ input {
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
-}
-
-.control_panel {
-	min-width: 300px;
-	padding: 22px;
-	padding-top: 0px;
 }
 
 .inputs {
@@ -92,12 +106,6 @@ input {
 .result {
 	display: none;
 	grid-area: result;
-	min-width: 260px;
-	width: 60%;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 2em;
-	margin-bottom: 4em;
 }
 
 .effects_desc {

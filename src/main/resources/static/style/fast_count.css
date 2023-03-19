@@ -3,20 +3,25 @@ body {
 	background: linear-gradient(90deg, #fafcff 0%, #fffbf5 100%);
 }
 
-button, input {
-	font-size: 14px;
+input {
+	max-width: 110px;
 }
 
-input {
-	width: 120px;
+#cards_validation {
+	margin-top: 1vw;
+	display: block;
+}
+
+.remove_button {
+	display: block;
+	margin-bottom: 1vw;
 }
 
 .wrapper {
 	display: grid;
 	grid-template-areas:
 		'header'
-		'home'
-		'result';
+		'home';
 }
 
 .header {
@@ -47,16 +52,18 @@ input {
 }
 
 .home {
-	grid-area: home;
-
+	padding-top: 10vw;
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	justify-content: center;
-	align-items: center;
+	gap: 6vw;
 }
 
 .block {
+	width: 30%;
+	height: fit-content;
+	min-width: 200px;
 	padding: 20px;
 	background-color: rgba(255, 255, 255, 0.2);
 	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -65,42 +72,14 @@ input {
 
 .line {
 	height: 3px;
-	width: 60%;
+	margin-bottom: 20px;
+	width: 30%;
 	border-radius: 2px;
 	background-image: linear-gradient(90deg, #e0c2ff 0%, #fef9ab 100%);
 }
 
-.inputs {
-	display: flex;
-	flex-wrap: wrap;
-	padding-bottom: 2.6em;
-	gap: 20px;
-}
-
-.inputs > div {
-	width: 220px;
-}
-
-.cards_count {
-	margin-bottom: 0px;
-}
-
-.last_card {
-	margin-top: 8px;
-}
-
-.remove_button {
-	display: block;
-	margin-top: -0.4em;
-	margin-bottom: 1.4em;
-}
-
 .result {
 	display: none;
-	grid-area: result;
-	text-align: center;
-	margin-top: 2em;
-	margin-bottom: 4em;
 }
 
 .result_table {

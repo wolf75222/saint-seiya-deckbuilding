@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style/fast_count.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="icon" type="image/png" href="pictures/logo.webp">
+    <title>Saint-seya</title>
+</head>
+<body>
+    <script type="text/javascript" src="script/fast_count_handler.js"></script>
+
+    <div class="wrapper">
+        <div class="header">
+            <img src="pictures/logo.webp" alt="Saint Seya logo" class="logo">
+            <a href="/index.html">Accueil</a>
+            <a href="/count.html">Décompte</a>
+            <a href="/help.html">Aide</a>
+        </div>
+        <div class="home">
+            <div class="block">
+                <h2>Vous êtes le maitre de la partie</h2>
+                <div class="line"></div>
+                <p id="game_id">Identifiant de la partie : </p>
+                <button onclick="new_game()" id="new_game">Genérer un identifiant</button>
+
+                <h2>Résultat de la partie</h2>
+                <div class="line"></div>
+                <p>Tous les joueurs ont validé leurs cartes ?</p>
+                <button onclick="result()" disabled id="result_button" disabled>Valider</button>
+            </div>
+
+            <div class="block">
+                <h2>Entrez vos cartes</h2>
+                <div class="line"></div>
+                <input type="test" name="player_name" id="player_name" placeholder="nom" disabled>
+                <button onclick="set_player_name()" disabled>Entrer</button>
+                <button onclick="upload_cards()" id="cards_validation" disabled>Valider mes cartes</button>
+
+                <div class="inputs">
+                    <div class="hand_cards">
+                        <h3>Cartes de votre main.</h3>
+                        <p class="cards_count">Nombre de cartes : <b>0</b></p>
+                        <p class="last_card">Dernière carte : <b>aucune</b></p>
+                        <button class="remove_button" onclick="id_pop(0)" disabled>retirer</button>
+                        <input class="cards_input" type="number" name="hand_cards_input" onkeypress="id_input(event, false, 0)" placeholder="numéro" disabled>
+                        <button onclick="id_input(undefined, true, 0)" disabled>entrer</button>
+
+                    </div>
+                    <div class="dead_cards">
+                        <h3>Cartes détruites.</h3>
+                        <p class="cards_count">Nombre de cartes : <b>0</b></p>
+                        <p class="last_card">Dernière carte : <b>aucune</b></p>
+                        <button class="remove_button" onclick="id_pop(1)" disabled>retirer</button>
+                        <input class="cards_input" type="number" name="dead_cards_input" onkeypress="id_input(event, false, 1)" placeholder="numéro" disabled>
+                        <button onclick="id_input(undefined, true, 1)" disabled>entrer</button> 
+                    </div>
+                    <div class="marked_cards">
+                        <h3>Cartes marquées.</h3>
+                        <p id="marked_cards">Nombre de cartes : <b>0</b></p>
+                        <input id="marked_cards_input" type="number" name="marked_cards_input" placeholder="nombre de cartes" onkeypress="marked_cards_input(event, false, 2)" disabled>
+                        <button onclick="marked_cards_input(undefined, true, 2)" disabled>entrer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="block result">
+                <h2>Résultat</h2>
+                <div class="line"></div>
+                <table class="result_table">
+                    <tr>
+                        <th>Joueur</th>
+                        <th>Points</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
