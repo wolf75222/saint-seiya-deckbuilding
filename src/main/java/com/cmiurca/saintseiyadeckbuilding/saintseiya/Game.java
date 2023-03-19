@@ -111,7 +111,7 @@ public class Game {
      * Constructor for Game class
      */
     public Game(){
-        this.playerCount = 5;
+        this.playerCount = 4;
         this.players = new ArrayList<>(playerCount);
         this.playMat = new PlayMat(this);
         this.currentPlayerIndex = 0;

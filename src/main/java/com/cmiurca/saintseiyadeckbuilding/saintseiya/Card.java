@@ -24,7 +24,7 @@ public class Card {
     /**
      * The name of the {@link Card}.
      */
-    public String name;
+    private String name;
 
     /**
      * The category of the {@link Card}.
@@ -558,7 +558,19 @@ public class Card {
      */
     @Override
     public String toString() {
-        return "Card{" + "name=" + name + ", category=" + category + ", acquisitionCostInStrength=" + acquisitionCostInStrength + ", acquisitionCostInCosmos=" + acquisitionCostInCosmos + ", rank=" + rank + ", id=" + id + ", flameOfTheClock=" + flameOfTheClock + ", pointOfVictory=" + pointOfVictory + ", effect=" + effect + ", strength=" + strength + ", cosmos=" + cosmos + ", care=" + care + '}';
+        return "Card[" + 
+        "name=\"" + this.name + "\", " +
+        "category=\"" + this.category + "\", " +
+        "acquisitionCostInStrength=" + this.acquisitionCostInStrength + ", " +
+        "acquisitionCostInCosmos=" + this.acquisitionCostInCosmos + ", " +
+        "rank=\"" + this.rank + "\" ," +
+        "id=" + this.id + ", " +
+        "flameOfTheClock=" + this.flameOfTheClock + ", " +
+        "pointOfVictory=" + this.pointOfVictory + ", " +
+        "effect=" + "[...]" + ", " +
+        "strength=" + this.strength + ", " +
+        "cosmos=" + this.cosmos + ", " +
+        "care=" + this.care + ']';
     }
 
     /**

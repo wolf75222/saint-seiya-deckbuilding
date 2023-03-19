@@ -1,7 +1,6 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class GameTest {
 
@@ -10,22 +9,26 @@ public class GameTest {
      */
     public static void main(String[] args) {
         Game game = new Game(); // Create a new game with default values (4 players)
-        System.out.println("Game created with " + game.getPlayerCount() + " players");
-        System.out.println("Current player index is " + game.getCurrentPlayerIndex());
-        System.out.println(game.getPlayMat().toString());
-        System.out.println(game.toString());
-        game.initPlayers();
-        System.out.println(game.toString());
-        String[] names = {"Romain", "Elise", "Sylvain", "Killian"};
-        game.setALLPlayerName(names);
-        System.out.println(game.toString());
-        Hero[] heroes = {Hero.SEIYA, Hero.HYOGA, Hero.SHIRYU, Hero.IKKI};
-        game.setAllPlayerHero(heroes);
-        System.out.println(game.toString());
-        game.setAllPlayerArmor();
-        System.out.println(game.toString());
 
-        // test with the same hand for all players
+        String[] playerNames = new String[]{"Romain", "Elise", "Sylvain", "Killian"};
+        Hero[] playerHeroes = new Hero[]{Hero.SEIYA, Hero.HYOGA, Hero.SHIRYU, Hero.IKKI};
+        
+        game.initPlayers();
+        
+        game.setALLPlayerName(playerNames);
+        game.setAllPlayerHero(playerHeroes);
+        game.setAllPlayerArmor();
+
+        Player player = game.getPlayer(0);
+        Card armor = player.getArmor();
+        
+        System.out.println("Game created with " + game.getPlayerCount() + " players.");
+        System.out.println("Player 0 is : " + player.toString());
+        System.out.println("And has armor : " + armor);
+        System.out.println("That has effect : " + armor.getEffect() + "\n");
+
+        System.out.println("Distributing hands...\n");
+
         ArrayList<ArrayList<Card>> hands = new ArrayList<ArrayList<Card>>();
         for (int i = 0; i < game.getPlayerCount(); i++) {
             ArrayList<Card> playerHand = new ArrayList<Card>();
@@ -35,24 +38,39 @@ public class GameTest {
             }
             hands.add(playerHand);
         }
+        
+        System.out.println("Player 0 [" + player.getName() + "] has hand : ");
         game.setAllPlayerHand(hands);
-        System.out.println(game.toString());
+        for(Card c : player.getHand()) {
+            System.out.println(c);
+        }
+        System.out.println("");
+        System.out.println("Initializing river : ");
 
         Card [] cardLocation = new Card[6];
         for (int i = 0; i < 6; i++) {
-            cardLocation[i] = new Card(61);
+            cardLocation[i] = new Card(20 + (int)(Math.random() * ((80 - 10) + 1)));
         }
         game.setPlayMatCardLocation(cardLocation);
-        System.out.println(game.getPlayMat().toString());
+        for(Card c : game.getPlayMat().getCardLocation()) {
+            System.out.println(c);
+        }
 
-        ArrayList<Card> hand0 = game.getPlayer(0).getHand();
-        game.getPlayer(game.getCurrentPlayerIndex()).acquireByStrength(game.getPlayMat(), 0, hand0);
-        System.out.println(game.toString());
+        System.out.println("\nPlayer 0 [" + player.getName() + "] tries to get cards from river :");
+        for(int i = game.getPlayMat().getCardLocation().length-1; i > -1; i--) {
+            try {
+                Card c = game.getPlayMat().getCardInLocationFromIndex(i);
+                player.acquireByStrength(game.getPlayMat(), i, player.getHand());
+                System.out.println("Acquired card \"" + c.getName() + "\" with name[" + c.getName() + "]");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Not enough strength to aquire card with name[" + game.getPlayMat().getCardInLocationFromIndex(i).getName() + "]");
+            } catch (NullPointerException e) {
+                //This is triggered only because the player hand is smaller than the river
+            }
+        }
+        
+        //game.getPlayer(game.getCurrentPlayerIndex()).applyEffect(game.getPlayMat(), ...); This is code is to apply effects???...
 
-        //game.getPlayer(game.getCurrentPlayerIndex()).applyEffect(game.getPlayMat(), ...);
-
-        // add a card with id 5 to the player
-        game.getPlayer(0).addCardToHand(new Card(5));
-        System.out.println(game.getPlayer(0).help(game.getPlayMat()));
+        System.out.println("\n" + player.help(game.getPlayMat()));
     }
 }

@@ -27,7 +27,7 @@ public class GameController {
 		model.addAttribute("player_name", current_player.getName());
 		var hand = current_player.getHand();
 		var hand_string = new ArrayList<String>();
-		hand.forEach(card -> hand_string.add(card.name));
+		hand.forEach(card -> hand_string.add(card.getName()));
 		model.addAttribute("hand", hand_string);
 		model.addAttribute("info", current_player.help(game.getPlayMat()));
 
@@ -50,7 +50,7 @@ public class GameController {
 		model.addAttribute("player_name", current_player.getName());
 		var hand = current_player.getHand();
 		var hand_string = new ArrayList<String>();
-		hand.forEach(card -> hand_string.add(card.name));
+		hand.forEach(card -> hand_string.add(card.getName()));
 		model.addAttribute("hand", hand_string);
 		model.addAttribute("info", current_player.help(game.getPlayMat()));
 

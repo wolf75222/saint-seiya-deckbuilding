@@ -76,7 +76,7 @@ public abstract class Effect{
      * @return The string of the effect.
      */
     public String toString() {
-        return "Effect [id=" + id + ", description=" + description + ", type=" + type + "]";
+        return "Effect[id=" + this.id + ", description=\"" + this.description + "\", type=" + this.type + "]";
     }
 
 }

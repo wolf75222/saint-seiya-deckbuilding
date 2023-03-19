@@ -339,13 +339,13 @@ public class PlayMat {
      */
     @Override
     public String toString() {
-        return "PlayMat{" +
+        return "PlayMat[" +
                 "cardLocation=" + Arrays.toString(cardLocation) +
                 ", commonDiscard=" + commonDiscard +
                 ", cardReserve=" + cardReserve +
                 ", onGoingEffect=" + onGoingEffect +
                 ", flameOfTheClockRemaining=" + flameOfTheClockRemaining +
-                ", currentGame=" + currentGame +
-                '}';
+                ", currentGame=" + "[...]" +
+                "]";
     }
 }

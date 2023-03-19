@@ -223,36 +223,31 @@ public class Player {
      * Method to acquire by Strength a card from the PlayMat
      * @param index index of the card to be acquired
      */
-    public void acquireByStrength(PlayMat playMat, int index, ArrayList<Card> cards) {
+    public boolean acquireByStrength(PlayMat playMat, int index, ArrayList<Card> cards) {
         int acquisitionCostInStrength = playMat.getCardInLocationFromIndex(index).getAcquisitionCostInStrength();
-        try {
-            int strength = 0;
-            ArrayList<Card> cardsToRemove = new ArrayList<>(); // nouvelle liste
-            for (Card card : cards) {
-                if (!hasCardInHand(card)) {
-                    throw new IllegalArgumentException("Vous n'avez pas la carte " + card.getName() + " dans votre main");
-                }
-                strength += card.getStrength();
-                cardsToRemove.add(card); // ajouter la carte à la nouvelle liste
+        
+        int strength = 0;
+        ArrayList<Card> cardsToRemove = new ArrayList<>(); // nouvelle liste
+        for (Card card : cards) {
+            if (!this.hasCardInHand(card)) {
+                throw new IllegalArgumentException("Vous n'avez pas la carte " + card.getName() + " dans votre main");
             }
-            if (strength < acquisitionCostInStrength) {
-                throw new IllegalArgumentException("Vous n'avez pas assez de force pour acquérir cette carte");
-            } else {
-                addCardToDiscard(playMat.getCardInLocationFromIndex(index));
-                playMat.removeCardFromLocationFromIndex(index);
-                for (Card card : cardsToRemove) {
-                    moveCardFromHandToDiscard(card);
-                }
-                /**
-                 if (playMat.getCardInLocationFromIndex(index).getEffect().getType() == EffectType.DEFEATED) {
-                 playMat.getCardInLocationFromIndex(index).applyEffect(...);
-                 }
-                 */
-            }
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
-            return;
+            strength += card.getStrength();
+            cardsToRemove.add(card); // ajouter la carte à la nouvelle liste
         }
+        if (strength < acquisitionCostInStrength) {
+            throw new IllegalArgumentException("Vous n'avez pas assez de force pour acquérir cette carte");
+        } else {
+            addCardToDiscard(playMat.getCardInLocationFromIndex(index));
+            playMat.removeCardFromLocationFromIndex(index);
+            for (Card card : cardsToRemove) {
+                moveCardFromHandToDiscard(card);
+            }
+            /*if(playMat.getCardInLocationFromIndex(index).getEffect().getType() == EffectType.DEFEATED) {
+                playMat.getCardInLocationFromIndex(index).applyEffect(...);
+            }*/
+        }
+        return true;
     }
 
 
@@ -1359,16 +1354,16 @@ public class Player {
      */
     @Override
     public String toString() {
-        return "Player{" +
-                "name='" + name + '\'' +
-                ", hero=" + hero +
-                ", deck=" + deck +
-                ", hand=" + hand +
-                ", discard=" + discard +
-                ", destroyedCards=" + destroyedCards +
-                ", armor=" + armor +
-                ", injuredCharacters=" + injuredCharacters +
-                '}';
+        return "Player[" +
+            "name=" + this.name + ", " +
+            "hero=" + this.hero + ", " +
+            "deck=" + this.deck + ", " +
+            "hand=" + this.hand + ", " +
+            "discard=" + this.discard + ", " +
+            "destroyedCards=" + this.destroyedCards + ", " +
+            "armor=" + "[...]" + ", " +
+            "injuredCharacters=" + this.injuredCharacters + "]";
+        
     }
 
 
