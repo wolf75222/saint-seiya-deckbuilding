@@ -1,6 +1,5 @@
 package com.cmiurca.saintseiyadeckbuilding.saintseiya;
 
-import java.io.IOException;
 import java.util.ArrayList;
 
 /**

@@ -346,7 +346,7 @@ public class Card {
      * @param effectDescription
      * @return Effect
      */
-    private Effect createEffect(int id, String effectDescription) {
+    public Effect createEffect(int id, String effectDescription) {
         String effectClassName = "Effect" + String.format("%04d", id);
         try {
             Class<?> effectClass = Class.forName(effectClassName);
