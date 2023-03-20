@@ -23,7 +23,10 @@ public class GameController {
 
 	@GetMapping(path = "/api/current")
 	public String current(Model model) {
+		System.out.println(game);
 		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
+		System.out.println(current_player);
+		System.out.println(game);
 		model.addAttribute("player_name", current_player.getName());
 		var hand = current_player.getHand();
 		var hand_string = new ArrayList<String>();
@@ -46,6 +49,8 @@ public class GameController {
 	@GetMapping(path = "/api/next_player")
 	public String next_player(Model model) {
 		game.nextPlayer();
+		System.out.println(game);
+		System.out.println(game.getCurrentPlayerIndex());
 		var current_player = game.getPlayer(game.getCurrentPlayerIndex());
 		model.addAttribute("player_name", current_player.getName());
 		var hand = current_player.getHand();

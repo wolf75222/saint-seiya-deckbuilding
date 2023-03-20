@@ -29,14 +29,14 @@ public class Game {
     /**
      * Current Player index
      */
-    private int currentPlayerIndex;
+    private int currentPlayerIndex = 0;
 
     /**
      * Simple getter for current player index
      * @return int current player index
      */
     public int getCurrentPlayerIndex() {
-        return currentPlayerIndex;
+        return this.currentPlayerIndex;
     }
 
     /**
@@ -102,7 +102,7 @@ public class Game {
      */
     public Game(int playerCount) {
         this.playerCount = playerCount;
-        this.players = new ArrayList<>(playerCount);
+        this.players = new ArrayList<Player>(playerCount);
         this.playMat = new PlayMat(this);
         this.currentPlayerIndex = 0;
     }
@@ -111,8 +111,8 @@ public class Game {
      * Constructor for Game class
      */
     public Game(){
-        this.playerCount = 4;
-        this.players = new ArrayList<>(playerCount);
+        this.playerCount = 0;
+        this.players = new ArrayList<Player>(playerCount);
         this.playMat = new PlayMat(this);
         this.currentPlayerIndex = 0;
     }
@@ -305,14 +305,19 @@ public class Game {
      * @param player player to add
      */
     public void addPlayer(Player player) {
-        for (int i = 0; i < this.players.size(); i++) {
+        /**for (int i = 0; i < this.players.size(); i++) {
             if (this.players.get(i) == null) {
                 this.players.set(i, player);
                 break;
             }
         }
+         */
+        this.players.add(player);
+        this.playerCount = 0;
+        for (Player p : this.players) {
+            this.playerCount++;
+        }
     }
-
     /**
      * Method to remove a player from the game
      * @param player player to remove
@@ -361,11 +366,18 @@ public class Game {
      * Method nextPlayer to set the next player as the current player
      */
     public void nextPlayer() {
-        if (this.currentPlayerIndex == this.playerCount - 1 || this.players.get(this.currentPlayerIndex + 1) == null) {
+        //this.currentPlayerIndex = (this.currentPlayerIndex + 1) % this.playerCount;
+
+
+        if (this.currentPlayerIndex == this.playerCount - 1) {
             this.currentPlayerIndex = 0;
         } else {
             this.currentPlayerIndex++;
         }
+        System.out.println("Current player index : " + this.currentPlayerIndex);
+
+        
+
     }
 
 
